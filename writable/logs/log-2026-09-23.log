@@ -1,0 +1,1151 @@
+DEBUG - 2026-09-23 15:34:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 15:34:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 15:34:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 15:34:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 15:34:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 15:34:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 15:34:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 15:34:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 15:36:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 15:36:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 15:36:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 15:38:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 15:38:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 15:38:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 15:38:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 15:38:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 15:38:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 15:38:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 15:39:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 15:39:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 15:39:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 15:39:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 15:39:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 15:39:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 15:39:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 15:39:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 15:39:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 15:40:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 15:40:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 15:42:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2026-09-23 15:42:44 --> [DEPRECATED] trim(): Passing null to parameter #1 ($string) of type string is deprecated in APPPATH\Controllers\Checkout.php on line 136.
+ 1 APPPATH\Controllers\Checkout.php(136): trim(null)
+ 2 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Checkout->process()
+ 3 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Checkout))
+ 4 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2026-09-23 15:42:46 --> Email: sendWithMail threw ErrorException: mail(): Failed to connect to mailserver at &quot;localhost&quot; port 25, verify your &quot;SMTP&quot; and &quot;smtp_port&quot; setting in php.ini or use ini_set() in C:\xampp\htdocs\DGracia\system\Email\Email.php:1702
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'mail(): Failed ...', 'C:\\xampp\\htdocs...', 1702)
+#1 C:\xampp\htdocs\DGracia\system\Email\Email.php(1702): mail('nal.lucho8@hotm...', '=?UTF-8?Q?=F0=9...', 'This is a multi...', 'Date: Wed, 23 S...', '-f nal.lucho8@h...')
+#2 C:\xampp\htdocs\DGracia\system\Email\Email.php(1634): CodeIgniter\Email\Email->sendWithMail()
+#3 C:\xampp\htdocs\DGracia\system\Email\Email.php(1528): CodeIgniter\Email\Email->spoolEmail()
+#4 C:\xampp\htdocs\DGracia\app\Libraries\EmailService.php(105): CodeIgniter\Email\Email->send()
+#5 C:\xampp\htdocs\DGracia\app\Controllers\Checkout.php(232): App\Libraries\EmailService::sendOrderNotificationToAdmins(Object(stdClass), Array)
+#6 C:\xampp\htdocs\DGracia\system\CodeIgniter.php(974): App\Controllers\Checkout->process()
+#7 C:\xampp\htdocs\DGracia\system\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Checkout))
+#8 C:\xampp\htdocs\DGracia\system\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\DGracia\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\DGracia\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\DGracia\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+ERROR - 2026-09-23 15:42:46 --> Email: Unable to send email using PHP mail(). Your server might not be configured to send mail using this method.
+ERROR - 2026-09-23 15:42:46 --> 
+DEBUG - 2026-09-23 15:42:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 15:42:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 15:44:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 15:45:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 15:46:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 15:46:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 15:48:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 15:48:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 15:48:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 15:48:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 15:48:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 15:48:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 15:48:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 15:48:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 15:48:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 15:48:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 15:48:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 15:48:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 15:48:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 15:49:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 15:50:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 15:50:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 15:50:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 15:50:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 15:50:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 15:50:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 15:50:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 15:50:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 15:50:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 15:50:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 15:50:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 15:50:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 15:50:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 15:50:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 15:50:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 15:50:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 15:50:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 15:50:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 15:50:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 15:50:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 15:50:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 15:50:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 15:50:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 15:50:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 15:50:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 15:50:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 15:50:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2026-09-23 15:50:38 --> Error connecting to the database: mysqli_sql_exception: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión in C:\xampp\htdocs\DGracia\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\xampp\htdocs\DGracia\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'dulce_gracia', 3306, '', 0)
+#1 C:\xampp\htdocs\DGracia\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\DGracia\system\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\DGracia\system\Database\BaseBuilder.php(1659): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\DGracia\system\Model.php(255): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\DGracia\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\DGracia\app\Helpers\setting_helper.php(19): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\DGracia\app\Views\layouts\main.php(2): setting('site_name', 'Dulce Gracia')
+#8 C:\xampp\htdocs\DGracia\system\View\View.php(240): include('C:\\xampp\\htdocs...')
+#9 C:\xampp\htdocs\DGracia\system\View\View.php(243): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#10 C:\xampp\htdocs\DGracia\system\View\View.php(256): CodeIgniter\View\View->render('layouts/main', Array, true)
+#11 C:\xampp\htdocs\DGracia\system\Common.php(1268): CodeIgniter\View\View->render('cart/index', Array, true)
+#12 C:\xampp\htdocs\DGracia\app\Controllers\Cart.php(31): view('cart/index', Array)
+#13 C:\xampp\htdocs\DGracia\system\CodeIgniter.php(974): App\Controllers\Cart->index()
+#14 C:\xampp\htdocs\DGracia\system\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cart))
+#15 C:\xampp\htdocs\DGracia\system\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#16 C:\xampp\htdocs\DGracia\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#17 C:\xampp\htdocs\DGracia\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#18 C:\xampp\htdocs\DGracia\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#19 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión in C:\xampp\htdocs\DGracia\system\Database\MySQLi\Connection.php:231
+Stack trace:
+#0 C:\xampp\htdocs\DGracia\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\DGracia\system\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\DGracia\system\Database\BaseBuilder.php(1659): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\xampp\htdocs\DGracia\system\Model.php(255): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\xampp\htdocs\DGracia\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#5 C:\xampp\htdocs\DGracia\app\Helpers\setting_helper.php(19): CodeIgniter\BaseModel->findAll()
+#6 C:\xampp\htdocs\DGracia\app\Views\layouts\main.php(2): setting('site_name', 'Dulce Gracia')
+#7 C:\xampp\htdocs\DGracia\system\View\View.php(240): include('C:\\xampp\\htdocs...')
+#8 C:\xampp\htdocs\DGracia\system\View\View.php(243): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#9 C:\xampp\htdocs\DGracia\system\View\View.php(256): CodeIgniter\View\View->render('layouts/main', Array, true)
+#10 C:\xampp\htdocs\DGracia\system\Common.php(1268): CodeIgniter\View\View->render('cart/index', Array, true)
+#11 C:\xampp\htdocs\DGracia\app\Controllers\Cart.php(31): view('cart/index', Array)
+#12 C:\xampp\htdocs\DGracia\system\CodeIgniter.php(974): App\Controllers\Cart->index()
+#13 C:\xampp\htdocs\DGracia\system\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cart))
+#14 C:\xampp\htdocs\DGracia\system\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#15 C:\xampp\htdocs\DGracia\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#16 C:\xampp\htdocs\DGracia\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#17 C:\xampp\htdocs\DGracia\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#18 {main}
+ERROR - 2026-09-23 15:50:42 --> Error connecting to the database: mysqli_sql_exception: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión in C:\xampp\htdocs\DGracia\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\xampp\htdocs\DGracia\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'dulce_gracia', 3306, '', 0)
+#1 C:\xampp\htdocs\DGracia\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\DGracia\system\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\DGracia\system\Database\BaseBuilder.php(1659): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\DGracia\system\Model.php(255): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\DGracia\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\DGracia\app\Views\layouts\main.php(7): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\DGracia\system\View\View.php(240): include('C:\\xampp\\htdocs...')
+#8 C:\xampp\htdocs\DGracia\system\View\View.php(243): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#9 C:\xampp\htdocs\DGracia\system\View\View.php(256): CodeIgniter\View\View->render('layouts/main', Array, true)
+#10 C:\xampp\htdocs\DGracia\system\Common.php(1268): CodeIgniter\View\View->render('cart/index', Array, true)
+#11 C:\xampp\htdocs\DGracia\app\Controllers\Cart.php(31): view('cart/index', Array)
+#12 C:\xampp\htdocs\DGracia\system\CodeIgniter.php(974): App\Controllers\Cart->index()
+#13 C:\xampp\htdocs\DGracia\system\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cart))
+#14 C:\xampp\htdocs\DGracia\system\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#15 C:\xampp\htdocs\DGracia\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#16 C:\xampp\htdocs\DGracia\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#17 C:\xampp\htdocs\DGracia\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#18 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión in C:\xampp\htdocs\DGracia\system\Database\MySQLi\Connection.php:231
+Stack trace:
+#0 C:\xampp\htdocs\DGracia\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\DGracia\system\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\DGracia\system\Database\BaseBuilder.php(1659): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\xampp\htdocs\DGracia\system\Model.php(255): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\xampp\htdocs\DGracia\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#5 C:\xampp\htdocs\DGracia\app\Views\layouts\main.php(7): CodeIgniter\BaseModel->findAll()
+#6 C:\xampp\htdocs\DGracia\system\View\View.php(240): include('C:\\xampp\\htdocs...')
+#7 C:\xampp\htdocs\DGracia\system\View\View.php(243): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#8 C:\xampp\htdocs\DGracia\system\View\View.php(256): CodeIgniter\View\View->render('layouts/main', Array, true)
+#9 C:\xampp\htdocs\DGracia\system\Common.php(1268): CodeIgniter\View\View->render('cart/index', Array, true)
+#10 C:\xampp\htdocs\DGracia\app\Controllers\Cart.php(31): view('cart/index', Array)
+#11 C:\xampp\htdocs\DGracia\system\CodeIgniter.php(974): App\Controllers\Cart->index()
+#12 C:\xampp\htdocs\DGracia\system\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cart))
+#13 C:\xampp\htdocs\DGracia\system\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#14 C:\xampp\htdocs\DGracia\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#15 C:\xampp\htdocs\DGracia\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#16 C:\xampp\htdocs\DGracia\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#17 {main}
+CRITICAL - 2026-09-23 15:50:42 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión
+[Method: GET, Route: carrito]
+in SYSTEMPATH\Database\BaseConnection.php on line 606.
+ 1 SYSTEMPATH\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1659): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `settings`', [], false)
+ 3 SYSTEMPATH\Model.php(255): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH\Views\layouts\main.php(7): CodeIgniter\BaseModel->findAll()
+ 6 SYSTEMPATH\View\View.php(240): include('C:\\xampp\\htdocs\\DGracia\\app\\Views\\layouts\\main.php')
+ 7 SYSTEMPATH\View\View.php(243): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\View\View.php(256): CodeIgniter\View\View->render('layouts/main', [], true)
+ 9 SYSTEMPATH\Common.php(1268): CodeIgniter\View\View->render('cart/index', [], true)
+10 APPPATH\Controllers\Cart.php(31): view('cart/index', [...])
+11 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Cart->index()
+12 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cart))
+13 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+14 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+15 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+16 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2026-09-23 15:51:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 15:51:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 15:54:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 15:54:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 15:54:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 15:54:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 15:55:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 15:59:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 15:59:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 15:59:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 15:59:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 16:00:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 16:00:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 16:00:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 16:00:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 16:01:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 16:01:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 16:01:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 16:01:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 16:01:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 16:01:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 16:01:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 16:02:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 16:02:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 16:02:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 16:02:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 16:02:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 16:02:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 16:03:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 16:03:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 16:03:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 16:03:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 16:03:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 16:05:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 16:05:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 16:05:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 16:05:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 16:05:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 16:05:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 16:06:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 16:06:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 16:07:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-09-23 16:07:41 --> Admin ID=1 cambió su contraseña exitosamente.
+DEBUG - 2026-09-23 16:07:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 16:08:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-09-23 16:08:23 --> Admin ID=1 cambió su contraseña exitosamente.
+DEBUG - 2026-09-23 16:08:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 16:13:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 13:43:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 13:43:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 13:43:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 13:43:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2026-09-23 13:43:11 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE 1=1 
+             GROUP BY month ORDER BY month ASC' at line 6
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('SELECT DATE_FORMAT(o.created_at,\'%Y-%m\') AS month,
+                    COALESCE(SUM(oi.quantity * (oi.price - COALESCE(p.cost,0))),0) AS profit
+             FROM orders o
+             JOIN order_items oi ON oi.order_id = o.id
+             JOIN products p ON p.id = oi.product_id
+             WHERE o.status != \'cancelado\'  WHERE 1=1 
+             GROUP BY month ORDER BY month ASC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(908): CodeIgniter\Database\MySQLi\Connection->execute('SELECT DATE_FORMAT(o.created_at,\'%Y-%m\') AS month,
+                    COALESCE(SUM(oi.quantity * (oi.price - COALESCE(p.cost,0))),0) AS profit
+             FROM orders o
+             JOIN order_items oi ON oi.order_id = o.id
+             JOIN products p ON p.id = oi.product_id
+             WHERE o.status != \'cancelado\'  WHERE 1=1 
+             GROUP BY month ORDER BY month ASC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(825): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT DATE_FORMAT(o.created_at,\'%Y-%m\') AS month,
+                    COALESCE(SUM(oi.quantity * (oi.price - COALESCE(p.cost,0))),0) AS profit
+             FROM orders o
+             JOIN order_items oi ON oi.order_id = o.id
+             JOIN products p ON p.id = oi.product_id
+             WHERE o.status != \'cancelado\'  WHERE 1=1 
+             GROUP BY month ORDER BY month ASC')
+ 4 APPPATH\Controllers\Admin\Dashboard.php(164): CodeIgniter\Database\BaseConnection->query('SELECT DATE_FORMAT(o.created_at,\'%Y-%m\') AS month,
+                    COALESCE(SUM(oi.quantity * (oi.price - COALESCE(p.cost,0))),0) AS profit
+             FROM orders o
+             JOIN order_items oi ON oi.order_id = o.id
+             JOIN products p ON p.id = oi.product_id
+             WHERE o.status != \'cancelado\'  WHERE 1=1 
+             GROUP BY month ORDER BY month ASC')
+ 5 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Admin\Dashboard->index()
+ 6 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+ 7 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-09-23 13:43:11 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE 1=1 
+             GROUP BY month ORDER BY month ASC' at line 6
+[Method: GET, Route: admin/dashboard]
+in SYSTEMPATH\Database\BaseConnection.php on line 863.
+ 1 APPPATH\Controllers\Admin\Dashboard.php(164): CodeIgniter\Database\BaseConnection->query('SELECT DATE_FORMAT(o.created_at,\'%Y-%m\') AS month,
+                    COALESCE(SUM(oi.quantity * (oi.price - COALESCE(p.cost,0))),0) AS profit
+             FROM orders o
+             JOIN order_items oi ON oi.order_id = o.id
+             JOIN products p ON p.id = oi.product_id
+             WHERE o.status != \'cancelado\'  WHERE 1=1 
+             GROUP BY month ORDER BY month ASC')
+ 2 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Admin\Dashboard->index()
+ 3 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+ 4 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-09-23 13:43:11 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE 1=1 
+             GROUP BY month ORDER BY month ASC' at line 6
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 310.
+ 1 SYSTEMPATH\Database\BaseConnection.php(908): CodeIgniter\Database\MySQLi\Connection->execute('SELECT DATE_FORMAT(o.created_at,\'%Y-%m\') AS month,
+                    COALESCE(SUM(oi.quantity * (oi.price - COALESCE(p.cost,0))),0) AS profit
+             FROM orders o
+             JOIN order_items oi ON oi.order_id = o.id
+             JOIN products p ON p.id = oi.product_id
+             WHERE o.status != \'cancelado\'  WHERE 1=1 
+             GROUP BY month ORDER BY month ASC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(825): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT DATE_FORMAT(o.created_at,\'%Y-%m\') AS month,
+                    COALESCE(SUM(oi.quantity * (oi.price - COALESCE(p.cost,0))),0) AS profit
+             FROM orders o
+             JOIN order_items oi ON oi.order_id = o.id
+             JOIN products p ON p.id = oi.product_id
+             WHERE o.status != \'cancelado\'  WHERE 1=1 
+             GROUP BY month ORDER BY month ASC')
+ 3 APPPATH\Controllers\Admin\Dashboard.php(164): CodeIgniter\Database\BaseConnection->query('SELECT DATE_FORMAT(o.created_at,\'%Y-%m\') AS month,
+                    COALESCE(SUM(oi.quantity * (oi.price - COALESCE(p.cost,0))),0) AS profit
+             FROM orders o
+             JOIN order_items oi ON oi.order_id = o.id
+             JOIN products p ON p.id = oi.product_id
+             WHERE o.status != \'cancelado\'  WHERE 1=1 
+             GROUP BY month ORDER BY month ASC')
+ 4 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Admin\Dashboard->index()
+ 5 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+ 6 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-09-23 13:43:11 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE 1=1 
+             GROUP BY month ORDER BY month ASC' at line 6
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('SELECT DATE_FORMAT(o.created_at,\'%Y-%m\') AS month,
+                    COALESCE(SUM(oi.quantity * (oi.price - COALESCE(p.cost,0))),0) AS profit
+             FROM orders o
+             JOIN order_items oi ON oi.order_id = o.id
+             JOIN products p ON p.id = oi.product_id
+             WHERE o.status != \'cancelado\'  WHERE 1=1 
+             GROUP BY month ORDER BY month ASC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(908): CodeIgniter\Database\MySQLi\Connection->execute('SELECT DATE_FORMAT(o.created_at,\'%Y-%m\') AS month,
+                    COALESCE(SUM(oi.quantity * (oi.price - COALESCE(p.cost,0))),0) AS profit
+             FROM orders o
+             JOIN order_items oi ON oi.order_id = o.id
+             JOIN products p ON p.id = oi.product_id
+             WHERE o.status != \'cancelado\'  WHERE 1=1 
+             GROUP BY month ORDER BY month ASC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(825): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT DATE_FORMAT(o.created_at,\'%Y-%m\') AS month,
+                    COALESCE(SUM(oi.quantity * (oi.price - COALESCE(p.cost,0))),0) AS profit
+             FROM orders o
+             JOIN order_items oi ON oi.order_id = o.id
+             JOIN products p ON p.id = oi.product_id
+             WHERE o.status != \'cancelado\'  WHERE 1=1 
+             GROUP BY month ORDER BY month ASC')
+ 4 APPPATH\Controllers\Admin\Dashboard.php(164): CodeIgniter\Database\BaseConnection->query('SELECT DATE_FORMAT(o.created_at,\'%Y-%m\') AS month,
+                    COALESCE(SUM(oi.quantity * (oi.price - COALESCE(p.cost,0))),0) AS profit
+             FROM orders o
+             JOIN order_items oi ON oi.order_id = o.id
+             JOIN products p ON p.id = oi.product_id
+             WHERE o.status != \'cancelado\'  WHERE 1=1 
+             GROUP BY month ORDER BY month ASC')
+ 5 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Admin\Dashboard->index()
+ 6 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+ 7 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2026-09-23 13:43:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2026-09-23 13:43:23 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE 1=1 
+             GROUP BY month ORDER BY month ASC' at line 6
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('SELECT DATE_FORMAT(o.created_at,\'%Y-%m\') AS month,
+                    COALESCE(SUM(oi.quantity * (oi.price - COALESCE(p.cost,0))),0) AS profit
+             FROM orders o
+             JOIN order_items oi ON oi.order_id = o.id
+             JOIN products p ON p.id = oi.product_id
+             WHERE o.status != \'cancelado\'  WHERE 1=1 
+             GROUP BY month ORDER BY month ASC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(908): CodeIgniter\Database\MySQLi\Connection->execute('SELECT DATE_FORMAT(o.created_at,\'%Y-%m\') AS month,
+                    COALESCE(SUM(oi.quantity * (oi.price - COALESCE(p.cost,0))),0) AS profit
+             FROM orders o
+             JOIN order_items oi ON oi.order_id = o.id
+             JOIN products p ON p.id = oi.product_id
+             WHERE o.status != \'cancelado\'  WHERE 1=1 
+             GROUP BY month ORDER BY month ASC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(825): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT DATE_FORMAT(o.created_at,\'%Y-%m\') AS month,
+                    COALESCE(SUM(oi.quantity * (oi.price - COALESCE(p.cost,0))),0) AS profit
+             FROM orders o
+             JOIN order_items oi ON oi.order_id = o.id
+             JOIN products p ON p.id = oi.product_id
+             WHERE o.status != \'cancelado\'  WHERE 1=1 
+             GROUP BY month ORDER BY month ASC')
+ 4 APPPATH\Controllers\Admin\Dashboard.php(164): CodeIgniter\Database\BaseConnection->query('SELECT DATE_FORMAT(o.created_at,\'%Y-%m\') AS month,
+                    COALESCE(SUM(oi.quantity * (oi.price - COALESCE(p.cost,0))),0) AS profit
+             FROM orders o
+             JOIN order_items oi ON oi.order_id = o.id
+             JOIN products p ON p.id = oi.product_id
+             WHERE o.status != \'cancelado\'  WHERE 1=1 
+             GROUP BY month ORDER BY month ASC')
+ 5 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Admin\Dashboard->index()
+ 6 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+ 7 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-09-23 13:43:23 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE 1=1 
+             GROUP BY month ORDER BY month ASC' at line 6
+[Method: GET, Route: admin/dashboard]
+in SYSTEMPATH\Database\BaseConnection.php on line 863.
+ 1 APPPATH\Controllers\Admin\Dashboard.php(164): CodeIgniter\Database\BaseConnection->query('SELECT DATE_FORMAT(o.created_at,\'%Y-%m\') AS month,
+                    COALESCE(SUM(oi.quantity * (oi.price - COALESCE(p.cost,0))),0) AS profit
+             FROM orders o
+             JOIN order_items oi ON oi.order_id = o.id
+             JOIN products p ON p.id = oi.product_id
+             WHERE o.status != \'cancelado\'  WHERE 1=1 
+             GROUP BY month ORDER BY month ASC')
+ 2 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Admin\Dashboard->index()
+ 3 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+ 4 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-09-23 13:43:23 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE 1=1 
+             GROUP BY month ORDER BY month ASC' at line 6
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 310.
+ 1 SYSTEMPATH\Database\BaseConnection.php(908): CodeIgniter\Database\MySQLi\Connection->execute('SELECT DATE_FORMAT(o.created_at,\'%Y-%m\') AS month,
+                    COALESCE(SUM(oi.quantity * (oi.price - COALESCE(p.cost,0))),0) AS profit
+             FROM orders o
+             JOIN order_items oi ON oi.order_id = o.id
+             JOIN products p ON p.id = oi.product_id
+             WHERE o.status != \'cancelado\'  WHERE 1=1 
+             GROUP BY month ORDER BY month ASC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(825): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT DATE_FORMAT(o.created_at,\'%Y-%m\') AS month,
+                    COALESCE(SUM(oi.quantity * (oi.price - COALESCE(p.cost,0))),0) AS profit
+             FROM orders o
+             JOIN order_items oi ON oi.order_id = o.id
+             JOIN products p ON p.id = oi.product_id
+             WHERE o.status != \'cancelado\'  WHERE 1=1 
+             GROUP BY month ORDER BY month ASC')
+ 3 APPPATH\Controllers\Admin\Dashboard.php(164): CodeIgniter\Database\BaseConnection->query('SELECT DATE_FORMAT(o.created_at,\'%Y-%m\') AS month,
+                    COALESCE(SUM(oi.quantity * (oi.price - COALESCE(p.cost,0))),0) AS profit
+             FROM orders o
+             JOIN order_items oi ON oi.order_id = o.id
+             JOIN products p ON p.id = oi.product_id
+             WHERE o.status != \'cancelado\'  WHERE 1=1 
+             GROUP BY month ORDER BY month ASC')
+ 4 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Admin\Dashboard->index()
+ 5 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+ 6 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-09-23 13:43:23 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE 1=1 
+             GROUP BY month ORDER BY month ASC' at line 6
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('SELECT DATE_FORMAT(o.created_at,\'%Y-%m\') AS month,
+                    COALESCE(SUM(oi.quantity * (oi.price - COALESCE(p.cost,0))),0) AS profit
+             FROM orders o
+             JOIN order_items oi ON oi.order_id = o.id
+             JOIN products p ON p.id = oi.product_id
+             WHERE o.status != \'cancelado\'  WHERE 1=1 
+             GROUP BY month ORDER BY month ASC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(908): CodeIgniter\Database\MySQLi\Connection->execute('SELECT DATE_FORMAT(o.created_at,\'%Y-%m\') AS month,
+                    COALESCE(SUM(oi.quantity * (oi.price - COALESCE(p.cost,0))),0) AS profit
+             FROM orders o
+             JOIN order_items oi ON oi.order_id = o.id
+             JOIN products p ON p.id = oi.product_id
+             WHERE o.status != \'cancelado\'  WHERE 1=1 
+             GROUP BY month ORDER BY month ASC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(825): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT DATE_FORMAT(o.created_at,\'%Y-%m\') AS month,
+                    COALESCE(SUM(oi.quantity * (oi.price - COALESCE(p.cost,0))),0) AS profit
+             FROM orders o
+             JOIN order_items oi ON oi.order_id = o.id
+             JOIN products p ON p.id = oi.product_id
+             WHERE o.status != \'cancelado\'  WHERE 1=1 
+             GROUP BY month ORDER BY month ASC')
+ 4 APPPATH\Controllers\Admin\Dashboard.php(164): CodeIgniter\Database\BaseConnection->query('SELECT DATE_FORMAT(o.created_at,\'%Y-%m\') AS month,
+                    COALESCE(SUM(oi.quantity * (oi.price - COALESCE(p.cost,0))),0) AS profit
+             FROM orders o
+             JOIN order_items oi ON oi.order_id = o.id
+             JOIN products p ON p.id = oi.product_id
+             WHERE o.status != \'cancelado\'  WHERE 1=1 
+             GROUP BY month ORDER BY month ASC')
+ 5 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Admin\Dashboard->index()
+ 6 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+ 7 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2026-09-23 13:43:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 13:43:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 13:43:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 13:45:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2026-09-23 13:45:29 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE 1=1 
+             GROUP BY month ORDER BY month ASC' at line 6
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('SELECT DATE_FORMAT(o.created_at,\'%Y-%m\') AS month,
+                    COALESCE(SUM(oi.quantity * (oi.price - COALESCE(p.cost,0))),0) AS profit
+             FROM orders o
+             JOIN order_items oi ON oi.order_id = o.id
+             JOIN products p ON p.id = oi.product_id
+             WHERE o.status != \'cancelado\'  WHERE 1=1 
+             GROUP BY month ORDER BY month ASC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(908): CodeIgniter\Database\MySQLi\Connection->execute('SELECT DATE_FORMAT(o.created_at,\'%Y-%m\') AS month,
+                    COALESCE(SUM(oi.quantity * (oi.price - COALESCE(p.cost,0))),0) AS profit
+             FROM orders o
+             JOIN order_items oi ON oi.order_id = o.id
+             JOIN products p ON p.id = oi.product_id
+             WHERE o.status != \'cancelado\'  WHERE 1=1 
+             GROUP BY month ORDER BY month ASC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(825): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT DATE_FORMAT(o.created_at,\'%Y-%m\') AS month,
+                    COALESCE(SUM(oi.quantity * (oi.price - COALESCE(p.cost,0))),0) AS profit
+             FROM orders o
+             JOIN order_items oi ON oi.order_id = o.id
+             JOIN products p ON p.id = oi.product_id
+             WHERE o.status != \'cancelado\'  WHERE 1=1 
+             GROUP BY month ORDER BY month ASC')
+ 4 APPPATH\Controllers\Admin\Dashboard.php(164): CodeIgniter\Database\BaseConnection->query('SELECT DATE_FORMAT(o.created_at,\'%Y-%m\') AS month,
+                    COALESCE(SUM(oi.quantity * (oi.price - COALESCE(p.cost,0))),0) AS profit
+             FROM orders o
+             JOIN order_items oi ON oi.order_id = o.id
+             JOIN products p ON p.id = oi.product_id
+             WHERE o.status != \'cancelado\'  WHERE 1=1 
+             GROUP BY month ORDER BY month ASC')
+ 5 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Admin\Dashboard->index()
+ 6 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+ 7 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-09-23 13:45:29 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE 1=1 
+             GROUP BY month ORDER BY month ASC' at line 6
+[Method: GET, Route: admin/dashboard]
+in SYSTEMPATH\Database\BaseConnection.php on line 863.
+ 1 APPPATH\Controllers\Admin\Dashboard.php(164): CodeIgniter\Database\BaseConnection->query('SELECT DATE_FORMAT(o.created_at,\'%Y-%m\') AS month,
+                    COALESCE(SUM(oi.quantity * (oi.price - COALESCE(p.cost,0))),0) AS profit
+             FROM orders o
+             JOIN order_items oi ON oi.order_id = o.id
+             JOIN products p ON p.id = oi.product_id
+             WHERE o.status != \'cancelado\'  WHERE 1=1 
+             GROUP BY month ORDER BY month ASC')
+ 2 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Admin\Dashboard->index()
+ 3 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+ 4 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-09-23 13:45:29 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE 1=1 
+             GROUP BY month ORDER BY month ASC' at line 6
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 310.
+ 1 SYSTEMPATH\Database\BaseConnection.php(908): CodeIgniter\Database\MySQLi\Connection->execute('SELECT DATE_FORMAT(o.created_at,\'%Y-%m\') AS month,
+                    COALESCE(SUM(oi.quantity * (oi.price - COALESCE(p.cost,0))),0) AS profit
+             FROM orders o
+             JOIN order_items oi ON oi.order_id = o.id
+             JOIN products p ON p.id = oi.product_id
+             WHERE o.status != \'cancelado\'  WHERE 1=1 
+             GROUP BY month ORDER BY month ASC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(825): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT DATE_FORMAT(o.created_at,\'%Y-%m\') AS month,
+                    COALESCE(SUM(oi.quantity * (oi.price - COALESCE(p.cost,0))),0) AS profit
+             FROM orders o
+             JOIN order_items oi ON oi.order_id = o.id
+             JOIN products p ON p.id = oi.product_id
+             WHERE o.status != \'cancelado\'  WHERE 1=1 
+             GROUP BY month ORDER BY month ASC')
+ 3 APPPATH\Controllers\Admin\Dashboard.php(164): CodeIgniter\Database\BaseConnection->query('SELECT DATE_FORMAT(o.created_at,\'%Y-%m\') AS month,
+                    COALESCE(SUM(oi.quantity * (oi.price - COALESCE(p.cost,0))),0) AS profit
+             FROM orders o
+             JOIN order_items oi ON oi.order_id = o.id
+             JOIN products p ON p.id = oi.product_id
+             WHERE o.status != \'cancelado\'  WHERE 1=1 
+             GROUP BY month ORDER BY month ASC')
+ 4 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Admin\Dashboard->index()
+ 5 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+ 6 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-09-23 13:45:29 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE 1=1 
+             GROUP BY month ORDER BY month ASC' at line 6
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('SELECT DATE_FORMAT(o.created_at,\'%Y-%m\') AS month,
+                    COALESCE(SUM(oi.quantity * (oi.price - COALESCE(p.cost,0))),0) AS profit
+             FROM orders o
+             JOIN order_items oi ON oi.order_id = o.id
+             JOIN products p ON p.id = oi.product_id
+             WHERE o.status != \'cancelado\'  WHERE 1=1 
+             GROUP BY month ORDER BY month ASC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(908): CodeIgniter\Database\MySQLi\Connection->execute('SELECT DATE_FORMAT(o.created_at,\'%Y-%m\') AS month,
+                    COALESCE(SUM(oi.quantity * (oi.price - COALESCE(p.cost,0))),0) AS profit
+             FROM orders o
+             JOIN order_items oi ON oi.order_id = o.id
+             JOIN products p ON p.id = oi.product_id
+             WHERE o.status != \'cancelado\'  WHERE 1=1 
+             GROUP BY month ORDER BY month ASC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(825): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT DATE_FORMAT(o.created_at,\'%Y-%m\') AS month,
+                    COALESCE(SUM(oi.quantity * (oi.price - COALESCE(p.cost,0))),0) AS profit
+             FROM orders o
+             JOIN order_items oi ON oi.order_id = o.id
+             JOIN products p ON p.id = oi.product_id
+             WHERE o.status != \'cancelado\'  WHERE 1=1 
+             GROUP BY month ORDER BY month ASC')
+ 4 APPPATH\Controllers\Admin\Dashboard.php(164): CodeIgniter\Database\BaseConnection->query('SELECT DATE_FORMAT(o.created_at,\'%Y-%m\') AS month,
+                    COALESCE(SUM(oi.quantity * (oi.price - COALESCE(p.cost,0))),0) AS profit
+             FROM orders o
+             JOIN order_items oi ON oi.order_id = o.id
+             JOIN products p ON p.id = oi.product_id
+             WHERE o.status != \'cancelado\'  WHERE 1=1 
+             GROUP BY month ORDER BY month ASC')
+ 5 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Admin\Dashboard->index()
+ 6 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+ 7 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2026-09-23 13:45:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2026-09-23 13:45:37 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE 1=1 
+             GROUP BY month ORDER BY month ASC' at line 6
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('SELECT DATE_FORMAT(o.created_at,\'%Y-%m\') AS month,
+                    COALESCE(SUM(oi.quantity * (oi.price - COALESCE(p.cost,0))),0) AS profit
+             FROM orders o
+             JOIN order_items oi ON oi.order_id = o.id
+             JOIN products p ON p.id = oi.product_id
+             WHERE o.status != \'cancelado\'  WHERE 1=1 
+             GROUP BY month ORDER BY month ASC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(908): CodeIgniter\Database\MySQLi\Connection->execute('SELECT DATE_FORMAT(o.created_at,\'%Y-%m\') AS month,
+                    COALESCE(SUM(oi.quantity * (oi.price - COALESCE(p.cost,0))),0) AS profit
+             FROM orders o
+             JOIN order_items oi ON oi.order_id = o.id
+             JOIN products p ON p.id = oi.product_id
+             WHERE o.status != \'cancelado\'  WHERE 1=1 
+             GROUP BY month ORDER BY month ASC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(825): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT DATE_FORMAT(o.created_at,\'%Y-%m\') AS month,
+                    COALESCE(SUM(oi.quantity * (oi.price - COALESCE(p.cost,0))),0) AS profit
+             FROM orders o
+             JOIN order_items oi ON oi.order_id = o.id
+             JOIN products p ON p.id = oi.product_id
+             WHERE o.status != \'cancelado\'  WHERE 1=1 
+             GROUP BY month ORDER BY month ASC')
+ 4 APPPATH\Controllers\Admin\Dashboard.php(164): CodeIgniter\Database\BaseConnection->query('SELECT DATE_FORMAT(o.created_at,\'%Y-%m\') AS month,
+                    COALESCE(SUM(oi.quantity * (oi.price - COALESCE(p.cost,0))),0) AS profit
+             FROM orders o
+             JOIN order_items oi ON oi.order_id = o.id
+             JOIN products p ON p.id = oi.product_id
+             WHERE o.status != \'cancelado\'  WHERE 1=1 
+             GROUP BY month ORDER BY month ASC')
+ 5 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Admin\Dashboard->index()
+ 6 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+ 7 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-09-23 13:45:37 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE 1=1 
+             GROUP BY month ORDER BY month ASC' at line 6
+[Method: GET, Route: admin]
+in SYSTEMPATH\Database\BaseConnection.php on line 863.
+ 1 APPPATH\Controllers\Admin\Dashboard.php(164): CodeIgniter\Database\BaseConnection->query('SELECT DATE_FORMAT(o.created_at,\'%Y-%m\') AS month,
+                    COALESCE(SUM(oi.quantity * (oi.price - COALESCE(p.cost,0))),0) AS profit
+             FROM orders o
+             JOIN order_items oi ON oi.order_id = o.id
+             JOIN products p ON p.id = oi.product_id
+             WHERE o.status != \'cancelado\'  WHERE 1=1 
+             GROUP BY month ORDER BY month ASC')
+ 2 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Admin\Dashboard->index()
+ 3 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+ 4 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-09-23 13:45:37 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE 1=1 
+             GROUP BY month ORDER BY month ASC' at line 6
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 310.
+ 1 SYSTEMPATH\Database\BaseConnection.php(908): CodeIgniter\Database\MySQLi\Connection->execute('SELECT DATE_FORMAT(o.created_at,\'%Y-%m\') AS month,
+                    COALESCE(SUM(oi.quantity * (oi.price - COALESCE(p.cost,0))),0) AS profit
+             FROM orders o
+             JOIN order_items oi ON oi.order_id = o.id
+             JOIN products p ON p.id = oi.product_id
+             WHERE o.status != \'cancelado\'  WHERE 1=1 
+             GROUP BY month ORDER BY month ASC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(825): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT DATE_FORMAT(o.created_at,\'%Y-%m\') AS month,
+                    COALESCE(SUM(oi.quantity * (oi.price - COALESCE(p.cost,0))),0) AS profit
+             FROM orders o
+             JOIN order_items oi ON oi.order_id = o.id
+             JOIN products p ON p.id = oi.product_id
+             WHERE o.status != \'cancelado\'  WHERE 1=1 
+             GROUP BY month ORDER BY month ASC')
+ 3 APPPATH\Controllers\Admin\Dashboard.php(164): CodeIgniter\Database\BaseConnection->query('SELECT DATE_FORMAT(o.created_at,\'%Y-%m\') AS month,
+                    COALESCE(SUM(oi.quantity * (oi.price - COALESCE(p.cost,0))),0) AS profit
+             FROM orders o
+             JOIN order_items oi ON oi.order_id = o.id
+             JOIN products p ON p.id = oi.product_id
+             WHERE o.status != \'cancelado\'  WHERE 1=1 
+             GROUP BY month ORDER BY month ASC')
+ 4 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Admin\Dashboard->index()
+ 5 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+ 6 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-09-23 13:45:37 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE 1=1 
+             GROUP BY month ORDER BY month ASC' at line 6
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('SELECT DATE_FORMAT(o.created_at,\'%Y-%m\') AS month,
+                    COALESCE(SUM(oi.quantity * (oi.price - COALESCE(p.cost,0))),0) AS profit
+             FROM orders o
+             JOIN order_items oi ON oi.order_id = o.id
+             JOIN products p ON p.id = oi.product_id
+             WHERE o.status != \'cancelado\'  WHERE 1=1 
+             GROUP BY month ORDER BY month ASC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(908): CodeIgniter\Database\MySQLi\Connection->execute('SELECT DATE_FORMAT(o.created_at,\'%Y-%m\') AS month,
+                    COALESCE(SUM(oi.quantity * (oi.price - COALESCE(p.cost,0))),0) AS profit
+             FROM orders o
+             JOIN order_items oi ON oi.order_id = o.id
+             JOIN products p ON p.id = oi.product_id
+             WHERE o.status != \'cancelado\'  WHERE 1=1 
+             GROUP BY month ORDER BY month ASC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(825): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT DATE_FORMAT(o.created_at,\'%Y-%m\') AS month,
+                    COALESCE(SUM(oi.quantity * (oi.price - COALESCE(p.cost,0))),0) AS profit
+             FROM orders o
+             JOIN order_items oi ON oi.order_id = o.id
+             JOIN products p ON p.id = oi.product_id
+             WHERE o.status != \'cancelado\'  WHERE 1=1 
+             GROUP BY month ORDER BY month ASC')
+ 4 APPPATH\Controllers\Admin\Dashboard.php(164): CodeIgniter\Database\BaseConnection->query('SELECT DATE_FORMAT(o.created_at,\'%Y-%m\') AS month,
+                    COALESCE(SUM(oi.quantity * (oi.price - COALESCE(p.cost,0))),0) AS profit
+             FROM orders o
+             JOIN order_items oi ON oi.order_id = o.id
+             JOIN products p ON p.id = oi.product_id
+             WHERE o.status != \'cancelado\'  WHERE 1=1 
+             GROUP BY month ORDER BY month ASC')
+ 5 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Admin\Dashboard->index()
+ 6 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+ 7 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2026-09-23 13:45:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 13:45:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 13:45:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 13:45:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 13:45:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 13:45:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 13:46:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 13:46:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 13:46:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 13:46:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2026-09-23 13:46:21 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE 1=1 
+             GROUP BY month ORDER BY month ASC' at line 6
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('SELECT DATE_FORMAT(o.created_at,\'%Y-%m\') AS month,
+                    COALESCE(SUM(oi.quantity * (oi.price - COALESCE(p.cost,0))),0) AS profit
+             FROM orders o
+             JOIN order_items oi ON oi.order_id = o.id
+             JOIN products p ON p.id = oi.product_id
+             WHERE o.status != \'cancelado\'  WHERE 1=1 
+             GROUP BY month ORDER BY month ASC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(908): CodeIgniter\Database\MySQLi\Connection->execute('SELECT DATE_FORMAT(o.created_at,\'%Y-%m\') AS month,
+                    COALESCE(SUM(oi.quantity * (oi.price - COALESCE(p.cost,0))),0) AS profit
+             FROM orders o
+             JOIN order_items oi ON oi.order_id = o.id
+             JOIN products p ON p.id = oi.product_id
+             WHERE o.status != \'cancelado\'  WHERE 1=1 
+             GROUP BY month ORDER BY month ASC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(825): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT DATE_FORMAT(o.created_at,\'%Y-%m\') AS month,
+                    COALESCE(SUM(oi.quantity * (oi.price - COALESCE(p.cost,0))),0) AS profit
+             FROM orders o
+             JOIN order_items oi ON oi.order_id = o.id
+             JOIN products p ON p.id = oi.product_id
+             WHERE o.status != \'cancelado\'  WHERE 1=1 
+             GROUP BY month ORDER BY month ASC')
+ 4 APPPATH\Controllers\Admin\Dashboard.php(164): CodeIgniter\Database\BaseConnection->query('SELECT DATE_FORMAT(o.created_at,\'%Y-%m\') AS month,
+                    COALESCE(SUM(oi.quantity * (oi.price - COALESCE(p.cost,0))),0) AS profit
+             FROM orders o
+             JOIN order_items oi ON oi.order_id = o.id
+             JOIN products p ON p.id = oi.product_id
+             WHERE o.status != \'cancelado\'  WHERE 1=1 
+             GROUP BY month ORDER BY month ASC')
+ 5 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Admin\Dashboard->index()
+ 6 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+ 7 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-09-23 13:46:21 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE 1=1 
+             GROUP BY month ORDER BY month ASC' at line 6
+[Method: GET, Route: admin]
+in SYSTEMPATH\Database\BaseConnection.php on line 863.
+ 1 APPPATH\Controllers\Admin\Dashboard.php(164): CodeIgniter\Database\BaseConnection->query('SELECT DATE_FORMAT(o.created_at,\'%Y-%m\') AS month,
+                    COALESCE(SUM(oi.quantity * (oi.price - COALESCE(p.cost,0))),0) AS profit
+             FROM orders o
+             JOIN order_items oi ON oi.order_id = o.id
+             JOIN products p ON p.id = oi.product_id
+             WHERE o.status != \'cancelado\'  WHERE 1=1 
+             GROUP BY month ORDER BY month ASC')
+ 2 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Admin\Dashboard->index()
+ 3 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+ 4 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-09-23 13:46:21 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE 1=1 
+             GROUP BY month ORDER BY month ASC' at line 6
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 310.
+ 1 SYSTEMPATH\Database\BaseConnection.php(908): CodeIgniter\Database\MySQLi\Connection->execute('SELECT DATE_FORMAT(o.created_at,\'%Y-%m\') AS month,
+                    COALESCE(SUM(oi.quantity * (oi.price - COALESCE(p.cost,0))),0) AS profit
+             FROM orders o
+             JOIN order_items oi ON oi.order_id = o.id
+             JOIN products p ON p.id = oi.product_id
+             WHERE o.status != \'cancelado\'  WHERE 1=1 
+             GROUP BY month ORDER BY month ASC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(825): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT DATE_FORMAT(o.created_at,\'%Y-%m\') AS month,
+                    COALESCE(SUM(oi.quantity * (oi.price - COALESCE(p.cost,0))),0) AS profit
+             FROM orders o
+             JOIN order_items oi ON oi.order_id = o.id
+             JOIN products p ON p.id = oi.product_id
+             WHERE o.status != \'cancelado\'  WHERE 1=1 
+             GROUP BY month ORDER BY month ASC')
+ 3 APPPATH\Controllers\Admin\Dashboard.php(164): CodeIgniter\Database\BaseConnection->query('SELECT DATE_FORMAT(o.created_at,\'%Y-%m\') AS month,
+                    COALESCE(SUM(oi.quantity * (oi.price - COALESCE(p.cost,0))),0) AS profit
+             FROM orders o
+             JOIN order_items oi ON oi.order_id = o.id
+             JOIN products p ON p.id = oi.product_id
+             WHERE o.status != \'cancelado\'  WHERE 1=1 
+             GROUP BY month ORDER BY month ASC')
+ 4 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Admin\Dashboard->index()
+ 5 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+ 6 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-09-23 13:46:21 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE 1=1 
+             GROUP BY month ORDER BY month ASC' at line 6
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('SELECT DATE_FORMAT(o.created_at,\'%Y-%m\') AS month,
+                    COALESCE(SUM(oi.quantity * (oi.price - COALESCE(p.cost,0))),0) AS profit
+             FROM orders o
+             JOIN order_items oi ON oi.order_id = o.id
+             JOIN products p ON p.id = oi.product_id
+             WHERE o.status != \'cancelado\'  WHERE 1=1 
+             GROUP BY month ORDER BY month ASC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(908): CodeIgniter\Database\MySQLi\Connection->execute('SELECT DATE_FORMAT(o.created_at,\'%Y-%m\') AS month,
+                    COALESCE(SUM(oi.quantity * (oi.price - COALESCE(p.cost,0))),0) AS profit
+             FROM orders o
+             JOIN order_items oi ON oi.order_id = o.id
+             JOIN products p ON p.id = oi.product_id
+             WHERE o.status != \'cancelado\'  WHERE 1=1 
+             GROUP BY month ORDER BY month ASC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(825): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT DATE_FORMAT(o.created_at,\'%Y-%m\') AS month,
+                    COALESCE(SUM(oi.quantity * (oi.price - COALESCE(p.cost,0))),0) AS profit
+             FROM orders o
+             JOIN order_items oi ON oi.order_id = o.id
+             JOIN products p ON p.id = oi.product_id
+             WHERE o.status != \'cancelado\'  WHERE 1=1 
+             GROUP BY month ORDER BY month ASC')
+ 4 APPPATH\Controllers\Admin\Dashboard.php(164): CodeIgniter\Database\BaseConnection->query('SELECT DATE_FORMAT(o.created_at,\'%Y-%m\') AS month,
+                    COALESCE(SUM(oi.quantity * (oi.price - COALESCE(p.cost,0))),0) AS profit
+             FROM orders o
+             JOIN order_items oi ON oi.order_id = o.id
+             JOIN products p ON p.id = oi.product_id
+             WHERE o.status != \'cancelado\'  WHERE 1=1 
+             GROUP BY month ORDER BY month ASC')
+ 5 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Admin\Dashboard->index()
+ 6 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+ 7 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2026-09-23 13:46:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 13:47:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 13:47:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 13:47:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 13:47:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 13:47:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 13:47:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 13:47:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 13:47:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 13:47:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 13:47:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 13:47:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 13:47:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 13:49:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2026-09-23 13:49:06 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE 1=1 
+             GROUP BY month ORDER BY month ASC' at line 6
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('SELECT DATE_FORMAT(o.created_at,\'%Y-%m\') AS month,
+                    COALESCE(SUM(oi.quantity * (oi.price - COALESCE(p.cost,0))),0) AS profit
+             FROM orders o
+             JOIN order_items oi ON oi.order_id = o.id
+             JOIN products p ON p.id = oi.product_id
+             WHERE o.status != \'cancelado\'  WHERE 1=1 
+             GROUP BY month ORDER BY month ASC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(908): CodeIgniter\Database\MySQLi\Connection->execute('SELECT DATE_FORMAT(o.created_at,\'%Y-%m\') AS month,
+                    COALESCE(SUM(oi.quantity * (oi.price - COALESCE(p.cost,0))),0) AS profit
+             FROM orders o
+             JOIN order_items oi ON oi.order_id = o.id
+             JOIN products p ON p.id = oi.product_id
+             WHERE o.status != \'cancelado\'  WHERE 1=1 
+             GROUP BY month ORDER BY month ASC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(825): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT DATE_FORMAT(o.created_at,\'%Y-%m\') AS month,
+                    COALESCE(SUM(oi.quantity * (oi.price - COALESCE(p.cost,0))),0) AS profit
+             FROM orders o
+             JOIN order_items oi ON oi.order_id = o.id
+             JOIN products p ON p.id = oi.product_id
+             WHERE o.status != \'cancelado\'  WHERE 1=1 
+             GROUP BY month ORDER BY month ASC')
+ 4 APPPATH\Controllers\Admin\Dashboard.php(164): CodeIgniter\Database\BaseConnection->query('SELECT DATE_FORMAT(o.created_at,\'%Y-%m\') AS month,
+                    COALESCE(SUM(oi.quantity * (oi.price - COALESCE(p.cost,0))),0) AS profit
+             FROM orders o
+             JOIN order_items oi ON oi.order_id = o.id
+             JOIN products p ON p.id = oi.product_id
+             WHERE o.status != \'cancelado\'  WHERE 1=1 
+             GROUP BY month ORDER BY month ASC')
+ 5 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Admin\Dashboard->index()
+ 6 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+ 7 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-09-23 13:49:06 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE 1=1 
+             GROUP BY month ORDER BY month ASC' at line 6
+[Method: GET, Route: admin]
+in SYSTEMPATH\Database\BaseConnection.php on line 863.
+ 1 APPPATH\Controllers\Admin\Dashboard.php(164): CodeIgniter\Database\BaseConnection->query('SELECT DATE_FORMAT(o.created_at,\'%Y-%m\') AS month,
+                    COALESCE(SUM(oi.quantity * (oi.price - COALESCE(p.cost,0))),0) AS profit
+             FROM orders o
+             JOIN order_items oi ON oi.order_id = o.id
+             JOIN products p ON p.id = oi.product_id
+             WHERE o.status != \'cancelado\'  WHERE 1=1 
+             GROUP BY month ORDER BY month ASC')
+ 2 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Admin\Dashboard->index()
+ 3 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+ 4 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-09-23 13:49:06 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE 1=1 
+             GROUP BY month ORDER BY month ASC' at line 6
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 310.
+ 1 SYSTEMPATH\Database\BaseConnection.php(908): CodeIgniter\Database\MySQLi\Connection->execute('SELECT DATE_FORMAT(o.created_at,\'%Y-%m\') AS month,
+                    COALESCE(SUM(oi.quantity * (oi.price - COALESCE(p.cost,0))),0) AS profit
+             FROM orders o
+             JOIN order_items oi ON oi.order_id = o.id
+             JOIN products p ON p.id = oi.product_id
+             WHERE o.status != \'cancelado\'  WHERE 1=1 
+             GROUP BY month ORDER BY month ASC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(825): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT DATE_FORMAT(o.created_at,\'%Y-%m\') AS month,
+                    COALESCE(SUM(oi.quantity * (oi.price - COALESCE(p.cost,0))),0) AS profit
+             FROM orders o
+             JOIN order_items oi ON oi.order_id = o.id
+             JOIN products p ON p.id = oi.product_id
+             WHERE o.status != \'cancelado\'  WHERE 1=1 
+             GROUP BY month ORDER BY month ASC')
+ 3 APPPATH\Controllers\Admin\Dashboard.php(164): CodeIgniter\Database\BaseConnection->query('SELECT DATE_FORMAT(o.created_at,\'%Y-%m\') AS month,
+                    COALESCE(SUM(oi.quantity * (oi.price - COALESCE(p.cost,0))),0) AS profit
+             FROM orders o
+             JOIN order_items oi ON oi.order_id = o.id
+             JOIN products p ON p.id = oi.product_id
+             WHERE o.status != \'cancelado\'  WHERE 1=1 
+             GROUP BY month ORDER BY month ASC')
+ 4 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Admin\Dashboard->index()
+ 5 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+ 6 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-09-23 13:49:06 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE 1=1 
+             GROUP BY month ORDER BY month ASC' at line 6
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('SELECT DATE_FORMAT(o.created_at,\'%Y-%m\') AS month,
+                    COALESCE(SUM(oi.quantity * (oi.price - COALESCE(p.cost,0))),0) AS profit
+             FROM orders o
+             JOIN order_items oi ON oi.order_id = o.id
+             JOIN products p ON p.id = oi.product_id
+             WHERE o.status != \'cancelado\'  WHERE 1=1 
+             GROUP BY month ORDER BY month ASC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(908): CodeIgniter\Database\MySQLi\Connection->execute('SELECT DATE_FORMAT(o.created_at,\'%Y-%m\') AS month,
+                    COALESCE(SUM(oi.quantity * (oi.price - COALESCE(p.cost,0))),0) AS profit
+             FROM orders o
+             JOIN order_items oi ON oi.order_id = o.id
+             JOIN products p ON p.id = oi.product_id
+             WHERE o.status != \'cancelado\'  WHERE 1=1 
+             GROUP BY month ORDER BY month ASC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(825): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT DATE_FORMAT(o.created_at,\'%Y-%m\') AS month,
+                    COALESCE(SUM(oi.quantity * (oi.price - COALESCE(p.cost,0))),0) AS profit
+             FROM orders o
+             JOIN order_items oi ON oi.order_id = o.id
+             JOIN products p ON p.id = oi.product_id
+             WHERE o.status != \'cancelado\'  WHERE 1=1 
+             GROUP BY month ORDER BY month ASC')
+ 4 APPPATH\Controllers\Admin\Dashboard.php(164): CodeIgniter\Database\BaseConnection->query('SELECT DATE_FORMAT(o.created_at,\'%Y-%m\') AS month,
+                    COALESCE(SUM(oi.quantity * (oi.price - COALESCE(p.cost,0))),0) AS profit
+             FROM orders o
+             JOIN order_items oi ON oi.order_id = o.id
+             JOIN products p ON p.id = oi.product_id
+             WHERE o.status != \'cancelado\'  WHERE 1=1 
+             GROUP BY month ORDER BY month ASC')
+ 5 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Admin\Dashboard->index()
+ 6 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+ 7 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2026-09-23 13:49:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2026-09-23 13:49:09 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE 1=1 
+             GROUP BY month ORDER BY month ASC' at line 6
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('SELECT DATE_FORMAT(o.created_at,\'%Y-%m\') AS month,
+                    COALESCE(SUM(oi.quantity * (oi.price - COALESCE(p.cost,0))),0) AS profit
+             FROM orders o
+             JOIN order_items oi ON oi.order_id = o.id
+             JOIN products p ON p.id = oi.product_id
+             WHERE o.status != \'cancelado\'  WHERE 1=1 
+             GROUP BY month ORDER BY month ASC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(908): CodeIgniter\Database\MySQLi\Connection->execute('SELECT DATE_FORMAT(o.created_at,\'%Y-%m\') AS month,
+                    COALESCE(SUM(oi.quantity * (oi.price - COALESCE(p.cost,0))),0) AS profit
+             FROM orders o
+             JOIN order_items oi ON oi.order_id = o.id
+             JOIN products p ON p.id = oi.product_id
+             WHERE o.status != \'cancelado\'  WHERE 1=1 
+             GROUP BY month ORDER BY month ASC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(825): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT DATE_FORMAT(o.created_at,\'%Y-%m\') AS month,
+                    COALESCE(SUM(oi.quantity * (oi.price - COALESCE(p.cost,0))),0) AS profit
+             FROM orders o
+             JOIN order_items oi ON oi.order_id = o.id
+             JOIN products p ON p.id = oi.product_id
+             WHERE o.status != \'cancelado\'  WHERE 1=1 
+             GROUP BY month ORDER BY month ASC')
+ 4 APPPATH\Controllers\Admin\Dashboard.php(164): CodeIgniter\Database\BaseConnection->query('SELECT DATE_FORMAT(o.created_at,\'%Y-%m\') AS month,
+                    COALESCE(SUM(oi.quantity * (oi.price - COALESCE(p.cost,0))),0) AS profit
+             FROM orders o
+             JOIN order_items oi ON oi.order_id = o.id
+             JOIN products p ON p.id = oi.product_id
+             WHERE o.status != \'cancelado\'  WHERE 1=1 
+             GROUP BY month ORDER BY month ASC')
+ 5 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Admin\Dashboard->index()
+ 6 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+ 7 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-09-23 13:49:09 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE 1=1 
+             GROUP BY month ORDER BY month ASC' at line 6
+[Method: GET, Route: admin]
+in SYSTEMPATH\Database\BaseConnection.php on line 863.
+ 1 APPPATH\Controllers\Admin\Dashboard.php(164): CodeIgniter\Database\BaseConnection->query('SELECT DATE_FORMAT(o.created_at,\'%Y-%m\') AS month,
+                    COALESCE(SUM(oi.quantity * (oi.price - COALESCE(p.cost,0))),0) AS profit
+             FROM orders o
+             JOIN order_items oi ON oi.order_id = o.id
+             JOIN products p ON p.id = oi.product_id
+             WHERE o.status != \'cancelado\'  WHERE 1=1 
+             GROUP BY month ORDER BY month ASC')
+ 2 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Admin\Dashboard->index()
+ 3 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+ 4 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-09-23 13:49:09 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE 1=1 
+             GROUP BY month ORDER BY month ASC' at line 6
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 310.
+ 1 SYSTEMPATH\Database\BaseConnection.php(908): CodeIgniter\Database\MySQLi\Connection->execute('SELECT DATE_FORMAT(o.created_at,\'%Y-%m\') AS month,
+                    COALESCE(SUM(oi.quantity * (oi.price - COALESCE(p.cost,0))),0) AS profit
+             FROM orders o
+             JOIN order_items oi ON oi.order_id = o.id
+             JOIN products p ON p.id = oi.product_id
+             WHERE o.status != \'cancelado\'  WHERE 1=1 
+             GROUP BY month ORDER BY month ASC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(825): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT DATE_FORMAT(o.created_at,\'%Y-%m\') AS month,
+                    COALESCE(SUM(oi.quantity * (oi.price - COALESCE(p.cost,0))),0) AS profit
+             FROM orders o
+             JOIN order_items oi ON oi.order_id = o.id
+             JOIN products p ON p.id = oi.product_id
+             WHERE o.status != \'cancelado\'  WHERE 1=1 
+             GROUP BY month ORDER BY month ASC')
+ 3 APPPATH\Controllers\Admin\Dashboard.php(164): CodeIgniter\Database\BaseConnection->query('SELECT DATE_FORMAT(o.created_at,\'%Y-%m\') AS month,
+                    COALESCE(SUM(oi.quantity * (oi.price - COALESCE(p.cost,0))),0) AS profit
+             FROM orders o
+             JOIN order_items oi ON oi.order_id = o.id
+             JOIN products p ON p.id = oi.product_id
+             WHERE o.status != \'cancelado\'  WHERE 1=1 
+             GROUP BY month ORDER BY month ASC')
+ 4 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Admin\Dashboard->index()
+ 5 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+ 6 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-09-23 13:49:09 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE 1=1 
+             GROUP BY month ORDER BY month ASC' at line 6
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('SELECT DATE_FORMAT(o.created_at,\'%Y-%m\') AS month,
+                    COALESCE(SUM(oi.quantity * (oi.price - COALESCE(p.cost,0))),0) AS profit
+             FROM orders o
+             JOIN order_items oi ON oi.order_id = o.id
+             JOIN products p ON p.id = oi.product_id
+             WHERE o.status != \'cancelado\'  WHERE 1=1 
+             GROUP BY month ORDER BY month ASC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(908): CodeIgniter\Database\MySQLi\Connection->execute('SELECT DATE_FORMAT(o.created_at,\'%Y-%m\') AS month,
+                    COALESCE(SUM(oi.quantity * (oi.price - COALESCE(p.cost,0))),0) AS profit
+             FROM orders o
+             JOIN order_items oi ON oi.order_id = o.id
+             JOIN products p ON p.id = oi.product_id
+             WHERE o.status != \'cancelado\'  WHERE 1=1 
+             GROUP BY month ORDER BY month ASC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(825): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT DATE_FORMAT(o.created_at,\'%Y-%m\') AS month,
+                    COALESCE(SUM(oi.quantity * (oi.price - COALESCE(p.cost,0))),0) AS profit
+             FROM orders o
+             JOIN order_items oi ON oi.order_id = o.id
+             JOIN products p ON p.id = oi.product_id
+             WHERE o.status != \'cancelado\'  WHERE 1=1 
+             GROUP BY month ORDER BY month ASC')
+ 4 APPPATH\Controllers\Admin\Dashboard.php(164): CodeIgniter\Database\BaseConnection->query('SELECT DATE_FORMAT(o.created_at,\'%Y-%m\') AS month,
+                    COALESCE(SUM(oi.quantity * (oi.price - COALESCE(p.cost,0))),0) AS profit
+             FROM orders o
+             JOIN order_items oi ON oi.order_id = o.id
+             JOIN products p ON p.id = oi.product_id
+             WHERE o.status != \'cancelado\'  WHERE 1=1 
+             GROUP BY month ORDER BY month ASC')
+ 5 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Admin\Dashboard->index()
+ 6 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+ 7 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2026-09-23 13:53:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 13:53:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 13:53:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 13:53:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 13:53:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 13:53:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 13:53:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 13:53:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 13:53:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 13:53:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 13:53:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-23 13:53:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

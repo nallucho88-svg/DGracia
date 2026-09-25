@@ -1,0 +1,1484 @@
+DEBUG - 2026-09-01 15:05:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 15:05:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 15:06:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2026-09-01 15:07:03 --> Error connecting to the database: mysqli_sql_exception: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión in C:\xampp\htdocs\DGracia\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\xampp\htdocs\DGracia\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'dulce_gracia', 3306, '', 0)
+#1 C:\xampp\htdocs\DGracia\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\DGracia\system\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\DGracia\system\Database\BaseBuilder.php(1659): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\DGracia\system\Model.php(255): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\DGracia\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\DGracia\app\Controllers\Home.php(14): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\DGracia\system\CodeIgniter.php(974): App\Controllers\Home->index()
+#8 C:\xampp\htdocs\DGracia\system\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#9 C:\xampp\htdocs\DGracia\system\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\DGracia\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\DGracia\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\DGracia\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión in C:\xampp\htdocs\DGracia\system\Database\MySQLi\Connection.php:231
+Stack trace:
+#0 C:\xampp\htdocs\DGracia\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\DGracia\system\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\DGracia\system\Database\BaseBuilder.php(1659): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\xampp\htdocs\DGracia\system\Model.php(255): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\xampp\htdocs\DGracia\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#5 C:\xampp\htdocs\DGracia\app\Controllers\Home.php(14): CodeIgniter\BaseModel->findAll()
+#6 C:\xampp\htdocs\DGracia\system\CodeIgniter.php(974): App\Controllers\Home->index()
+#7 C:\xampp\htdocs\DGracia\system\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\xampp\htdocs\DGracia\system\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\DGracia\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\DGracia\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\DGracia\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+CRITICAL - 2026-09-01 15:07:03 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión
+[Method: GET, Route: /]
+in SYSTEMPATH\Database\BaseConnection.php on line 606.
+ 1 SYSTEMPATH\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1659): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `banners`
+WHERE `status` = :status:
+ORDER BY `priority` ASC', [...], false)
+ 3 SYSTEMPATH\Model.php(255): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH\Controllers\Home.php(14): CodeIgniter\BaseModel->findAll()
+ 6 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2026-09-01 15:07:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 15:12:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 15:12:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 15:12:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 15:13:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 15:13:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 16:07:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2026-09-01 16:07:39 --> Unknown column 'oi.unit_price' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('SELECT DATE_FORMAT(o.created_at,\'%Y-%m\') AS month,
+                    COALESCE(SUM(oi.quantity * (oi.unit_price - COALESCE(p.cost,0))),0) AS profit
+             FROM orders o
+             JOIN order_items oi ON oi.order_id = o.id
+             JOIN products p ON p.id = oi.product_id
+             WHERE o.status != \'cancelado\'
+               AND o.created_at >= DATE_SUB(CURDATE(), INTERVAL 12 MONTH)
+             GROUP BY month ORDER BY month ASC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(908): CodeIgniter\Database\MySQLi\Connection->execute('SELECT DATE_FORMAT(o.created_at,\'%Y-%m\') AS month,
+                    COALESCE(SUM(oi.quantity * (oi.unit_price - COALESCE(p.cost,0))),0) AS profit
+             FROM orders o
+             JOIN order_items oi ON oi.order_id = o.id
+             JOIN products p ON p.id = oi.product_id
+             WHERE o.status != \'cancelado\'
+               AND o.created_at >= DATE_SUB(CURDATE(), INTERVAL 12 MONTH)
+             GROUP BY month ORDER BY month ASC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(825): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT DATE_FORMAT(o.created_at,\'%Y-%m\') AS month,
+                    COALESCE(SUM(oi.quantity * (oi.unit_price - COALESCE(p.cost,0))),0) AS profit
+             FROM orders o
+             JOIN order_items oi ON oi.order_id = o.id
+             JOIN products p ON p.id = oi.product_id
+             WHERE o.status != \'cancelado\'
+               AND o.created_at >= DATE_SUB(CURDATE(), INTERVAL 12 MONTH)
+             GROUP BY month ORDER BY month ASC')
+ 4 APPPATH\Controllers\Admin\Dashboard.php(77): CodeIgniter\Database\BaseConnection->query('SELECT DATE_FORMAT(o.created_at,\'%Y-%m\') AS month,
+                    COALESCE(SUM(oi.quantity * (oi.unit_price - COALESCE(p.cost,0))),0) AS profit
+             FROM orders o
+             JOIN order_items oi ON oi.order_id = o.id
+             JOIN products p ON p.id = oi.product_id
+             WHERE o.status != \'cancelado\'
+               AND o.created_at >= DATE_SUB(CURDATE(), INTERVAL 12 MONTH)
+             GROUP BY month ORDER BY month ASC')
+ 5 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Admin\Dashboard->index()
+ 6 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+ 7 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-09-01 16:07:39 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'oi.unit_price' in 'field list'
+[Method: GET, Route: admin/dashboard]
+in SYSTEMPATH\Database\BaseConnection.php on line 863.
+ 1 APPPATH\Controllers\Admin\Dashboard.php(77): CodeIgniter\Database\BaseConnection->query('SELECT DATE_FORMAT(o.created_at,\'%Y-%m\') AS month,
+                    COALESCE(SUM(oi.quantity * (oi.unit_price - COALESCE(p.cost,0))),0) AS profit
+             FROM orders o
+             JOIN order_items oi ON oi.order_id = o.id
+             JOIN products p ON p.id = oi.product_id
+             WHERE o.status != \'cancelado\'
+               AND o.created_at >= DATE_SUB(CURDATE(), INTERVAL 12 MONTH)
+             GROUP BY month ORDER BY month ASC')
+ 2 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Admin\Dashboard->index()
+ 3 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+ 4 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-09-01 16:07:39 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'oi.unit_price' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 310.
+ 1 SYSTEMPATH\Database\BaseConnection.php(908): CodeIgniter\Database\MySQLi\Connection->execute('SELECT DATE_FORMAT(o.created_at,\'%Y-%m\') AS month,
+                    COALESCE(SUM(oi.quantity * (oi.unit_price - COALESCE(p.cost,0))),0) AS profit
+             FROM orders o
+             JOIN order_items oi ON oi.order_id = o.id
+             JOIN products p ON p.id = oi.product_id
+             WHERE o.status != \'cancelado\'
+               AND o.created_at >= DATE_SUB(CURDATE(), INTERVAL 12 MONTH)
+             GROUP BY month ORDER BY month ASC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(825): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT DATE_FORMAT(o.created_at,\'%Y-%m\') AS month,
+                    COALESCE(SUM(oi.quantity * (oi.unit_price - COALESCE(p.cost,0))),0) AS profit
+             FROM orders o
+             JOIN order_items oi ON oi.order_id = o.id
+             JOIN products p ON p.id = oi.product_id
+             WHERE o.status != \'cancelado\'
+               AND o.created_at >= DATE_SUB(CURDATE(), INTERVAL 12 MONTH)
+             GROUP BY month ORDER BY month ASC')
+ 3 APPPATH\Controllers\Admin\Dashboard.php(77): CodeIgniter\Database\BaseConnection->query('SELECT DATE_FORMAT(o.created_at,\'%Y-%m\') AS month,
+                    COALESCE(SUM(oi.quantity * (oi.unit_price - COALESCE(p.cost,0))),0) AS profit
+             FROM orders o
+             JOIN order_items oi ON oi.order_id = o.id
+             JOIN products p ON p.id = oi.product_id
+             WHERE o.status != \'cancelado\'
+               AND o.created_at >= DATE_SUB(CURDATE(), INTERVAL 12 MONTH)
+             GROUP BY month ORDER BY month ASC')
+ 4 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Admin\Dashboard->index()
+ 5 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+ 6 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-09-01 16:07:39 --> [Caused by] mysqli_sql_exception: Unknown column 'oi.unit_price' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('SELECT DATE_FORMAT(o.created_at,\'%Y-%m\') AS month,
+                    COALESCE(SUM(oi.quantity * (oi.unit_price - COALESCE(p.cost,0))),0) AS profit
+             FROM orders o
+             JOIN order_items oi ON oi.order_id = o.id
+             JOIN products p ON p.id = oi.product_id
+             WHERE o.status != \'cancelado\'
+               AND o.created_at >= DATE_SUB(CURDATE(), INTERVAL 12 MONTH)
+             GROUP BY month ORDER BY month ASC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(908): CodeIgniter\Database\MySQLi\Connection->execute('SELECT DATE_FORMAT(o.created_at,\'%Y-%m\') AS month,
+                    COALESCE(SUM(oi.quantity * (oi.unit_price - COALESCE(p.cost,0))),0) AS profit
+             FROM orders o
+             JOIN order_items oi ON oi.order_id = o.id
+             JOIN products p ON p.id = oi.product_id
+             WHERE o.status != \'cancelado\'
+               AND o.created_at >= DATE_SUB(CURDATE(), INTERVAL 12 MONTH)
+             GROUP BY month ORDER BY month ASC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(825): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT DATE_FORMAT(o.created_at,\'%Y-%m\') AS month,
+                    COALESCE(SUM(oi.quantity * (oi.unit_price - COALESCE(p.cost,0))),0) AS profit
+             FROM orders o
+             JOIN order_items oi ON oi.order_id = o.id
+             JOIN products p ON p.id = oi.product_id
+             WHERE o.status != \'cancelado\'
+               AND o.created_at >= DATE_SUB(CURDATE(), INTERVAL 12 MONTH)
+             GROUP BY month ORDER BY month ASC')
+ 4 APPPATH\Controllers\Admin\Dashboard.php(77): CodeIgniter\Database\BaseConnection->query('SELECT DATE_FORMAT(o.created_at,\'%Y-%m\') AS month,
+                    COALESCE(SUM(oi.quantity * (oi.unit_price - COALESCE(p.cost,0))),0) AS profit
+             FROM orders o
+             JOIN order_items oi ON oi.order_id = o.id
+             JOIN products p ON p.id = oi.product_id
+             WHERE o.status != \'cancelado\'
+               AND o.created_at >= DATE_SUB(CURDATE(), INTERVAL 12 MONTH)
+             GROUP BY month ORDER BY month ASC')
+ 5 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Admin\Dashboard->index()
+ 6 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+ 7 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2026-09-01 16:07:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 16:08:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 16:08:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 16:08:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 16:09:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 16:09:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2026-09-01 16:09:29 --> Unknown column 'oi.unit_price' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('SELECT DATE_FORMAT(o.created_at,\'%Y-%m\') AS month,
+                    COALESCE(SUM(oi.quantity * (oi.unit_price - COALESCE(p.cost,0))),0) AS profit
+             FROM orders o
+             JOIN order_items oi ON oi.order_id = o.id
+             JOIN products p ON p.id = oi.product_id
+             WHERE o.status != \'cancelado\'
+               AND o.created_at >= DATE_SUB(CURDATE(), INTERVAL 12 MONTH)
+             GROUP BY month ORDER BY month ASC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(908): CodeIgniter\Database\MySQLi\Connection->execute('SELECT DATE_FORMAT(o.created_at,\'%Y-%m\') AS month,
+                    COALESCE(SUM(oi.quantity * (oi.unit_price - COALESCE(p.cost,0))),0) AS profit
+             FROM orders o
+             JOIN order_items oi ON oi.order_id = o.id
+             JOIN products p ON p.id = oi.product_id
+             WHERE o.status != \'cancelado\'
+               AND o.created_at >= DATE_SUB(CURDATE(), INTERVAL 12 MONTH)
+             GROUP BY month ORDER BY month ASC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(825): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT DATE_FORMAT(o.created_at,\'%Y-%m\') AS month,
+                    COALESCE(SUM(oi.quantity * (oi.unit_price - COALESCE(p.cost,0))),0) AS profit
+             FROM orders o
+             JOIN order_items oi ON oi.order_id = o.id
+             JOIN products p ON p.id = oi.product_id
+             WHERE o.status != \'cancelado\'
+               AND o.created_at >= DATE_SUB(CURDATE(), INTERVAL 12 MONTH)
+             GROUP BY month ORDER BY month ASC')
+ 4 APPPATH\Controllers\Admin\Dashboard.php(77): CodeIgniter\Database\BaseConnection->query('SELECT DATE_FORMAT(o.created_at,\'%Y-%m\') AS month,
+                    COALESCE(SUM(oi.quantity * (oi.unit_price - COALESCE(p.cost,0))),0) AS profit
+             FROM orders o
+             JOIN order_items oi ON oi.order_id = o.id
+             JOIN products p ON p.id = oi.product_id
+             WHERE o.status != \'cancelado\'
+               AND o.created_at >= DATE_SUB(CURDATE(), INTERVAL 12 MONTH)
+             GROUP BY month ORDER BY month ASC')
+ 5 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Admin\Dashboard->index()
+ 6 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+ 7 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-09-01 16:09:29 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'oi.unit_price' in 'field list'
+[Method: GET, Route: admin]
+in SYSTEMPATH\Database\BaseConnection.php on line 863.
+ 1 APPPATH\Controllers\Admin\Dashboard.php(77): CodeIgniter\Database\BaseConnection->query('SELECT DATE_FORMAT(o.created_at,\'%Y-%m\') AS month,
+                    COALESCE(SUM(oi.quantity * (oi.unit_price - COALESCE(p.cost,0))),0) AS profit
+             FROM orders o
+             JOIN order_items oi ON oi.order_id = o.id
+             JOIN products p ON p.id = oi.product_id
+             WHERE o.status != \'cancelado\'
+               AND o.created_at >= DATE_SUB(CURDATE(), INTERVAL 12 MONTH)
+             GROUP BY month ORDER BY month ASC')
+ 2 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Admin\Dashboard->index()
+ 3 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+ 4 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-09-01 16:09:29 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'oi.unit_price' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 310.
+ 1 SYSTEMPATH\Database\BaseConnection.php(908): CodeIgniter\Database\MySQLi\Connection->execute('SELECT DATE_FORMAT(o.created_at,\'%Y-%m\') AS month,
+                    COALESCE(SUM(oi.quantity * (oi.unit_price - COALESCE(p.cost,0))),0) AS profit
+             FROM orders o
+             JOIN order_items oi ON oi.order_id = o.id
+             JOIN products p ON p.id = oi.product_id
+             WHERE o.status != \'cancelado\'
+               AND o.created_at >= DATE_SUB(CURDATE(), INTERVAL 12 MONTH)
+             GROUP BY month ORDER BY month ASC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(825): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT DATE_FORMAT(o.created_at,\'%Y-%m\') AS month,
+                    COALESCE(SUM(oi.quantity * (oi.unit_price - COALESCE(p.cost,0))),0) AS profit
+             FROM orders o
+             JOIN order_items oi ON oi.order_id = o.id
+             JOIN products p ON p.id = oi.product_id
+             WHERE o.status != \'cancelado\'
+               AND o.created_at >= DATE_SUB(CURDATE(), INTERVAL 12 MONTH)
+             GROUP BY month ORDER BY month ASC')
+ 3 APPPATH\Controllers\Admin\Dashboard.php(77): CodeIgniter\Database\BaseConnection->query('SELECT DATE_FORMAT(o.created_at,\'%Y-%m\') AS month,
+                    COALESCE(SUM(oi.quantity * (oi.unit_price - COALESCE(p.cost,0))),0) AS profit
+             FROM orders o
+             JOIN order_items oi ON oi.order_id = o.id
+             JOIN products p ON p.id = oi.product_id
+             WHERE o.status != \'cancelado\'
+               AND o.created_at >= DATE_SUB(CURDATE(), INTERVAL 12 MONTH)
+             GROUP BY month ORDER BY month ASC')
+ 4 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Admin\Dashboard->index()
+ 5 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+ 6 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-09-01 16:09:29 --> [Caused by] mysqli_sql_exception: Unknown column 'oi.unit_price' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('SELECT DATE_FORMAT(o.created_at,\'%Y-%m\') AS month,
+                    COALESCE(SUM(oi.quantity * (oi.unit_price - COALESCE(p.cost,0))),0) AS profit
+             FROM orders o
+             JOIN order_items oi ON oi.order_id = o.id
+             JOIN products p ON p.id = oi.product_id
+             WHERE o.status != \'cancelado\'
+               AND o.created_at >= DATE_SUB(CURDATE(), INTERVAL 12 MONTH)
+             GROUP BY month ORDER BY month ASC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(908): CodeIgniter\Database\MySQLi\Connection->execute('SELECT DATE_FORMAT(o.created_at,\'%Y-%m\') AS month,
+                    COALESCE(SUM(oi.quantity * (oi.unit_price - COALESCE(p.cost,0))),0) AS profit
+             FROM orders o
+             JOIN order_items oi ON oi.order_id = o.id
+             JOIN products p ON p.id = oi.product_id
+             WHERE o.status != \'cancelado\'
+               AND o.created_at >= DATE_SUB(CURDATE(), INTERVAL 12 MONTH)
+             GROUP BY month ORDER BY month ASC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(825): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT DATE_FORMAT(o.created_at,\'%Y-%m\') AS month,
+                    COALESCE(SUM(oi.quantity * (oi.unit_price - COALESCE(p.cost,0))),0) AS profit
+             FROM orders o
+             JOIN order_items oi ON oi.order_id = o.id
+             JOIN products p ON p.id = oi.product_id
+             WHERE o.status != \'cancelado\'
+               AND o.created_at >= DATE_SUB(CURDATE(), INTERVAL 12 MONTH)
+             GROUP BY month ORDER BY month ASC')
+ 4 APPPATH\Controllers\Admin\Dashboard.php(77): CodeIgniter\Database\BaseConnection->query('SELECT DATE_FORMAT(o.created_at,\'%Y-%m\') AS month,
+                    COALESCE(SUM(oi.quantity * (oi.unit_price - COALESCE(p.cost,0))),0) AS profit
+             FROM orders o
+             JOIN order_items oi ON oi.order_id = o.id
+             JOIN products p ON p.id = oi.product_id
+             WHERE o.status != \'cancelado\'
+               AND o.created_at >= DATE_SUB(CURDATE(), INTERVAL 12 MONTH)
+             GROUP BY month ORDER BY month ASC')
+ 5 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Admin\Dashboard->index()
+ 6 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+ 7 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2026-09-01 16:10:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2026-09-01 16:10:22 --> Unknown column 'oi.unit_price' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('SELECT DATE_FORMAT(o.created_at,\'%Y-%m\') AS month,
+                    COALESCE(SUM(oi.quantity * (oi.unit_price - COALESCE(p.cost,0))),0) AS profit
+             FROM orders o
+             JOIN order_items oi ON oi.order_id = o.id
+             JOIN products p ON p.id = oi.product_id
+             WHERE o.status != \'cancelado\'
+               AND o.created_at >= DATE_SUB(CURDATE(), INTERVAL 12 MONTH)
+             GROUP BY month ORDER BY month ASC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(908): CodeIgniter\Database\MySQLi\Connection->execute('SELECT DATE_FORMAT(o.created_at,\'%Y-%m\') AS month,
+                    COALESCE(SUM(oi.quantity * (oi.unit_price - COALESCE(p.cost,0))),0) AS profit
+             FROM orders o
+             JOIN order_items oi ON oi.order_id = o.id
+             JOIN products p ON p.id = oi.product_id
+             WHERE o.status != \'cancelado\'
+               AND o.created_at >= DATE_SUB(CURDATE(), INTERVAL 12 MONTH)
+             GROUP BY month ORDER BY month ASC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(825): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT DATE_FORMAT(o.created_at,\'%Y-%m\') AS month,
+                    COALESCE(SUM(oi.quantity * (oi.unit_price - COALESCE(p.cost,0))),0) AS profit
+             FROM orders o
+             JOIN order_items oi ON oi.order_id = o.id
+             JOIN products p ON p.id = oi.product_id
+             WHERE o.status != \'cancelado\'
+               AND o.created_at >= DATE_SUB(CURDATE(), INTERVAL 12 MONTH)
+             GROUP BY month ORDER BY month ASC')
+ 4 APPPATH\Controllers\Admin\Dashboard.php(77): CodeIgniter\Database\BaseConnection->query('SELECT DATE_FORMAT(o.created_at,\'%Y-%m\') AS month,
+                    COALESCE(SUM(oi.quantity * (oi.unit_price - COALESCE(p.cost,0))),0) AS profit
+             FROM orders o
+             JOIN order_items oi ON oi.order_id = o.id
+             JOIN products p ON p.id = oi.product_id
+             WHERE o.status != \'cancelado\'
+               AND o.created_at >= DATE_SUB(CURDATE(), INTERVAL 12 MONTH)
+             GROUP BY month ORDER BY month ASC')
+ 5 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Admin\Dashboard->index()
+ 6 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+ 7 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-09-01 16:10:22 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'oi.unit_price' in 'field list'
+[Method: GET, Route: admin]
+in SYSTEMPATH\Database\BaseConnection.php on line 863.
+ 1 APPPATH\Controllers\Admin\Dashboard.php(77): CodeIgniter\Database\BaseConnection->query('SELECT DATE_FORMAT(o.created_at,\'%Y-%m\') AS month,
+                    COALESCE(SUM(oi.quantity * (oi.unit_price - COALESCE(p.cost,0))),0) AS profit
+             FROM orders o
+             JOIN order_items oi ON oi.order_id = o.id
+             JOIN products p ON p.id = oi.product_id
+             WHERE o.status != \'cancelado\'
+               AND o.created_at >= DATE_SUB(CURDATE(), INTERVAL 12 MONTH)
+             GROUP BY month ORDER BY month ASC')
+ 2 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Admin\Dashboard->index()
+ 3 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+ 4 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-09-01 16:10:22 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'oi.unit_price' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 310.
+ 1 SYSTEMPATH\Database\BaseConnection.php(908): CodeIgniter\Database\MySQLi\Connection->execute('SELECT DATE_FORMAT(o.created_at,\'%Y-%m\') AS month,
+                    COALESCE(SUM(oi.quantity * (oi.unit_price - COALESCE(p.cost,0))),0) AS profit
+             FROM orders o
+             JOIN order_items oi ON oi.order_id = o.id
+             JOIN products p ON p.id = oi.product_id
+             WHERE o.status != \'cancelado\'
+               AND o.created_at >= DATE_SUB(CURDATE(), INTERVAL 12 MONTH)
+             GROUP BY month ORDER BY month ASC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(825): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT DATE_FORMAT(o.created_at,\'%Y-%m\') AS month,
+                    COALESCE(SUM(oi.quantity * (oi.unit_price - COALESCE(p.cost,0))),0) AS profit
+             FROM orders o
+             JOIN order_items oi ON oi.order_id = o.id
+             JOIN products p ON p.id = oi.product_id
+             WHERE o.status != \'cancelado\'
+               AND o.created_at >= DATE_SUB(CURDATE(), INTERVAL 12 MONTH)
+             GROUP BY month ORDER BY month ASC')
+ 3 APPPATH\Controllers\Admin\Dashboard.php(77): CodeIgniter\Database\BaseConnection->query('SELECT DATE_FORMAT(o.created_at,\'%Y-%m\') AS month,
+                    COALESCE(SUM(oi.quantity * (oi.unit_price - COALESCE(p.cost,0))),0) AS profit
+             FROM orders o
+             JOIN order_items oi ON oi.order_id = o.id
+             JOIN products p ON p.id = oi.product_id
+             WHERE o.status != \'cancelado\'
+               AND o.created_at >= DATE_SUB(CURDATE(), INTERVAL 12 MONTH)
+             GROUP BY month ORDER BY month ASC')
+ 4 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Admin\Dashboard->index()
+ 5 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+ 6 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-09-01 16:10:22 --> [Caused by] mysqli_sql_exception: Unknown column 'oi.unit_price' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('SELECT DATE_FORMAT(o.created_at,\'%Y-%m\') AS month,
+                    COALESCE(SUM(oi.quantity * (oi.unit_price - COALESCE(p.cost,0))),0) AS profit
+             FROM orders o
+             JOIN order_items oi ON oi.order_id = o.id
+             JOIN products p ON p.id = oi.product_id
+             WHERE o.status != \'cancelado\'
+               AND o.created_at >= DATE_SUB(CURDATE(), INTERVAL 12 MONTH)
+             GROUP BY month ORDER BY month ASC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(908): CodeIgniter\Database\MySQLi\Connection->execute('SELECT DATE_FORMAT(o.created_at,\'%Y-%m\') AS month,
+                    COALESCE(SUM(oi.quantity * (oi.unit_price - COALESCE(p.cost,0))),0) AS profit
+             FROM orders o
+             JOIN order_items oi ON oi.order_id = o.id
+             JOIN products p ON p.id = oi.product_id
+             WHERE o.status != \'cancelado\'
+               AND o.created_at >= DATE_SUB(CURDATE(), INTERVAL 12 MONTH)
+             GROUP BY month ORDER BY month ASC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(825): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT DATE_FORMAT(o.created_at,\'%Y-%m\') AS month,
+                    COALESCE(SUM(oi.quantity * (oi.unit_price - COALESCE(p.cost,0))),0) AS profit
+             FROM orders o
+             JOIN order_items oi ON oi.order_id = o.id
+             JOIN products p ON p.id = oi.product_id
+             WHERE o.status != \'cancelado\'
+               AND o.created_at >= DATE_SUB(CURDATE(), INTERVAL 12 MONTH)
+             GROUP BY month ORDER BY month ASC')
+ 4 APPPATH\Controllers\Admin\Dashboard.php(77): CodeIgniter\Database\BaseConnection->query('SELECT DATE_FORMAT(o.created_at,\'%Y-%m\') AS month,
+                    COALESCE(SUM(oi.quantity * (oi.unit_price - COALESCE(p.cost,0))),0) AS profit
+             FROM orders o
+             JOIN order_items oi ON oi.order_id = o.id
+             JOIN products p ON p.id = oi.product_id
+             WHERE o.status != \'cancelado\'
+               AND o.created_at >= DATE_SUB(CURDATE(), INTERVAL 12 MONTH)
+             GROUP BY month ORDER BY month ASC')
+ 5 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Admin\Dashboard->index()
+ 6 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+ 7 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2026-09-01 16:14:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2026-09-01 16:14:59 --> [DEPRECATED] Function strftime() is deprecated in APPPATH\Controllers\Admin\Dashboard.php on line 114.
+ 1 [internal function]: App\Controllers\Admin\Dashboard->App\Controllers\Admin\{closure}('2025-10')
+ 2 APPPATH\Controllers\Admin\Dashboard.php(113): array_map(Object(Closure), [...])
+ 3 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Admin\Dashboard->index()
+ 4 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+ 5 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2026-09-01 16:14:59 --> [DEPRECATED] Function strftime() is deprecated in APPPATH\Controllers\Admin\Dashboard.php on line 114.
+ 1 [internal function]: App\Controllers\Admin\Dashboard->App\Controllers\Admin\{closure}('2025-11')
+ 2 APPPATH\Controllers\Admin\Dashboard.php(113): array_map(Object(Closure), [...])
+ 3 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Admin\Dashboard->index()
+ 4 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+ 5 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2026-09-01 16:14:59 --> [DEPRECATED] Function strftime() is deprecated in APPPATH\Controllers\Admin\Dashboard.php on line 114.
+ 1 [internal function]: App\Controllers\Admin\Dashboard->App\Controllers\Admin\{closure}('2025-12')
+ 2 APPPATH\Controllers\Admin\Dashboard.php(113): array_map(Object(Closure), [...])
+ 3 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Admin\Dashboard->index()
+ 4 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+ 5 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2026-09-01 16:14:59 --> [DEPRECATED] Function strftime() is deprecated in APPPATH\Controllers\Admin\Dashboard.php on line 114.
+ 1 [internal function]: App\Controllers\Admin\Dashboard->App\Controllers\Admin\{closure}('2026-01')
+ 2 APPPATH\Controllers\Admin\Dashboard.php(113): array_map(Object(Closure), [...])
+ 3 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Admin\Dashboard->index()
+ 4 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+ 5 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2026-09-01 16:14:59 --> [DEPRECATED] Function strftime() is deprecated in APPPATH\Controllers\Admin\Dashboard.php on line 114.
+ 1 [internal function]: App\Controllers\Admin\Dashboard->App\Controllers\Admin\{closure}('2026-02')
+ 2 APPPATH\Controllers\Admin\Dashboard.php(113): array_map(Object(Closure), [...])
+ 3 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Admin\Dashboard->index()
+ 4 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+ 5 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2026-09-01 16:14:59 --> [DEPRECATED] Function strftime() is deprecated in APPPATH\Controllers\Admin\Dashboard.php on line 114.
+ 1 [internal function]: App\Controllers\Admin\Dashboard->App\Controllers\Admin\{closure}('2026-03')
+ 2 APPPATH\Controllers\Admin\Dashboard.php(113): array_map(Object(Closure), [...])
+ 3 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Admin\Dashboard->index()
+ 4 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+ 5 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2026-09-01 16:14:59 --> [DEPRECATED] Function strftime() is deprecated in APPPATH\Controllers\Admin\Dashboard.php on line 114.
+ 1 [internal function]: App\Controllers\Admin\Dashboard->App\Controllers\Admin\{closure}('2026-04')
+ 2 APPPATH\Controllers\Admin\Dashboard.php(113): array_map(Object(Closure), [...])
+ 3 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Admin\Dashboard->index()
+ 4 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+ 5 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2026-09-01 16:14:59 --> [DEPRECATED] Function strftime() is deprecated in APPPATH\Controllers\Admin\Dashboard.php on line 114.
+ 1 [internal function]: App\Controllers\Admin\Dashboard->App\Controllers\Admin\{closure}('2026-05')
+ 2 APPPATH\Controllers\Admin\Dashboard.php(113): array_map(Object(Closure), [...])
+ 3 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Admin\Dashboard->index()
+ 4 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+ 5 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2026-09-01 16:14:59 --> [DEPRECATED] Function strftime() is deprecated in APPPATH\Controllers\Admin\Dashboard.php on line 114.
+ 1 [internal function]: App\Controllers\Admin\Dashboard->App\Controllers\Admin\{closure}('2026-06')
+ 2 APPPATH\Controllers\Admin\Dashboard.php(113): array_map(Object(Closure), [...])
+ 3 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Admin\Dashboard->index()
+ 4 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+ 5 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2026-09-01 16:14:59 --> [DEPRECATED] Function strftime() is deprecated in APPPATH\Controllers\Admin\Dashboard.php on line 114.
+ 1 [internal function]: App\Controllers\Admin\Dashboard->App\Controllers\Admin\{closure}('2026-07')
+ 2 APPPATH\Controllers\Admin\Dashboard.php(113): array_map(Object(Closure), [...])
+ 3 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Admin\Dashboard->index()
+ 4 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+ 5 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2026-09-01 16:14:59 --> [DEPRECATED] Function strftime() is deprecated in APPPATH\Controllers\Admin\Dashboard.php on line 114.
+ 1 [internal function]: App\Controllers\Admin\Dashboard->App\Controllers\Admin\{closure}('2026-08')
+ 2 APPPATH\Controllers\Admin\Dashboard.php(113): array_map(Object(Closure), [...])
+ 3 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Admin\Dashboard->index()
+ 4 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+ 5 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2026-09-01 16:14:59 --> [DEPRECATED] Function strftime() is deprecated in APPPATH\Controllers\Admin\Dashboard.php on line 114.
+ 1 [internal function]: App\Controllers\Admin\Dashboard->App\Controllers\Admin\{closure}('2026-09')
+ 2 APPPATH\Controllers\Admin\Dashboard.php(113): array_map(Object(Closure), [...])
+ 3 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Admin\Dashboard->index()
+ 4 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+ 5 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2026-09-01 16:14:59 --> Unknown column 'p.image_path' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('SELECT p.id, p.name, p.price, p.cost, p.image_path,
+                    SUM(oi.quantity) AS total_qty,
+                    SUM(oi.quantity * oi.price) AS total_revenue
+             FROM order_items oi
+             JOIN products p ON p.id = oi.product_id
+             JOIN orders o ON o.id = oi.order_id
+             WHERE o.status != \'cancelado\'
+             GROUP BY p.id ORDER BY total_qty DESC LIMIT 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(908): CodeIgniter\Database\MySQLi\Connection->execute('SELECT p.id, p.name, p.price, p.cost, p.image_path,
+                    SUM(oi.quantity) AS total_qty,
+                    SUM(oi.quantity * oi.price) AS total_revenue
+             FROM order_items oi
+             JOIN products p ON p.id = oi.product_id
+             JOIN orders o ON o.id = oi.order_id
+             WHERE o.status != \'cancelado\'
+             GROUP BY p.id ORDER BY total_qty DESC LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(825): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT p.id, p.name, p.price, p.cost, p.image_path,
+                    SUM(oi.quantity) AS total_qty,
+                    SUM(oi.quantity * oi.price) AS total_revenue
+             FROM order_items oi
+             JOIN products p ON p.id = oi.product_id
+             JOIN orders o ON o.id = oi.order_id
+             WHERE o.status != \'cancelado\'
+             GROUP BY p.id ORDER BY total_qty DESC LIMIT 1')
+ 4 APPPATH\Controllers\Admin\Dashboard.php(118): CodeIgniter\Database\BaseConnection->query('SELECT p.id, p.name, p.price, p.cost, p.image_path,
+                    SUM(oi.quantity) AS total_qty,
+                    SUM(oi.quantity * oi.price) AS total_revenue
+             FROM order_items oi
+             JOIN products p ON p.id = oi.product_id
+             JOIN orders o ON o.id = oi.order_id
+             WHERE o.status != \'cancelado\'
+             GROUP BY p.id ORDER BY total_qty DESC LIMIT 1')
+ 5 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Admin\Dashboard->index()
+ 6 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+ 7 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-09-01 16:14:59 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'p.image_path' in 'field list'
+[Method: GET, Route: admin]
+in SYSTEMPATH\Database\BaseConnection.php on line 863.
+ 1 APPPATH\Controllers\Admin\Dashboard.php(118): CodeIgniter\Database\BaseConnection->query('SELECT p.id, p.name, p.price, p.cost, p.image_path,
+                    SUM(oi.quantity) AS total_qty,
+                    SUM(oi.quantity * oi.price) AS total_revenue
+             FROM order_items oi
+             JOIN products p ON p.id = oi.product_id
+             JOIN orders o ON o.id = oi.order_id
+             WHERE o.status != \'cancelado\'
+             GROUP BY p.id ORDER BY total_qty DESC LIMIT 1')
+ 2 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Admin\Dashboard->index()
+ 3 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+ 4 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-09-01 16:14:59 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'p.image_path' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 310.
+ 1 SYSTEMPATH\Database\BaseConnection.php(908): CodeIgniter\Database\MySQLi\Connection->execute('SELECT p.id, p.name, p.price, p.cost, p.image_path,
+                    SUM(oi.quantity) AS total_qty,
+                    SUM(oi.quantity * oi.price) AS total_revenue
+             FROM order_items oi
+             JOIN products p ON p.id = oi.product_id
+             JOIN orders o ON o.id = oi.order_id
+             WHERE o.status != \'cancelado\'
+             GROUP BY p.id ORDER BY total_qty DESC LIMIT 1')
+ 2 SYSTEMPATH\Database\BaseConnection.php(825): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT p.id, p.name, p.price, p.cost, p.image_path,
+                    SUM(oi.quantity) AS total_qty,
+                    SUM(oi.quantity * oi.price) AS total_revenue
+             FROM order_items oi
+             JOIN products p ON p.id = oi.product_id
+             JOIN orders o ON o.id = oi.order_id
+             WHERE o.status != \'cancelado\'
+             GROUP BY p.id ORDER BY total_qty DESC LIMIT 1')
+ 3 APPPATH\Controllers\Admin\Dashboard.php(118): CodeIgniter\Database\BaseConnection->query('SELECT p.id, p.name, p.price, p.cost, p.image_path,
+                    SUM(oi.quantity) AS total_qty,
+                    SUM(oi.quantity * oi.price) AS total_revenue
+             FROM order_items oi
+             JOIN products p ON p.id = oi.product_id
+             JOIN orders o ON o.id = oi.order_id
+             WHERE o.status != \'cancelado\'
+             GROUP BY p.id ORDER BY total_qty DESC LIMIT 1')
+ 4 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Admin\Dashboard->index()
+ 5 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+ 6 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-09-01 16:14:59 --> [Caused by] mysqli_sql_exception: Unknown column 'p.image_path' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('SELECT p.id, p.name, p.price, p.cost, p.image_path,
+                    SUM(oi.quantity) AS total_qty,
+                    SUM(oi.quantity * oi.price) AS total_revenue
+             FROM order_items oi
+             JOIN products p ON p.id = oi.product_id
+             JOIN orders o ON o.id = oi.order_id
+             WHERE o.status != \'cancelado\'
+             GROUP BY p.id ORDER BY total_qty DESC LIMIT 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(908): CodeIgniter\Database\MySQLi\Connection->execute('SELECT p.id, p.name, p.price, p.cost, p.image_path,
+                    SUM(oi.quantity) AS total_qty,
+                    SUM(oi.quantity * oi.price) AS total_revenue
+             FROM order_items oi
+             JOIN products p ON p.id = oi.product_id
+             JOIN orders o ON o.id = oi.order_id
+             WHERE o.status != \'cancelado\'
+             GROUP BY p.id ORDER BY total_qty DESC LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(825): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT p.id, p.name, p.price, p.cost, p.image_path,
+                    SUM(oi.quantity) AS total_qty,
+                    SUM(oi.quantity * oi.price) AS total_revenue
+             FROM order_items oi
+             JOIN products p ON p.id = oi.product_id
+             JOIN orders o ON o.id = oi.order_id
+             WHERE o.status != \'cancelado\'
+             GROUP BY p.id ORDER BY total_qty DESC LIMIT 1')
+ 4 APPPATH\Controllers\Admin\Dashboard.php(118): CodeIgniter\Database\BaseConnection->query('SELECT p.id, p.name, p.price, p.cost, p.image_path,
+                    SUM(oi.quantity) AS total_qty,
+                    SUM(oi.quantity * oi.price) AS total_revenue
+             FROM order_items oi
+             JOIN products p ON p.id = oi.product_id
+             JOIN orders o ON o.id = oi.order_id
+             WHERE o.status != \'cancelado\'
+             GROUP BY p.id ORDER BY total_qty DESC LIMIT 1')
+ 5 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Admin\Dashboard->index()
+ 6 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+ 7 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2026-09-01 16:16:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2026-09-01 16:16:51 --> [DEPRECATED] Function strftime() is deprecated in APPPATH\Controllers\Admin\Dashboard.php on line 114.
+ 1 [internal function]: App\Controllers\Admin\Dashboard->App\Controllers\Admin\{closure}('2025-10')
+ 2 APPPATH\Controllers\Admin\Dashboard.php(113): array_map(Object(Closure), [...])
+ 3 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Admin\Dashboard->index()
+ 4 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+ 5 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2026-09-01 16:16:51 --> [DEPRECATED] Function strftime() is deprecated in APPPATH\Controllers\Admin\Dashboard.php on line 114.
+ 1 [internal function]: App\Controllers\Admin\Dashboard->App\Controllers\Admin\{closure}('2025-11')
+ 2 APPPATH\Controllers\Admin\Dashboard.php(113): array_map(Object(Closure), [...])
+ 3 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Admin\Dashboard->index()
+ 4 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+ 5 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2026-09-01 16:16:51 --> [DEPRECATED] Function strftime() is deprecated in APPPATH\Controllers\Admin\Dashboard.php on line 114.
+ 1 [internal function]: App\Controllers\Admin\Dashboard->App\Controllers\Admin\{closure}('2025-12')
+ 2 APPPATH\Controllers\Admin\Dashboard.php(113): array_map(Object(Closure), [...])
+ 3 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Admin\Dashboard->index()
+ 4 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+ 5 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2026-09-01 16:16:51 --> [DEPRECATED] Function strftime() is deprecated in APPPATH\Controllers\Admin\Dashboard.php on line 114.
+ 1 [internal function]: App\Controllers\Admin\Dashboard->App\Controllers\Admin\{closure}('2026-01')
+ 2 APPPATH\Controllers\Admin\Dashboard.php(113): array_map(Object(Closure), [...])
+ 3 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Admin\Dashboard->index()
+ 4 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+ 5 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2026-09-01 16:16:51 --> [DEPRECATED] Function strftime() is deprecated in APPPATH\Controllers\Admin\Dashboard.php on line 114.
+ 1 [internal function]: App\Controllers\Admin\Dashboard->App\Controllers\Admin\{closure}('2026-02')
+ 2 APPPATH\Controllers\Admin\Dashboard.php(113): array_map(Object(Closure), [...])
+ 3 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Admin\Dashboard->index()
+ 4 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+ 5 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2026-09-01 16:16:51 --> [DEPRECATED] Function strftime() is deprecated in APPPATH\Controllers\Admin\Dashboard.php on line 114.
+ 1 [internal function]: App\Controllers\Admin\Dashboard->App\Controllers\Admin\{closure}('2026-03')
+ 2 APPPATH\Controllers\Admin\Dashboard.php(113): array_map(Object(Closure), [...])
+ 3 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Admin\Dashboard->index()
+ 4 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+ 5 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2026-09-01 16:16:51 --> [DEPRECATED] Function strftime() is deprecated in APPPATH\Controllers\Admin\Dashboard.php on line 114.
+ 1 [internal function]: App\Controllers\Admin\Dashboard->App\Controllers\Admin\{closure}('2026-04')
+ 2 APPPATH\Controllers\Admin\Dashboard.php(113): array_map(Object(Closure), [...])
+ 3 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Admin\Dashboard->index()
+ 4 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+ 5 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2026-09-01 16:16:51 --> [DEPRECATED] Function strftime() is deprecated in APPPATH\Controllers\Admin\Dashboard.php on line 114.
+ 1 [internal function]: App\Controllers\Admin\Dashboard->App\Controllers\Admin\{closure}('2026-05')
+ 2 APPPATH\Controllers\Admin\Dashboard.php(113): array_map(Object(Closure), [...])
+ 3 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Admin\Dashboard->index()
+ 4 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+ 5 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2026-09-01 16:16:51 --> [DEPRECATED] Function strftime() is deprecated in APPPATH\Controllers\Admin\Dashboard.php on line 114.
+ 1 [internal function]: App\Controllers\Admin\Dashboard->App\Controllers\Admin\{closure}('2026-06')
+ 2 APPPATH\Controllers\Admin\Dashboard.php(113): array_map(Object(Closure), [...])
+ 3 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Admin\Dashboard->index()
+ 4 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+ 5 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2026-09-01 16:16:51 --> [DEPRECATED] Function strftime() is deprecated in APPPATH\Controllers\Admin\Dashboard.php on line 114.
+ 1 [internal function]: App\Controllers\Admin\Dashboard->App\Controllers\Admin\{closure}('2026-07')
+ 2 APPPATH\Controllers\Admin\Dashboard.php(113): array_map(Object(Closure), [...])
+ 3 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Admin\Dashboard->index()
+ 4 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+ 5 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2026-09-01 16:16:51 --> [DEPRECATED] Function strftime() is deprecated in APPPATH\Controllers\Admin\Dashboard.php on line 114.
+ 1 [internal function]: App\Controllers\Admin\Dashboard->App\Controllers\Admin\{closure}('2026-08')
+ 2 APPPATH\Controllers\Admin\Dashboard.php(113): array_map(Object(Closure), [...])
+ 3 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Admin\Dashboard->index()
+ 4 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+ 5 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2026-09-01 16:16:51 --> [DEPRECATED] Function strftime() is deprecated in APPPATH\Controllers\Admin\Dashboard.php on line 114.
+ 1 [internal function]: App\Controllers\Admin\Dashboard->App\Controllers\Admin\{closure}('2026-09')
+ 2 APPPATH\Controllers\Admin\Dashboard.php(113): array_map(Object(Closure), [...])
+ 3 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Admin\Dashboard->index()
+ 4 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+ 5 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2026-09-01 16:16:51 --> Unknown column 'p.image_path' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('SELECT p.id, p.name, p.price, p.cost, p.image_path,
+                    SUM(oi.quantity) AS total_qty,
+                    SUM(oi.quantity * oi.price) AS total_revenue
+             FROM order_items oi
+             JOIN products p ON p.id = oi.product_id
+             JOIN orders o ON o.id = oi.order_id
+             WHERE o.status != \'cancelado\'
+             GROUP BY p.id ORDER BY total_qty DESC LIMIT 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(908): CodeIgniter\Database\MySQLi\Connection->execute('SELECT p.id, p.name, p.price, p.cost, p.image_path,
+                    SUM(oi.quantity) AS total_qty,
+                    SUM(oi.quantity * oi.price) AS total_revenue
+             FROM order_items oi
+             JOIN products p ON p.id = oi.product_id
+             JOIN orders o ON o.id = oi.order_id
+             WHERE o.status != \'cancelado\'
+             GROUP BY p.id ORDER BY total_qty DESC LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(825): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT p.id, p.name, p.price, p.cost, p.image_path,
+                    SUM(oi.quantity) AS total_qty,
+                    SUM(oi.quantity * oi.price) AS total_revenue
+             FROM order_items oi
+             JOIN products p ON p.id = oi.product_id
+             JOIN orders o ON o.id = oi.order_id
+             WHERE o.status != \'cancelado\'
+             GROUP BY p.id ORDER BY total_qty DESC LIMIT 1')
+ 4 APPPATH\Controllers\Admin\Dashboard.php(118): CodeIgniter\Database\BaseConnection->query('SELECT p.id, p.name, p.price, p.cost, p.image_path,
+                    SUM(oi.quantity) AS total_qty,
+                    SUM(oi.quantity * oi.price) AS total_revenue
+             FROM order_items oi
+             JOIN products p ON p.id = oi.product_id
+             JOIN orders o ON o.id = oi.order_id
+             WHERE o.status != \'cancelado\'
+             GROUP BY p.id ORDER BY total_qty DESC LIMIT 1')
+ 5 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Admin\Dashboard->index()
+ 6 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+ 7 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-09-01 16:16:51 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'p.image_path' in 'field list'
+[Method: GET, Route: admin]
+in SYSTEMPATH\Database\BaseConnection.php on line 863.
+ 1 APPPATH\Controllers\Admin\Dashboard.php(118): CodeIgniter\Database\BaseConnection->query('SELECT p.id, p.name, p.price, p.cost, p.image_path,
+                    SUM(oi.quantity) AS total_qty,
+                    SUM(oi.quantity * oi.price) AS total_revenue
+             FROM order_items oi
+             JOIN products p ON p.id = oi.product_id
+             JOIN orders o ON o.id = oi.order_id
+             WHERE o.status != \'cancelado\'
+             GROUP BY p.id ORDER BY total_qty DESC LIMIT 1')
+ 2 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Admin\Dashboard->index()
+ 3 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+ 4 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-09-01 16:16:51 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'p.image_path' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 310.
+ 1 SYSTEMPATH\Database\BaseConnection.php(908): CodeIgniter\Database\MySQLi\Connection->execute('SELECT p.id, p.name, p.price, p.cost, p.image_path,
+                    SUM(oi.quantity) AS total_qty,
+                    SUM(oi.quantity * oi.price) AS total_revenue
+             FROM order_items oi
+             JOIN products p ON p.id = oi.product_id
+             JOIN orders o ON o.id = oi.order_id
+             WHERE o.status != \'cancelado\'
+             GROUP BY p.id ORDER BY total_qty DESC LIMIT 1')
+ 2 SYSTEMPATH\Database\BaseConnection.php(825): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT p.id, p.name, p.price, p.cost, p.image_path,
+                    SUM(oi.quantity) AS total_qty,
+                    SUM(oi.quantity * oi.price) AS total_revenue
+             FROM order_items oi
+             JOIN products p ON p.id = oi.product_id
+             JOIN orders o ON o.id = oi.order_id
+             WHERE o.status != \'cancelado\'
+             GROUP BY p.id ORDER BY total_qty DESC LIMIT 1')
+ 3 APPPATH\Controllers\Admin\Dashboard.php(118): CodeIgniter\Database\BaseConnection->query('SELECT p.id, p.name, p.price, p.cost, p.image_path,
+                    SUM(oi.quantity) AS total_qty,
+                    SUM(oi.quantity * oi.price) AS total_revenue
+             FROM order_items oi
+             JOIN products p ON p.id = oi.product_id
+             JOIN orders o ON o.id = oi.order_id
+             WHERE o.status != \'cancelado\'
+             GROUP BY p.id ORDER BY total_qty DESC LIMIT 1')
+ 4 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Admin\Dashboard->index()
+ 5 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+ 6 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-09-01 16:16:51 --> [Caused by] mysqli_sql_exception: Unknown column 'p.image_path' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('SELECT p.id, p.name, p.price, p.cost, p.image_path,
+                    SUM(oi.quantity) AS total_qty,
+                    SUM(oi.quantity * oi.price) AS total_revenue
+             FROM order_items oi
+             JOIN products p ON p.id = oi.product_id
+             JOIN orders o ON o.id = oi.order_id
+             WHERE o.status != \'cancelado\'
+             GROUP BY p.id ORDER BY total_qty DESC LIMIT 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(908): CodeIgniter\Database\MySQLi\Connection->execute('SELECT p.id, p.name, p.price, p.cost, p.image_path,
+                    SUM(oi.quantity) AS total_qty,
+                    SUM(oi.quantity * oi.price) AS total_revenue
+             FROM order_items oi
+             JOIN products p ON p.id = oi.product_id
+             JOIN orders o ON o.id = oi.order_id
+             WHERE o.status != \'cancelado\'
+             GROUP BY p.id ORDER BY total_qty DESC LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(825): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT p.id, p.name, p.price, p.cost, p.image_path,
+                    SUM(oi.quantity) AS total_qty,
+                    SUM(oi.quantity * oi.price) AS total_revenue
+             FROM order_items oi
+             JOIN products p ON p.id = oi.product_id
+             JOIN orders o ON o.id = oi.order_id
+             WHERE o.status != \'cancelado\'
+             GROUP BY p.id ORDER BY total_qty DESC LIMIT 1')
+ 4 APPPATH\Controllers\Admin\Dashboard.php(118): CodeIgniter\Database\BaseConnection->query('SELECT p.id, p.name, p.price, p.cost, p.image_path,
+                    SUM(oi.quantity) AS total_qty,
+                    SUM(oi.quantity * oi.price) AS total_revenue
+             FROM order_items oi
+             JOIN products p ON p.id = oi.product_id
+             JOIN orders o ON o.id = oi.order_id
+             WHERE o.status != \'cancelado\'
+             GROUP BY p.id ORDER BY total_qty DESC LIMIT 1')
+ 5 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Admin\Dashboard->index()
+ 6 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+ 7 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2026-09-01 16:17:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2026-09-01 16:17:34 --> [DEPRECATED] Function strftime() is deprecated in APPPATH\Controllers\Admin\Dashboard.php on line 114.
+ 1 [internal function]: App\Controllers\Admin\Dashboard->App\Controllers\Admin\{closure}('2025-10')
+ 2 APPPATH\Controllers\Admin\Dashboard.php(113): array_map(Object(Closure), [...])
+ 3 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Admin\Dashboard->index()
+ 4 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+ 5 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2026-09-01 16:17:34 --> [DEPRECATED] Function strftime() is deprecated in APPPATH\Controllers\Admin\Dashboard.php on line 114.
+ 1 [internal function]: App\Controllers\Admin\Dashboard->App\Controllers\Admin\{closure}('2025-11')
+ 2 APPPATH\Controllers\Admin\Dashboard.php(113): array_map(Object(Closure), [...])
+ 3 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Admin\Dashboard->index()
+ 4 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+ 5 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2026-09-01 16:17:34 --> [DEPRECATED] Function strftime() is deprecated in APPPATH\Controllers\Admin\Dashboard.php on line 114.
+ 1 [internal function]: App\Controllers\Admin\Dashboard->App\Controllers\Admin\{closure}('2025-12')
+ 2 APPPATH\Controllers\Admin\Dashboard.php(113): array_map(Object(Closure), [...])
+ 3 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Admin\Dashboard->index()
+ 4 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+ 5 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2026-09-01 16:17:34 --> [DEPRECATED] Function strftime() is deprecated in APPPATH\Controllers\Admin\Dashboard.php on line 114.
+ 1 [internal function]: App\Controllers\Admin\Dashboard->App\Controllers\Admin\{closure}('2026-01')
+ 2 APPPATH\Controllers\Admin\Dashboard.php(113): array_map(Object(Closure), [...])
+ 3 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Admin\Dashboard->index()
+ 4 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+ 5 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2026-09-01 16:17:34 --> [DEPRECATED] Function strftime() is deprecated in APPPATH\Controllers\Admin\Dashboard.php on line 114.
+ 1 [internal function]: App\Controllers\Admin\Dashboard->App\Controllers\Admin\{closure}('2026-02')
+ 2 APPPATH\Controllers\Admin\Dashboard.php(113): array_map(Object(Closure), [...])
+ 3 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Admin\Dashboard->index()
+ 4 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+ 5 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2026-09-01 16:17:34 --> [DEPRECATED] Function strftime() is deprecated in APPPATH\Controllers\Admin\Dashboard.php on line 114.
+ 1 [internal function]: App\Controllers\Admin\Dashboard->App\Controllers\Admin\{closure}('2026-03')
+ 2 APPPATH\Controllers\Admin\Dashboard.php(113): array_map(Object(Closure), [...])
+ 3 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Admin\Dashboard->index()
+ 4 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+ 5 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2026-09-01 16:17:34 --> [DEPRECATED] Function strftime() is deprecated in APPPATH\Controllers\Admin\Dashboard.php on line 114.
+ 1 [internal function]: App\Controllers\Admin\Dashboard->App\Controllers\Admin\{closure}('2026-04')
+ 2 APPPATH\Controllers\Admin\Dashboard.php(113): array_map(Object(Closure), [...])
+ 3 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Admin\Dashboard->index()
+ 4 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+ 5 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2026-09-01 16:17:34 --> [DEPRECATED] Function strftime() is deprecated in APPPATH\Controllers\Admin\Dashboard.php on line 114.
+ 1 [internal function]: App\Controllers\Admin\Dashboard->App\Controllers\Admin\{closure}('2026-05')
+ 2 APPPATH\Controllers\Admin\Dashboard.php(113): array_map(Object(Closure), [...])
+ 3 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Admin\Dashboard->index()
+ 4 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+ 5 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2026-09-01 16:17:34 --> [DEPRECATED] Function strftime() is deprecated in APPPATH\Controllers\Admin\Dashboard.php on line 114.
+ 1 [internal function]: App\Controllers\Admin\Dashboard->App\Controllers\Admin\{closure}('2026-06')
+ 2 APPPATH\Controllers\Admin\Dashboard.php(113): array_map(Object(Closure), [...])
+ 3 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Admin\Dashboard->index()
+ 4 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+ 5 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2026-09-01 16:17:34 --> [DEPRECATED] Function strftime() is deprecated in APPPATH\Controllers\Admin\Dashboard.php on line 114.
+ 1 [internal function]: App\Controllers\Admin\Dashboard->App\Controllers\Admin\{closure}('2026-07')
+ 2 APPPATH\Controllers\Admin\Dashboard.php(113): array_map(Object(Closure), [...])
+ 3 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Admin\Dashboard->index()
+ 4 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+ 5 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2026-09-01 16:17:34 --> [DEPRECATED] Function strftime() is deprecated in APPPATH\Controllers\Admin\Dashboard.php on line 114.
+ 1 [internal function]: App\Controllers\Admin\Dashboard->App\Controllers\Admin\{closure}('2026-08')
+ 2 APPPATH\Controllers\Admin\Dashboard.php(113): array_map(Object(Closure), [...])
+ 3 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Admin\Dashboard->index()
+ 4 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+ 5 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2026-09-01 16:17:34 --> [DEPRECATED] Function strftime() is deprecated in APPPATH\Controllers\Admin\Dashboard.php on line 114.
+ 1 [internal function]: App\Controllers\Admin\Dashboard->App\Controllers\Admin\{closure}('2026-09')
+ 2 APPPATH\Controllers\Admin\Dashboard.php(113): array_map(Object(Closure), [...])
+ 3 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Admin\Dashboard->index()
+ 4 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+ 5 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2026-09-01 16:17:34 --> Unknown column 'p.image_path' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('SELECT p.id, p.name, p.price, p.cost, p.image_path,
+                    SUM(oi.quantity) AS total_qty,
+                    SUM(oi.quantity * oi.price) AS total_revenue
+             FROM order_items oi
+             JOIN products p ON p.id = oi.product_id
+             JOIN orders o ON o.id = oi.order_id
+             WHERE o.status != \'cancelado\'
+             GROUP BY p.id ORDER BY total_qty DESC LIMIT 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(908): CodeIgniter\Database\MySQLi\Connection->execute('SELECT p.id, p.name, p.price, p.cost, p.image_path,
+                    SUM(oi.quantity) AS total_qty,
+                    SUM(oi.quantity * oi.price) AS total_revenue
+             FROM order_items oi
+             JOIN products p ON p.id = oi.product_id
+             JOIN orders o ON o.id = oi.order_id
+             WHERE o.status != \'cancelado\'
+             GROUP BY p.id ORDER BY total_qty DESC LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(825): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT p.id, p.name, p.price, p.cost, p.image_path,
+                    SUM(oi.quantity) AS total_qty,
+                    SUM(oi.quantity * oi.price) AS total_revenue
+             FROM order_items oi
+             JOIN products p ON p.id = oi.product_id
+             JOIN orders o ON o.id = oi.order_id
+             WHERE o.status != \'cancelado\'
+             GROUP BY p.id ORDER BY total_qty DESC LIMIT 1')
+ 4 APPPATH\Controllers\Admin\Dashboard.php(118): CodeIgniter\Database\BaseConnection->query('SELECT p.id, p.name, p.price, p.cost, p.image_path,
+                    SUM(oi.quantity) AS total_qty,
+                    SUM(oi.quantity * oi.price) AS total_revenue
+             FROM order_items oi
+             JOIN products p ON p.id = oi.product_id
+             JOIN orders o ON o.id = oi.order_id
+             WHERE o.status != \'cancelado\'
+             GROUP BY p.id ORDER BY total_qty DESC LIMIT 1')
+ 5 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Admin\Dashboard->index()
+ 6 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+ 7 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-09-01 16:17:34 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'p.image_path' in 'field list'
+[Method: GET, Route: admin]
+in SYSTEMPATH\Database\BaseConnection.php on line 863.
+ 1 APPPATH\Controllers\Admin\Dashboard.php(118): CodeIgniter\Database\BaseConnection->query('SELECT p.id, p.name, p.price, p.cost, p.image_path,
+                    SUM(oi.quantity) AS total_qty,
+                    SUM(oi.quantity * oi.price) AS total_revenue
+             FROM order_items oi
+             JOIN products p ON p.id = oi.product_id
+             JOIN orders o ON o.id = oi.order_id
+             WHERE o.status != \'cancelado\'
+             GROUP BY p.id ORDER BY total_qty DESC LIMIT 1')
+ 2 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Admin\Dashboard->index()
+ 3 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+ 4 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-09-01 16:17:34 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'p.image_path' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 310.
+ 1 SYSTEMPATH\Database\BaseConnection.php(908): CodeIgniter\Database\MySQLi\Connection->execute('SELECT p.id, p.name, p.price, p.cost, p.image_path,
+                    SUM(oi.quantity) AS total_qty,
+                    SUM(oi.quantity * oi.price) AS total_revenue
+             FROM order_items oi
+             JOIN products p ON p.id = oi.product_id
+             JOIN orders o ON o.id = oi.order_id
+             WHERE o.status != \'cancelado\'
+             GROUP BY p.id ORDER BY total_qty DESC LIMIT 1')
+ 2 SYSTEMPATH\Database\BaseConnection.php(825): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT p.id, p.name, p.price, p.cost, p.image_path,
+                    SUM(oi.quantity) AS total_qty,
+                    SUM(oi.quantity * oi.price) AS total_revenue
+             FROM order_items oi
+             JOIN products p ON p.id = oi.product_id
+             JOIN orders o ON o.id = oi.order_id
+             WHERE o.status != \'cancelado\'
+             GROUP BY p.id ORDER BY total_qty DESC LIMIT 1')
+ 3 APPPATH\Controllers\Admin\Dashboard.php(118): CodeIgniter\Database\BaseConnection->query('SELECT p.id, p.name, p.price, p.cost, p.image_path,
+                    SUM(oi.quantity) AS total_qty,
+                    SUM(oi.quantity * oi.price) AS total_revenue
+             FROM order_items oi
+             JOIN products p ON p.id = oi.product_id
+             JOIN orders o ON o.id = oi.order_id
+             WHERE o.status != \'cancelado\'
+             GROUP BY p.id ORDER BY total_qty DESC LIMIT 1')
+ 4 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Admin\Dashboard->index()
+ 5 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+ 6 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-09-01 16:17:34 --> [Caused by] mysqli_sql_exception: Unknown column 'p.image_path' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('SELECT p.id, p.name, p.price, p.cost, p.image_path,
+                    SUM(oi.quantity) AS total_qty,
+                    SUM(oi.quantity * oi.price) AS total_revenue
+             FROM order_items oi
+             JOIN products p ON p.id = oi.product_id
+             JOIN orders o ON o.id = oi.order_id
+             WHERE o.status != \'cancelado\'
+             GROUP BY p.id ORDER BY total_qty DESC LIMIT 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(908): CodeIgniter\Database\MySQLi\Connection->execute('SELECT p.id, p.name, p.price, p.cost, p.image_path,
+                    SUM(oi.quantity) AS total_qty,
+                    SUM(oi.quantity * oi.price) AS total_revenue
+             FROM order_items oi
+             JOIN products p ON p.id = oi.product_id
+             JOIN orders o ON o.id = oi.order_id
+             WHERE o.status != \'cancelado\'
+             GROUP BY p.id ORDER BY total_qty DESC LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(825): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT p.id, p.name, p.price, p.cost, p.image_path,
+                    SUM(oi.quantity) AS total_qty,
+                    SUM(oi.quantity * oi.price) AS total_revenue
+             FROM order_items oi
+             JOIN products p ON p.id = oi.product_id
+             JOIN orders o ON o.id = oi.order_id
+             WHERE o.status != \'cancelado\'
+             GROUP BY p.id ORDER BY total_qty DESC LIMIT 1')
+ 4 APPPATH\Controllers\Admin\Dashboard.php(118): CodeIgniter\Database\BaseConnection->query('SELECT p.id, p.name, p.price, p.cost, p.image_path,
+                    SUM(oi.quantity) AS total_qty,
+                    SUM(oi.quantity * oi.price) AS total_revenue
+             FROM order_items oi
+             JOIN products p ON p.id = oi.product_id
+             JOIN orders o ON o.id = oi.order_id
+             WHERE o.status != \'cancelado\'
+             GROUP BY p.id ORDER BY total_qty DESC LIMIT 1')
+ 5 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Admin\Dashboard->index()
+ 6 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+ 7 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2026-09-01 16:33:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 16:33:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 16:33:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 16:33:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 16:33:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 16:33:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 16:33:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 16:33:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 16:34:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 16:34:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 16:34:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 16:34:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 16:34:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 16:34:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 16:34:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 16:34:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 16:34:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 16:34:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 16:34:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 16:34:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 16:34:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 16:34:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 16:34:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 16:34:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 16:34:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 16:34:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 16:35:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 16:35:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 16:35:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 16:35:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 16:35:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 16:35:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 16:35:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 16:35:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 16:35:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 16:35:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 16:35:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 16:35:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 16:35:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 16:35:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 16:35:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 16:46:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 16:46:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 16:46:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 16:46:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 16:46:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 16:46:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 16:46:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 16:47:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 16:48:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 16:48:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 16:48:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 16:48:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 16:48:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 16:48:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 16:48:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 16:48:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 16:48:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 16:48:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 16:49:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 16:49:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 16:49:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 16:49:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 17:29:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 17:29:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:09:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:09:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:10:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:10:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:10:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:10:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:10:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:10:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:10:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:10:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:10:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:10:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:10:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:10:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:10:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:10:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:10:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:10:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:10:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:10:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:10:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:21:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:21:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:25:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:25:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:25:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:25:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:25:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:25:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:25:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:25:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:25:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:25:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:25:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:25:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:25:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:25:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:25:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:25:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:26:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:26:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:27:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:27:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:27:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:27:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:27:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:27:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:27:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:27:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:27:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:27:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:27:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:27:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:30:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:30:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:30:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:30:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:30:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:30:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:30:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:30:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:30:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:30:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:30:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:30:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:30:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:30:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:30:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:30:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:30:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:30:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:30:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:30:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:31:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:31:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:31:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:31:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:31:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:32:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:32:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:32:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:32:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:33:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:33:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:33:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:33:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:33:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:37:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2026-09-01 20:37:11 --> Cannot add or update a child row: a foreign key constraint fails (`dulce_gracia`.`product_images`, CONSTRAINT `product_images_product_id_foreign` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`) ON DELETE CASCADE ON UPDATE CASCADE)
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('INSERT INTO `product_images` (`product_id`, `image_path`, `is_main`, `created_at`) VALUES (0, \'http://localhost/DGracia/public/uploads/products/1788295031_26bfd0c70cf0cf1f3405.jpg\', 1, \'2026-09-01 20:37:11\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(908): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `product_images` (`product_id`, `image_path`, `is_main`, `created_at`) VALUES (0, \'http://localhost/DGracia/public/uploads/products/1788295031_26bfd0c70cf0cf1f3405.jpg\', 1, \'2026-09-01 20:37:11\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(825): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `product_images` (`product_id`, `image_path`, `is_main`, `created_at`) VALUES (0, \'http://localhost/DGracia/public/uploads/products/1788295031_26bfd0c70cf0cf1f3405.jpg\', 1, \'2026-09-01 20:37:11\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2355): CodeIgniter\Database\BaseConnection->query('INSERT INTO `product_images` (`product_id`, `image_path`, `is_main`, `created_at`) VALUES (:product_id:, :image_path:, :is_main:, :created_at:)', [...], false)
+ 5 SYSTEMPATH\Model.php(357): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(670): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Controllers\Admin\Products.php(59): CodeIgniter\Model->insert([...])
+ 9 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Admin\Products->create()
+10 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Products))
+11 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-09-01 20:37:11 --> CodeIgniter\Database\Exceptions\DatabaseException: Cannot add or update a child row: a foreign key constraint fails (`dulce_gracia`.`product_images`, CONSTRAINT `product_images_product_id_foreign` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`) ON DELETE CASCADE ON UPDATE CASCADE)
+[Method: POST, Route: admin/productos/crear]
+in SYSTEMPATH\Database\BaseConnection.php on line 863.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2355): CodeIgniter\Database\BaseConnection->query('INSERT INTO `product_images` (`product_id`, `image_path`, `is_main`, `created_at`) VALUES (:product_id:, :image_path:, :is_main:, :created_at:)', [...], false)
+ 2 SYSTEMPATH\Model.php(357): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(670): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH\Controllers\Admin\Products.php(59): CodeIgniter\Model->insert([...])
+ 6 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Admin\Products->create()
+ 7 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Products))
+ 8 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-09-01 20:37:11 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Cannot add or update a child row: a foreign key constraint fails (`dulce_gracia`.`product_images`, CONSTRAINT `product_images_product_id_foreign` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`) ON DELETE CASCADE ON UPDATE CASCADE)
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 310.
+ 1 SYSTEMPATH\Database\BaseConnection.php(908): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `product_images` (`product_id`, `image_path`, `is_main`, `created_at`) VALUES (0, \'http://localhost/DGracia/public/uploads/products/1788295031_26bfd0c70cf0cf1f3405.jpg\', 1, \'2026-09-01 20:37:11\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(825): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `product_images` (`product_id`, `image_path`, `is_main`, `created_at`) VALUES (0, \'http://localhost/DGracia/public/uploads/products/1788295031_26bfd0c70cf0cf1f3405.jpg\', 1, \'2026-09-01 20:37:11\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2355): CodeIgniter\Database\BaseConnection->query('INSERT INTO `product_images` (`product_id`, `image_path`, `is_main`, `created_at`) VALUES (:product_id:, :image_path:, :is_main:, :created_at:)', [...], false)
+ 4 SYSTEMPATH\Model.php(357): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH\Model.php(670): CodeIgniter\BaseModel->insert([...], true)
+ 7 APPPATH\Controllers\Admin\Products.php(59): CodeIgniter\Model->insert([...])
+ 8 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Admin\Products->create()
+ 9 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Products))
+10 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-09-01 20:37:11 --> [Caused by] mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`dulce_gracia`.`product_images`, CONSTRAINT `product_images_product_id_foreign` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`) ON DELETE CASCADE ON UPDATE CASCADE)
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('INSERT INTO `product_images` (`product_id`, `image_path`, `is_main`, `created_at`) VALUES (0, \'http://localhost/DGracia/public/uploads/products/1788295031_26bfd0c70cf0cf1f3405.jpg\', 1, \'2026-09-01 20:37:11\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(908): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `product_images` (`product_id`, `image_path`, `is_main`, `created_at`) VALUES (0, \'http://localhost/DGracia/public/uploads/products/1788295031_26bfd0c70cf0cf1f3405.jpg\', 1, \'2026-09-01 20:37:11\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(825): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `product_images` (`product_id`, `image_path`, `is_main`, `created_at`) VALUES (0, \'http://localhost/DGracia/public/uploads/products/1788295031_26bfd0c70cf0cf1f3405.jpg\', 1, \'2026-09-01 20:37:11\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2355): CodeIgniter\Database\BaseConnection->query('INSERT INTO `product_images` (`product_id`, `image_path`, `is_main`, `created_at`) VALUES (:product_id:, :image_path:, :is_main:, :created_at:)', [...], false)
+ 5 SYSTEMPATH\Model.php(357): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(899): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(670): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Controllers\Admin\Products.php(59): CodeIgniter\Model->insert([...])
+ 9 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Admin\Products->create()
+10 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Products))
+11 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2026-09-01 20:37:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:37:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:38:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:38:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:38:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:38:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:39:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:39:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:39:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:39:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:39:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:39:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:39:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:39:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:39:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:39:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:39:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:40:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:40:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:40:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:40:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:41:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:41:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:41:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:41:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:42:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:42:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:42:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:42:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:45:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:45:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:45:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:45:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:46:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:46:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:46:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:46:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:46:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:46:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:46:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:46:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:47:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:47:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:47:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:47:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:47:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:47:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:47:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:47:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:48:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:48:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:48:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:49:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:49:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:49:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 20:49:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 23:06:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 23:06:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 23:06:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 23:06:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 23:06:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 23:06:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 23:06:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 23:07:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 23:07:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 23:07:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 23:07:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 23:08:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 23:08:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 23:08:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 23:08:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 23:08:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 23:08:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 23:08:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 23:08:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 23:08:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 23:08:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 23:09:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 23:10:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 23:11:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 23:11:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 23:11:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 23:11:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 23:11:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 23:11:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 23:11:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 23:11:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 23:11:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 23:11:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 23:11:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 23:12:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 23:12:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 23:12:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 23:12:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 23:12:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 23:12:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 23:12:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 23:12:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 23:13:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 23:14:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 23:14:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-09-01 23:19:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
