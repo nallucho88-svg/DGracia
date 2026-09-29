@@ -74,6 +74,7 @@ class Cart extends BaseController
 
             $cart[] = [
                 'id'               => $product->id,
+                'slug'             => $product->slug,
                 'name'             => $product->name,
                 'price'            => $unitPrice,
                 'normal_price'     => $normalPrice,

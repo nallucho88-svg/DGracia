@@ -55,6 +55,24 @@
             <a href="<?= base_url('admin/dashboard') ?>" class="text-decoration-none fw-bold ms-2 text-info">Restablecer</a>
         </div>
         <?php endif; ?>
+</div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════
+     BARRA DE FILTRO INTERACTIVO DE NAVEGACIÓN (CROSS-FILTERING)
+═══════════════════════════════════════════════════════════ -->
+<div id="interactiveFilterBar" class="alert alert-warning border-0 rounded-4 shadow-sm mb-4 d-none">
+    <div class="d-flex align-items-center justify-content-between">
+        <div class="d-flex align-items-center gap-2">
+            <i class="fas fa-filter fa-lg text-warning"></i>
+            <div>
+                <strong>Filtro Interactivo Aplicado:</strong>
+                <span id="interactiveFilterTags" class="ms-2"></span>
+            </div>
+        </div>
+        <button type="button" id="btnClearInteractiveFilters" class="btn btn-sm btn-outline-dark rounded-pill px-3">
+            <i class="fas fa-times me-1"></i>Limpiar Filtros Interactivos
+        </button>
     </div>
 </div>
 
@@ -123,7 +141,7 @@
                     <i class="fas fa-clock fa-lg me-2 text-danger"></i>
                     <small class="fw-bold text-danger text-uppercase">Pendientes</small>
                 </div>
-                <h4 class="fw-bold mb-0 text-danger"><?= $pendingOrders ?></h4>
+                <h4 class="fw-bold mb-0 text-danger" id="kpiPendingOrders"><?= $pendingOrders ?></h4>
             </div>
         </div>
     </div>
@@ -155,7 +173,7 @@
                 </div>
                 <div>
                     <h6 class="text-muted mb-1 small text-uppercase">Total Pedidos</h6>
-                    <h2 class="fw-bold mb-0"><?= $totalOrders ?></h2>
+                    <h2 class="fw-bold mb-0" id="kpiTotalOrders"><?= $totalOrders ?></h2>
                 </div>
             </div>
         </div>
@@ -168,7 +186,7 @@
                 </div>
                 <div>
                     <h6 class="text-muted mb-1 small text-uppercase">Ventas Totales</h6>
-                    <h2 class="fw-bold mb-0 text-success">$<?= number_format($salesTotal, 0, ',', '.') ?></h2>
+                    <h2 class="fw-bold mb-0 text-success" id="kpiSalesTotal">$<?= number_format($salesTotal, 0, ',', '.') ?></h2>
                 </div>
             </div>
         </div>
@@ -180,8 +198,8 @@
                     <i class="fas fa-box fa-2x text-info"></i>
                 </div>
                 <div>
-                    <h6 class="text-muted mb-1 small text-uppercase">Productos</h6>
-                    <h2 class="fw-bold mb-0"><?= $totalProducts ?></h2>
+                    <h6 class="text-muted mb-1 small text-uppercase">Productos Vendidos</h6>
+                    <h2 class="fw-bold mb-0" id="kpiTotalProducts"><?= number_format($totalProducts, 0, ',', '.') ?></h2>
                 </div>
             </div>
         </div>
@@ -357,6 +375,58 @@
         </div>
     </div>
 
+    <!-- Mejor Valorado -->
+    <div class="col-lg-6 col-md-6">
+        <div class="card border-0 shadow-sm rounded-4 h-100 border-start border-warning border-4">
+            <div class="card-body p-4">
+                <h6 class="fw-bold text-uppercase text-muted small mb-3">
+                    <i class="fas fa-star me-2 text-warning"></i>Producto Mejor Valorado
+                </h6>
+                <?php if (!empty($highestRatedProduct)): ?>
+                    <div class="d-flex align-items-center gap-3">
+                        <img src="<?= media_url($highestRatedProduct->image_path ?? '', 'assets/img/default-product.jpg') ?>"
+                             class="rounded-3" style="width:64px;height:64px;object-fit:cover;" alt="<?= esc($highestRatedProduct->name) ?>">
+                        <div>
+                            <div class="fw-bold text-dark"><?= esc($highestRatedProduct->name) ?></div>
+                            <div class="text-warning fw-bold fs-5">
+                                ★ <?= number_format($highestRatedProduct->avg_rating, 1) ?> / 5.0
+                            </div>
+                            <small class="text-muted"><?= $highestRatedProduct->total_ratings ?> <?= $highestRatedProduct->total_ratings == 1 ? 'valoración' : 'valoraciones' ?></small>
+                        </div>
+                    </div>
+                <?php else: ?>
+                    <p class="text-muted text-center py-3">Sin valoraciones aun</p>
+                <?php endif; ?>
+            </div>
+        </div>
+    </div>
+
+    <!-- Menor Valorado -->
+    <div class="col-lg-6 col-md-6">
+        <div class="card border-0 shadow-sm rounded-4 h-100 border-start border-secondary border-4">
+            <div class="card-body p-4">
+                <h6 class="fw-bold text-uppercase text-muted small mb-3">
+                    <i class="far fa-star me-2 text-secondary"></i>Producto Menor Valorado
+                </h6>
+                <?php if (!empty($lowestRatedProduct)): ?>
+                    <div class="d-flex align-items-center gap-3">
+                        <img src="<?= media_url($lowestRatedProduct->image_path ?? '', 'assets/img/default-product.jpg') ?>"
+                             class="rounded-3" style="width:64px;height:64px;object-fit:cover;" alt="<?= esc($lowestRatedProduct->name) ?>">
+                        <div>
+                            <div class="fw-bold text-dark"><?= esc($lowestRatedProduct->name) ?></div>
+                            <div class="text-secondary fw-bold fs-5">
+                                ★ <?= number_format($lowestRatedProduct->avg_rating, 1) ?> / 5.0
+                            </div>
+                            <small class="text-muted"><?= $lowestRatedProduct->total_ratings ?> <?= $lowestRatedProduct->total_ratings == 1 ? 'valoración' : 'valoraciones' ?></small>
+                        </div>
+                    </div>
+                <?php else: ?>
+                    <p class="text-muted text-center py-3">Sin valoraciones aun</p>
+                <?php endif; ?>
+            </div>
+        </div>
+    </div>
+
 </div>
 
 <!-- ══════════════════════════════════════════════════════════
@@ -423,9 +493,16 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 <script>
 (function () {
-    const labels  = <?= json_encode($monthLabels) ?>;
-    const sales   = <?= json_encode($salesByMonth) ?>;
-    const profits = <?= json_encode($profitByMonth) ?>;
+    const monthsRaw = <?= json_encode($months ?? []) ?>;
+    const labels    = <?= json_encode($monthLabels) ?>;
+    const sales     = <?= json_encode($salesByMonth) ?>;
+    const profits   = <?= json_encode($profitByMonth) ?>;
+
+    let activeFilterState = {
+        status: null,
+        month: null,
+        source: null
+    };
 
     // ── 1. Gráfico de Ventas Mensuales (Barras) ──────────────────────────
     const bestIdx  = sales.indexOf(Math.max(...sales));
@@ -437,7 +514,7 @@
         return 'rgba(212,163,115,.7)';
     });
 
-    new Chart(document.getElementById('salesChart'), {
+    const salesChart = new Chart(document.getElementById('salesChart'), {
         type: 'bar',
         data: {
             labels,
@@ -451,6 +528,15 @@
         },
         options: {
             responsive: true,
+            onClick: (e, elements) => {
+                if (elements.length > 0) {
+                    const idx = elements[0].index;
+                    if (monthsRaw[idx]) {
+                        activeFilterState.month = activeFilterState.month === monthsRaw[idx] ? null : monthsRaw[idx];
+                        applyInteractiveFilter();
+                    }
+                }
+            },
             plugins: {
                 legend: { display: false },
                 tooltip: {
@@ -515,7 +601,7 @@
     const statusCounts = statusData.map(r => parseInt(r.cnt));
     const statusColors = ['#ffc107','#0dcaf0','#0d6efd','#198754','#dc3545','#6c757d'];
 
-    new Chart(document.getElementById('statusChart'), {
+    const statusChart = new Chart(document.getElementById('statusChart'), {
         type: 'doughnut',
         data: {
             labels: statusLabels,
@@ -530,6 +616,16 @@
         options: {
             responsive: true,
             cutout: '65%',
+            onClick: (e, elements) => {
+                if (elements.length > 0) {
+                    const idx = elements[0].index;
+                    const selectedStatus = statusData[idx]?.status;
+                    if (selectedStatus) {
+                        activeFilterState.status = activeFilterState.status === selectedStatus ? null : selectedStatus;
+                        applyInteractiveFilter();
+                    }
+                }
+            },
             plugins: {
                 legend: { position: 'bottom', labels: { boxWidth: 10, font: { size: 10 } } }
             }
@@ -541,7 +637,7 @@
     const dailyWeb    = <?= json_encode($dailyWebSales ?? []) ?>;
     const dailyPos    = <?= json_encode($dailyPosSales ?? []) ?>;
 
-    new Chart(document.getElementById('webVsPosChart'), {
+    const webVsPosChart = new Chart(document.getElementById('webVsPosChart'), {
         type: 'line',
         data: {
             labels: dailyLabels,
@@ -571,6 +667,14 @@
         options: {
             responsive: true,
             interaction: { mode: 'index', intersect: false },
+            onClick: (e, elements) => {
+                if (elements.length > 0) {
+                    const datasetIdx = elements[0].datasetIndex;
+                    const selectedSource = datasetIdx === 0 ? 'web' : 'pos';
+                    activeFilterState.source = activeFilterState.source === selectedSource ? null : selectedSource;
+                    applyInteractiveFilter();
+                }
+            },
             plugins: {
                 legend: { position: 'top' },
                 tooltip: {
@@ -591,6 +695,69 @@
             }
         }
     });
+
+    // ── 5. Función AJAX para aplicar Filtro Interactivo Cross-Filtering ────
+    function applyInteractiveFilter() {
+        const startDate = document.getElementById('start_date')?.value || '';
+        const endDate   = document.getElementById('end_date')?.value || '';
+
+        const params = new URLSearchParams();
+        if (startDate) params.append('start_date', startDate);
+        if (endDate)   params.append('end_date', endDate);
+        if (activeFilterState.status) params.append('status', activeFilterState.status);
+        if (activeFilterState.month)  params.append('month', activeFilterState.month);
+        if (activeFilterState.source) params.append('source', activeFilterState.source);
+
+        fetch(`<?= base_url('admin/dashboard/filtro-ajax') ?>?${params.toString()}`, {
+            headers: { 'X-Requested-With': 'XMLHttpRequest' }
+        })
+        .then(res => res.json())
+        .then(data => {
+            if (data.status === 'success' && data.kpis) {
+                // Actualizar KPIs en tiempo real
+                document.getElementById('kpiSalesTotal').textContent    = data.kpis.salesTotalFormatted;
+                document.getElementById('kpiTotalOrders').textContent   = data.kpis.totalOrders;
+                document.getElementById('kpiPendingOrders').textContent  = data.kpis.pendingOrders;
+                document.getElementById('kpiTotalProducts').textContent = data.kpis.totalProducts.toLocaleString('es-CO');
+
+                // Renderizar barra de etiquetas de filtro activo
+                renderFilterTags();
+            }
+        })
+        .catch(err => console.error('Error procesando filtro interactivo:', err));
+    }
+
+    function renderFilterTags() {
+        const bar  = document.getElementById('interactiveFilterBar');
+        const tags = document.getElementById('interactiveFilterTags');
+        tags.innerHTML = '';
+
+        let count = 0;
+        if (activeFilterState.status) {
+            count++;
+            tags.innerHTML += `<span class="badge bg-primary rounded-pill me-1">Estado: ${activeFilterState.status}</span>`;
+        }
+        if (activeFilterState.month) {
+            count++;
+            tags.innerHTML += `<span class="badge bg-success rounded-pill me-1">Mes: ${activeFilterState.month}</span>`;
+        }
+        if (activeFilterState.source) {
+            count++;
+            tags.innerHTML += `<span class="badge bg-warning text-dark rounded-pill me-1">Canal: ${activeFilterState.source.toUpperCase()}</span>`;
+        }
+
+        if (count > 0) {
+            bar.classList.remove('d-none');
+        } else {
+            bar.classList.add('d-none');
+        }
+    }
+
+    document.getElementById('btnClearInteractiveFilters')?.addEventListener('click', () => {
+        activeFilterState = { status: null, month: null, source: null };
+        applyInteractiveFilter();
+    });
+
 })();
 </script>
 <?= $this->endSection() ?>

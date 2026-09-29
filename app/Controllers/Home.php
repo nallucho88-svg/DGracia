@@ -101,13 +101,28 @@ class Home extends BaseController
         }
 
         $messageModel = new \App\Models\MessageModel();
-        $messageModel->insert([
-            'name'    => $this->request->getPost('name'),
-            'phone'   => $this->request->getPost('phone'),
-            'email'   => $this->request->getPost('email'),
+        $messageData = [
+            'name'    => trim((string)$this->request->getPost('name')),
+            'phone'   => trim((string)$this->request->getPost('phone')),
+            'email'   => trim((string)$this->request->getPost('email')),
             'type'    => $this->request->getPost('type'),
-            'message' => $this->request->getPost('message'),
-        ]);
+            'message' => trim((string)$this->request->getPost('message')),
+            'status'  => 'unread'
+        ];
+
+        $inserted = $messageModel->insert($messageData);
+
+        if (!$inserted) {
+            return redirect()->back()->withInput()->with('error', 'Ocurrió un problema al enviar tu mensaje. Intenta nuevamente.');
+        }
+
+        // Crear notificación para administradores
+        \App\Models\NotificationModel::createNotification(
+            'contact',
+            '📩 Nuevo mensaje de ' . $messageData['type'],
+            $messageData['name'] . ' envió un mensaje: "' . mb_strimwidth($messageData['message'], 0, 50, '...') . '"',
+            base_url('admin/contacto')
+        );
 
         return redirect()->to(base_url('contacto'))->with('success', '¡Gracias por tu mensaje! Lo atenderemos pronto.');
     }

@@ -30,7 +30,13 @@
                     <button class="nav-link fw-bold" id="discounts-tab" data-bs-toggle="tab" data-bs-target="#discounts" type="button" role="tab"><i class="fas fa-percentage me-2"></i>Reglas de Descuentos</button>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link fw-bold" id="points-tab" data-bs-toggle="tab" data-bs-target="#points" type="button" role="tab"><i class="fas fa-coins me-2"></i>Programa de Fidelización</button>
+                    <button class="nav-link fw-bold" id="smtp-tab" data-bs-toggle="tab" data-bs-target="#smtp" type="button" role="tab"><i class="fas fa-paper-plane me-2"></i>Correo SMTP</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link fw-bold" id="backup-tab" data-bs-toggle="tab" data-bs-target="#backup" type="button" role="tab"><i class="fas fa-database me-2"></i>Copia de Seguridad</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link fw-bold" id="migration-tab" data-bs-toggle="tab" data-bs-target="#migration" type="button" role="tab"><i class="fas fa-sync me-2"></i>Migración de Datos</button>
                 </li>
             </ul>
         </div>
@@ -216,12 +222,113 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- 6. Correo SMTP -->
+                <div class="tab-pane fade" id="smtp" role="tabpanel">
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <label class="form-label fw-bold">SMTP Host</label>
+                            <input type="text" class="form-control" name="settings[smtp_host]" value="<?= esc($settings['smtp_host'] ?? '') ?>" placeholder="ej: smtp.gmail.com">
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label fw-bold">SMTP User</label>
+                            <input type="text" class="form-control" name="settings[smtp_user]" value="<?= esc($settings['smtp_user'] ?? '') ?>" placeholder="ej: tu_correo@dominio.com">
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label fw-bold">SMTP Password</label>
+                            <input type="password" class="form-control" name="settings[smtp_pass]" value="<?= esc($settings['smtp_pass'] ?? '') ?>" placeholder="••••••••••••">
+                            <small class="text-muted">Guardada de forma segura.</small>
+                        </div>
+                        <div class="col-md-3">
+                            <label class="form-label fw-bold">SMTP Port</label>
+                            <input type="number" class="form-control" name="settings[smtp_port]" value="<?= esc($settings['smtp_port'] ?? '587') ?>" placeholder="587">
+                        </div>
+                        <div class="col-md-3">
+                            <label class="form-label fw-bold">SMTP Crypto</label>
+                            <select class="form-select" name="settings[smtp_crypto]">
+                                <option value="tls" <?= ($settings['smtp_crypto'] ?? 'tls') === 'tls' ? 'selected' : '' ?>>TLS (Recomendado)</option>
+                                <option value="ssl" <?= ($settings['smtp_crypto'] ?? '') === 'ssl' ? 'selected' : '' ?>>SSL</option>
+                                <option value="none" <?= ($settings['smtp_crypto'] ?? '') === 'none' ? 'selected' : '' ?>>Ninguno</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6 border-top pt-3">
+                            <label class="form-label fw-bold">From Email (Remitente)</label>
+                            <input type="email" class="form-control" name="settings[smtp_from_email]" value="<?= esc($settings['smtp_from_email'] ?? '') ?>" placeholder="notificaciones@dulcegracia.com">
+                        </div>
+                        <div class="col-md-6 border-top pt-3">
+                            <label class="form-label fw-bold">From Name (Nombre del Remitente)</label>
+                            <input type="text" class="form-control" name="settings[smtp_from_name]" value="<?= esc($settings['smtp_from_name'] ?? 'Dulce Gracia') ?>" placeholder="Dulce Gracia Repostería">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 7. Copia de Seguridad -->
+                <div class="tab-pane fade" id="backup" role="tabpanel">
+                    <div class="p-3 border rounded-4 bg-light mb-3">
+                        <h5 class="fw-bold text-dark mb-2"><i class="fas fa-shield-alt text-success me-2"></i>Respaldos de Base de Datos</h5>
+                        <p class="text-muted mb-0 small">Genera y descarga una copia completa en formato <code>.sql</code> de la base de datos actual del sistema. Los archivos se protegen en ubicaciones privadas y conservan fecha y hora de Colombia.</p>
+                    </div>
+                </div>
+
+                <!-- 8. Migración de Datos -->
+                <div class="tab-pane fade" id="migration" role="tabpanel">
+                    <div class="p-3 border rounded-4 bg-light mb-3">
+                        <h5 class="fw-bold text-dark mb-2"><i class="fas fa-magic text-primary me-2"></i>Verificación y Actualización de Estructura</h5>
+                        <p class="text-muted mb-0 small">Ejecuta las migraciones de CodeIgniter 4 de forma segura. Si falta alguna tabla o columna requerida, el sistema la creará automáticamente sin eliminar ni vaciar ningún dato existente.</p>
+                    </div>
+                </div>
             </div>
 
-            <div class="mt-4 pt-3 border-top">
+            <div class="mt-4 pt-3 border-top d-flex justify-content-between align-items-center">
                 <button type="submit" class="btn btn-dg-primary rounded-pill px-5"><i class="fas fa-save me-2"></i>Guardar Cambios</button>
             </div>
         </div>
     </div>
 </form>
+
+<!-- Formularios secundarios para probar SMTP, Backup y Migraciones -->
+<div class="row g-3 mt-3">
+    <div class="col-md-4">
+        <div class="card border-0 shadow-sm rounded-4 h-100">
+            <div class="card-body p-4 text-center">
+                <i class="fas fa-paper-plane fa-2x text-primary mb-3"></i>
+                <h6 class="fw-bold">Probar Conexión SMTP</h6>
+                <p class="text-muted small">Envía un correo de prueba con la configuración activa.</p>
+                <form action="<?= base_url('admin/configuracion/probar-smtp') ?>" method="POST">
+                    <?= csrf_field() ?>
+                    <input type="email" name="test_email" class="form-control form-control-sm mb-3 rounded-pill text-center" placeholder="tu_correo@dominio.com" required>
+                    <button type="submit" class="btn btn-outline-primary btn-sm rounded-pill w-100 fw-bold">Enviar Correo Prueba</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card border-0 shadow-sm rounded-4 h-100">
+            <div class="card-body p-4 text-center">
+                <i class="fas fa-download fa-2x text-success mb-3"></i>
+                <h6 class="fw-bold">Crear Copia de Seguridad</h6>
+                <p class="text-muted small">Descarga el respaldo completo <code>.sql</code> de la BD.</p>
+                <form action="<?= base_url('admin/configuracion/backup') ?>" method="POST">
+                    <?= csrf_field() ?>
+                    <button type="submit" class="btn btn-success btn-sm rounded-pill w-100 fw-bold mt-4"><i class="fas fa-file-export me-1"></i>Descargar Backup .SQL</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card border-0 shadow-sm rounded-4 h-100">
+            <div class="card-body p-4 text-center">
+                <i class="fas fa-sync fa-2x text-warning mb-3"></i>
+                <h6 class="fw-bold">Actualizar Estructura</h6>
+                <p class="text-muted small">Verifica y aplica migraciones de DB pendientes.</p>
+                <form action="<?= base_url('admin/configuracion/migrar') ?>" method="POST">
+                    <?= csrf_field() ?>
+                    <button type="submit" class="btn btn-warning btn-sm rounded-pill w-100 fw-bold mt-4"><i class="fas fa-check-circle me-1"></i>Verificar y Actualizar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 <?= $this->endSection() ?>

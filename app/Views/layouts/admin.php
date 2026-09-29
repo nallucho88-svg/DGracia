@@ -182,6 +182,11 @@
                 </a>
             </li>
             <li>
+                <a href="<?= base_url('admin/valoraciones') ?>" class="<?= url_is('admin/valoraciones*') ? 'active' : '' ?>">
+                    <i class="fas fa-star"></i> Valoraciones
+                </a>
+            </li>
+            <li>
                 <a href="<?= base_url('admin/usuarios') ?>" class="<?= url_is('admin/usuarios*') ? 'active' : '' ?>">
                     <i class="fas fa-users"></i> Usuarios
                 </a>
@@ -211,7 +216,25 @@
             <button class="btn btn-light d-md-none" id="sidebarToggle">
                 <i class="fas fa-bars"></i>
             </button>
-            <div class="ms-auto d-flex align-items-center">
+            <div class="ms-auto d-flex align-items-center gap-2">
+                <!-- Dropdown Notificaciones 🔔 -->
+                <div class="dropdown" id="adminNotifDropdown">
+                    <button class="btn btn-light rounded-circle position-relative border-0 shadow-sm" type="button" id="notifBellBtn" data-bs-toggle="dropdown" aria-expanded="false" title="Notificaciones">
+                        <i class="fas fa-bell text-secondary fs-5"></i>
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger d-none" id="notifBadgeCount">0</span>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-end border-0 shadow-lg p-0 mt-2 rounded-4 overflow-hidden" style="width: 340px; max-height: 440px;" aria-labelledby="notifBellBtn">
+                        <div class="p-3 border-bottom d-flex justify-content-between align-items-center bg-light">
+                            <h6 class="fw-bold mb-0 text-dark"><i class="fas fa-bell me-2 text-primary"></i>Notificaciones</h6>
+                            <button type="button" class="btn btn-sm btn-link text-decoration-none fw-bold p-0 text-primary" id="btnMarkAllRead">Marcar leídas</button>
+                        </div>
+                        <div id="notifListContainer" class="list-group list-group-flush overflow-y-auto" style="max-height: 350px;">
+                            <div class="p-4 text-center text-muted small">Cargando notificaciones...</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Perfil de usuario -->
                 <div class="dropdown">
                     <button class="btn btn-light dropdown-toggle rounded-pill border-0 px-3" type="button" id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
                         <i class="fas fa-user-circle me-2 text-muted"></i> 

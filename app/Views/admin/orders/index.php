@@ -2,11 +2,66 @@
 
 <?= $this->section('content') ?>
 <div class="d-flex justify-content-between align-items-center mb-4">
-    <h2 class="mb-0 fw-bold" style="font-family: var(--font-heading); color: var(--dg-primary);">Pedidos Recientes</h2>
+    <div>
+        <h2 class="mb-0 fw-bold" style="font-family: var(--font-heading); color: var(--dg-primary);">Gestión de Pedidos</h2>
+        <small class="text-muted">Consulta, filtra y gestiona los pedidos registrados</small>
+    </div>
+</div>
+
+<!-- Filtros de Búsqueda -->
+<div class="card border-0 shadow-sm rounded-4 mb-4">
+    <div class="card-body p-3 p-md-4">
+        <form action="<?= base_url('admin/pedidos') ?>" method="GET" class="row g-3 align-items-end">
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <label for="start_date" class="form-label fw-bold small text-muted">
+                    <i class="fas fa-calendar-alt me-1 text-primary"></i>Fecha Inicial
+                </label>
+                <input type="date" class="form-control rounded-3" id="start_date" name="start_date" value="<?= esc($startDate ?? '') ?>">
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <label for="end_date" class="form-label fw-bold small text-muted">
+                    <i class="fas fa-calendar-alt me-1 text-primary"></i>Fecha Final
+                </label>
+                <input type="date" class="form-control rounded-3" id="end_date" name="end_date" value="<?= esc($endDate ?? '') ?>">
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <label for="order_number" class="form-label fw-bold small text-muted">
+                    <i class="fas fa-hashtag me-1 text-primary"></i>Nº de Pedido
+                </label>
+                <input type="text" class="form-control rounded-3" id="order_number" name="order_number" placeholder="Ej: DG-260925-..." value="<?= esc($orderNumber ?? '') ?>">
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <label for="customer" class="form-label fw-bold small text-muted">
+                    <i class="fas fa-user me-1 text-primary"></i>Cliente (Nombre/Email/Tel)
+                </label>
+                <input type="text" class="form-control rounded-3" id="customer" name="customer" placeholder="Buscar cliente..." value="<?= esc($customer ?? '') ?>">
+            </div>
+            
+            <div class="col-12 d-flex justify-content-end gap-2 mt-3">
+                <button type="submit" class="btn btn-dg-primary rounded-pill px-4 fw-bold">
+                    <i class="fas fa-search me-2"></i>Buscar
+                </button>
+                <?php if ($isFiltered): ?>
+                <a href="<?= base_url('admin/pedidos') ?>" class="btn btn-outline-secondary rounded-pill px-3" title="Limpiar filtros">
+                    <i class="fas fa-undo me-1"></i>Limpiar
+                </a>
+                <?php endif; ?>
+            </div>
+        </form>
+    </div>
 </div>
 
 <div class="card border-0 shadow-sm rounded-4">
     <div class="card-body p-4">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <div class="small text-muted fw-bold">
+                <?php if (!empty($totalFiltered) && $totalFiltered > 0): ?>
+                    Mostrando <?= $fromItem ?> - <?= $toItem ?> de <?= $totalFiltered ?> pedidos
+                <?php else: ?>
+                    0 pedidos encontrados
+                <?php endif; ?>
+            </div>
+        </div>
         <div class="table-responsive">
             <table class="table table-hover align-middle">
                 <thead class="table-light">
@@ -88,6 +143,18 @@
                 </tbody>
             </table>
         </div>
+
+        <!-- Paginación -->
+        <?php if (!empty($pager) && !empty($totalFiltered) && $totalFiltered > 0): ?>
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-center border-top pt-3 mt-3 gap-2">
+                <div class="small text-muted fw-bold">
+                    Mostrando <?= $fromItem ?> a <?= $toItem ?> de <?= $totalFiltered ?> pedidos registrados
+                </div>
+                <div>
+                    <?= $pager->only(['start_date', 'end_date', 'order_number', 'customer'])->links('default', 'default_full') ?>
+                </div>
+            </div>
+        <?php endif; ?>
     </div>
 </div>
 

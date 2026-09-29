@@ -95,10 +95,43 @@
                         <tbody>
                             <?php foreach ($items as $it): ?>
                             <tr>
-                                <td class="fw-bold"><?= esc($it->product_name) ?></td>
-                                <td class="text-center"><?= $it->quantity ?></td>
-                                <td class="text-end">$<?= number_format($it->price, 0, ',', '.') ?></td>
-                                <td class="text-end fw-bold">$<?= number_format($it->subtotal, 0, ',', '.') ?></td>
+                                <td>
+                                    <div class="fw-bold"><?= esc($it->product_name) ?></div>
+                                    
+                                    <!-- Bloque de Calificación de Compra -->
+                                    <div class="mt-2 p-2 bg-light rounded-3" style="max-width: 320px;">
+                                        <?php if (!empty($it->rating)): ?>
+                                            <div class="small">
+                                                <span class="text-success fw-bold me-1">✓ Ya calificaste este producto:</span>
+                                                <span class="text-warning">
+                                                    <?php for($s=1; $s<=5; $s++): ?>
+                                                        <i class="<?= $s <= $it->rating->rating ? 'fas' : 'far' ?> fa-star"></i>
+                                                    <?php endfor; ?>
+                                                </span>
+                                                <?php if(!empty($it->rating->comment)): ?>
+                                                    <div class="fst-italic text-muted mt-1">"<?= esc($it->rating->comment) ?>"</div>
+                                                <?php endif; ?>
+                                            </div>
+                                        <?php else: ?>
+                                            <form action="<?= base_url('valoracion/guardar') ?>" method="POST" class="form-rating-ajax d-flex flex-column gap-1">
+                                                <?= csrf_field() ?>
+                                                <input type="hidden" name="order_item_id" value="<?= $it->id ?>">
+                                                <small class="fw-bold text-dark">Calificar producto:</small>
+                                                <div class="d-flex align-items-center gap-1 rating-stars-picker">
+                                                    <?php for($s=1; $s<=5; $s++): ?>
+                                                        <i class="far fa-star text-warning cursor-pointer star-pick" data-val="<?= $s ?>"></i>
+                                                    <?php endfor; ?>
+                                                    <input type="hidden" name="rating" value="5" class="rating-value-input">
+                                                </div>
+                                                <input type="text" name="comment" class="form-control form-control-sm rounded-pill" placeholder="Comentario opcional...">
+                                                <button type="submit" class="btn btn-sm btn-dg-primary rounded-pill fw-bold">Calificar producto</button>
+                                            </form>
+                                        <?php endif; ?>
+                                    </div>
+                                </td>
+                                <td class="text-center align-top pt-3"><?= $it->quantity ?></td>
+                                <td class="text-end align-top pt-3">$<?= number_format($it->price, 0, ',', '.') ?></td>
+                                <td class="text-end fw-bold align-top pt-3">$<?= number_format($it->subtotal, 0, ',', '.') ?></td>
                             </tr>
                             <?php endforeach; ?>
                         </tbody>
@@ -142,5 +175,64 @@
 
     </div>
 </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.rating-stars-picker').forEach(picker => {
+        const stars = picker.querySelectorAll('.star-pick');
+        const input = picker.querySelector('.rating-value-input');
+
+        stars.forEach(star => {
+            star.addEventListener('click', function() {
+                const val = parseInt(this.getAttribute('data-val'));
+                input.value = val;
+                stars.forEach((s, idx) => {
+                    if (idx < val) {
+                        s.classList.remove('far');
+                        s.classList.add('fas');
+                    } else {
+                        s.classList.remove('fas');
+                        s.classList.add('far');
+                    }
+                });
+            });
+        });
+    });
+
+    document.querySelectorAll('.form-rating-ajax').forEach(form => {
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const btn = this.querySelector('button[type="submit"]');
+            btn.disabled = true;
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin me-1"></i>Enviando...';
+
+            const formData = new FormData(this);
+
+            fetch(this.action, {
+                method: 'POST',
+                body: formData,
+                headers: { 'X-Requested-With': 'XMLHttpRequest' }
+            })
+            .then(res => res.json())
+            .then(data => {
+                if (data.status === 'success') {
+                    if (typeof DGAlert !== 'undefined') DGAlert.success('¡Gracias!', data.message);
+                    location.reload();
+                } else {
+                    if (typeof DGAlert !== 'undefined') DGAlert.error('Atención', data.message);
+                    else alert(data.message);
+                    btn.disabled = false;
+                    btn.innerHTML = 'Calificar producto';
+                }
+            })
+            .catch(err => {
+                console.error(err);
+                btn.disabled = false;
+                btn.innerHTML = 'Calificar producto';
+            });
+        });
+    });
+});
+</script>
 
 <?= $this->endSection() ?>

@@ -205,6 +205,11 @@ class CustomerAccount extends BaseController
         }
 
         $items = $orderItemModel->where('order_id', $order->id)->findAll();
+        $ratingModel = new \App\Models\RatingModel();
+
+        foreach ($items as &$item) {
+            $item->rating = $ratingModel->where('order_item_id', $item->id)->first();
+        }
 
         // Mapeo de timeline de estados
         $statuses = [
@@ -227,6 +232,83 @@ class CustomerAccount extends BaseController
         ];
 
         return view('customer/order_detail', $data);
+    }
+
+    /**
+     * Guardar Valoración de Producto (1 por compra)
+     */
+    public function saveRating()
+    {
+        $userId = session()->get('user_id');
+        if (!$userId) {
+            if ($this->request->isAJAX()) {
+                return $this->response->setJSON(['status' => 'error', 'message' => 'Debes iniciar sesión para calificar.']);
+            }
+            return redirect()->to(base_url('login'))->with('error', 'Debes iniciar sesión para calificar.');
+        }
+
+        $orderItemId = (int) $this->request->getPost('order_item_id');
+        $ratingVal   = (int) $this->request->getPost('rating');
+        $comment     = trim((string) $this->request->getPost('comment'));
+
+        if ($ratingVal < 1 || $ratingVal > 5) {
+            $msg = 'La valoración debe ser entre 1 y 5 estrellas.';
+            return $this->request->isAJAX() 
+                ? $this->response->setJSON(['status' => 'error', 'message' => $msg]) 
+                : redirect()->back()->with('error', $msg);
+        }
+
+        $orderItemModel = new \App\Models\OrderItemModel();
+        $orderModel     = new \App\Models\OrderModel();
+        $ratingModel    = new \App\Models\RatingModel();
+
+        $item = $orderItemModel->find($orderItemId);
+        if (!$item) {
+            $msg = 'Item de pedido no encontrado.';
+            return $this->request->isAJAX() 
+                ? $this->response->setJSON(['status' => 'error', 'message' => $msg]) 
+                : redirect()->back()->with('error', $msg);
+        }
+
+        $order = $orderModel->find($item->order_id);
+        if (!$order || (int)$order->user_id !== (int)$userId) {
+            $msg = 'No tienes permiso para calificar esta compra.';
+            return $this->request->isAJAX() 
+                ? $this->response->setJSON(['status' => 'error', 'message' => $msg]) 
+                : redirect()->back()->with('error', $msg);
+        }
+
+        // Verificar si ya tiene valoración para esta compra específica
+        $existing = $ratingModel->where('order_item_id', $orderItemId)->first();
+        if ($existing) {
+            $msg = 'Ya calificaste este producto para esta compra.';
+            return $this->request->isAJAX() 
+                ? $this->response->setJSON(['status' => 'error', 'message' => $msg]) 
+                : redirect()->back()->with('error', $msg);
+        }
+
+        // Insertar valoración
+        $ratingModel->insert([
+            'user_id'       => $userId,
+            'order_id'      => $order->id,
+            'order_item_id' => $item->id,
+            'product_id'    => $item->product_id,
+            'rating'        => $ratingVal,
+            'comment'       => esc(strip_tags($comment)),
+            'status'        => 'visible'
+        ]);
+
+        $successMsg = '¡Muchas gracias por calificar tu producto!';
+
+        if ($this->request->isAJAX()) {
+            return $this->response->setJSON([
+                'status'  => 'success',
+                'message' => $successMsg,
+                'rating'  => $ratingVal
+            ]);
+        }
+
+        return redirect()->back()->with('success', $successMsg);
     }
 
     /**

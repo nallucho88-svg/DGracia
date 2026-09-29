@@ -50,8 +50,9 @@ class Dashboard extends BaseController
         $totalOrders   = (int) ($this->db->query("SELECT COUNT(*) AS cnt FROM orders {$whereOrder}")->getRow()->cnt ?? 0);
         $pendingOrders = (int) ($this->db->query("SELECT COUNT(*) AS cnt FROM orders {$whereOrder} AND status = 'pendiente'")->getRow()->cnt ?? 0);
         
-        $productModel  = new ProductModel();
-        $totalProducts = $productModel->countAllResults();
+        $totalProducts = (int) ($this->db->query(
+            "SELECT COALESCE(SUM(oi.quantity),0) AS cnt FROM order_items oi JOIN orders o ON o.id = oi.order_id WHERE o.status != 'cancelado' {$whereOrderO}"
+        )->getRow()->cnt ?? 0);
 
         $customerWhere = " WHERE role = 'customer' ";
         if ($startDateTime) {
@@ -267,6 +268,31 @@ class Dashboard extends BaseController
             $recentOrders = $orderModel->orderBy('created_at', 'DESC')->limit(8)->findAll();
         }
 
+        // ── Productos Mejor y Menor Valorados ─────────────────────────────────
+        $highestRatedProduct = $this->db->query(
+            "SELECT p.id, p.name,
+                    (SELECT pi.image_path FROM product_images pi WHERE pi.product_id = p.id ORDER BY pi.is_main DESC, pi.id ASC LIMIT 1) AS image_path,
+                    ROUND(AVG(r.rating),1) AS avg_rating,
+                    COUNT(r.id) AS total_ratings
+             FROM ratings r
+             JOIN products p ON p.id = r.product_id
+             WHERE r.status = 'visible'
+             GROUP BY p.id, p.name
+             ORDER BY avg_rating DESC, total_ratings DESC LIMIT 1"
+        )->getRow();
+
+        $lowestRatedProduct = $this->db->query(
+            "SELECT p.id, p.name,
+                    (SELECT pi.image_path FROM product_images pi WHERE pi.product_id = p.id ORDER BY pi.is_main DESC, pi.id ASC LIMIT 1) AS image_path,
+                    ROUND(AVG(r.rating),1) AS avg_rating,
+                    COUNT(r.id) AS total_ratings
+             FROM ratings r
+             JOIN products p ON p.id = r.product_id
+             WHERE r.status = 'visible'
+             GROUP BY p.id, p.name
+             ORDER BY avg_rating ASC, total_ratings DESC LIMIT 1"
+        )->getRow();
+
         $data = [
             'title'                 => 'Dashboard | Admin',
             'startDate'             => $startDate,
@@ -297,10 +323,78 @@ class Dashboard extends BaseController
             'bestSellingProduct'    => $bestSellingProduct,
             'leastSellingProduct'   => $leastSellingProduct,
             'mostProfitableProduct' => $mostProfitableProduct,
+            'highestRatedProduct'   => $highestRatedProduct,
+            'lowestRatedProduct'    => $lowestRatedProduct,
             // Recent orders
             'recentOrders'          => $recentOrders,
         ];
 
         return view('admin/dashboard/index', $data);
+    }
+
+    /**
+     * Endpoint AJAX para filtrado interactivo tipo Power BI (Cross-Filtering)
+     */
+    public function filterData()
+    {
+        $startDate = trim((string)$this->request->getGet('start_date'));
+        $endDate   = trim((string)$this->request->getGet('end_date'));
+        $status    = trim((string)$this->request->getGet('status'));
+        $source    = trim((string)$this->request->getGet('source'));
+        $month     = trim((string)$this->request->getGet('month'));
+
+        $where = " WHERE 1=1 ";
+        if (!empty($startDate)) {
+            $where .= " AND created_at >= " . $this->db->escape($startDate . ' 00:00:00');
+        }
+        if (!empty($endDate)) {
+            $where .= " AND created_at <= " . $this->db->escape($endDate . ' 23:59:59');
+        }
+        if (!empty($status)) {
+            $where .= " AND status = " . $this->db->escape($status);
+        }
+        if (!empty($source)) {
+            $where .= " AND source = " . $this->db->escape($source);
+        }
+        if (!empty($month) && preg_match('/^\d{4}-\d{2}$/', $month)) {
+            $where .= " AND DATE_FORMAT(created_at, '%Y-%m') = " . $this->db->escape($month);
+        }
+
+        // Re-calcular KPIs con contexto
+        $salesTotal = (float) ($this->db->query(
+            "SELECT COALESCE(SUM(total),0) AS val FROM orders {$where} AND status != 'cancelado'"
+        )->getRow()->val ?? 0);
+
+        $totalOrders = (int) ($this->db->query("SELECT COUNT(*) AS cnt FROM orders {$where}")->getRow()->cnt ?? 0);
+
+        $pendingOrders = (int) ($this->db->query("SELECT COUNT(*) AS cnt FROM orders {$where} AND status = 'pendiente'")->getRow()->cnt ?? 0);
+
+        $totalProducts = (int) ($this->db->query(
+            "SELECT COALESCE(SUM(oi.quantity),0) AS cnt FROM order_items oi JOIN orders o ON o.id = oi.order_id {$where} AND o.status != 'cancelado'"
+        )->getRow()->cnt ?? 0);
+
+        // Desglose por estado
+        $ordersByStatus = $this->db->query(
+            "SELECT status, COUNT(*) AS cnt FROM orders {$where} GROUP BY status ORDER BY cnt DESC"
+        )->getResultArray();
+
+        return $this->response->setJSON([
+            'status' => 'success',
+            'context' => [
+                'startDate' => $startDate,
+                'endDate'   => $endDate,
+                'status'    => $status,
+                'source'    => $source,
+                'month'     => $month
+            ],
+            'kpis' => [
+                'salesTotal'          => $salesTotal,
+                'salesTotalFormatted' => '$' . number_format($salesTotal, 0, ',', '.'),
+                'totalOrders'         => $totalOrders,
+                'pendingOrders'       => $pendingOrders,
+                'totalProducts'       => $totalProducts
+            ],
+            'ordersByStatus' => $ordersByStatus
+        ]);
     }
 }

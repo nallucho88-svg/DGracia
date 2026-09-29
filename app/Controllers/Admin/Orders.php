@@ -12,14 +12,54 @@ class Orders extends BaseController
     public function index()
     {
         $orderModel = new OrderModel();
-        
-        // Obtenemos todas las órdenes, ordenadas por más reciente, pero dando prioridad visual a las 'pendientes'
-        // Esto se manejará desde la consulta ordenando por status = pendiente primero si queremos, o simplemente por created_at
-        $orders = $orderModel->orderBy('created_at', 'DESC')->findAll();
+
+        $startDate   = trim((string)$this->request->getGet('start_date'));
+        $endDate     = trim((string)$this->request->getGet('end_date'));
+        $orderNumber = trim((string)$this->request->getGet('order_number'));
+        $customer    = trim((string)$this->request->getGet('customer'));
+
+        if (!empty($startDate) && preg_match('/^\d{4}-\d{2}-\d{2}$/', $startDate)) {
+            $orderModel->where('created_at >=', $startDate . ' 00:00:00');
+        }
+        if (!empty($endDate) && preg_match('/^\d{4}-\d{2}-\d{2}$/', $endDate)) {
+            $orderModel->where('created_at <=', $endDate . ' 23:59:59');
+        }
+        if (!empty($orderNumber)) {
+            $cleanNum = ltrim($orderNumber, '#');
+            $orderModel->like('order_number', $cleanNum);
+        }
+        if (!empty($customer)) {
+            $orderModel->groupStart()
+                ->like('customer_name', $customer)
+                ->orLike('customer_email', $customer)
+                ->orLike('phone', $customer)
+                ->groupEnd();
+        }
+
+        $orders = $orderModel->orderBy('created_at', 'DESC')->paginate(10);
+        $pager  = $orderModel->pager;
+
+        $totalFiltered = $pager->getTotal();
+        $currentPage   = $pager->getCurrentPage();
+        $perPage       = $pager->getPerPage();
+
+        $fromItem = $totalFiltered > 0 ? (($currentPage - 1) * $perPage) + 1 : 0;
+        $toItem   = min($currentPage * $perPage, $totalFiltered);
+
+        $isFiltered = !empty($startDate) || !empty($endDate) || !empty($orderNumber) || !empty($customer);
 
         $data = [
-            'title' => 'Gestión de Pedidos | Admin',
-            'orders' => $orders
+            'title'         => 'Gestión de Pedidos | Admin',
+            'orders'        => $orders,
+            'pager'         => $pager,
+            'startDate'     => $startDate,
+            'endDate'       => $endDate,
+            'orderNumber'   => $orderNumber,
+            'customer'      => $customer,
+            'isFiltered'    => $isFiltered,
+            'totalFiltered' => $totalFiltered,
+            'fromItem'      => $fromItem,
+            'toItem'        => $toItem,
         ];
 
         return view('admin/orders/index', $data);

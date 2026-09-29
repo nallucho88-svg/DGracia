@@ -44,15 +44,15 @@
             <div class="col-lg-3 col-md-4 col-sm-6">
                 <div class="card card-dg h-100 position-relative">
                     <button type="button" 
-                            class="btn btn-light btn-sm rounded-circle position-absolute top-0 start-0 m-2 shadow-sm btn-toggle-favorite <?= (isset($userFavorites) && in_array((int)$p->id, $userFavorites)) ? 'is-favorite' : '' ?>"
+                            class="btn btn-light btn-sm rounded-circle position-absolute top-0 end-0 m-2 shadow-sm btn-toggle-favorite <?= (isset($userFavorites) && in_array((int)$p->id, $userFavorites)) ? 'is-favorite text-danger' : 'text-muted' ?>"
                             data-product-id="<?= $p->id ?>"
-                            style="z-index: 3; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center;"
+                            style="z-index: 3; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem;"
                             title="Guardar en favoritos">
-                        <i class="<?= (isset($userFavorites) && in_array((int)$p->id, $userFavorites)) ? 'fas fa-heart text-danger' : 'far fa-heart text-muted' ?>"></i>
+                        <?= (isset($userFavorites) && in_array((int)$p->id, $userFavorites)) ? '♥' : '♡' ?>
                     </button>
 
                     <?php if(isset($p->discount_info) && $p->discount_info['has_discount']): ?>
-                        <span class="badge bg-danger position-absolute top-0 end-0 m-2 px-2 py-1 fw-bold shadow-sm" style="z-index: 2;">
+                        <span class="badge bg-danger position-absolute top-0 start-0 m-2 px-2 py-1 fw-bold shadow-sm" style="z-index: 2;">
                             <?= $p->discount_info['discount_percentage'] ?>% OFF
                         </span>
                     <?php endif; ?>

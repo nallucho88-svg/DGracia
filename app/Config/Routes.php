@@ -43,6 +43,7 @@ $routes->post('olvide-contrasena', 'PasswordReset::sendResetLink');
 $routes->get('restablecer-contrasena/(:segment)', 'PasswordReset::resetForm/$1');
 $routes->post('restablecer-contrasena', 'PasswordReset::processReset');
 $routes->post('favorito/toggle', 'CustomerAccount::toggleFavorite');
+$routes->post('valoracion/guardar', 'CustomerAccount::saveRating');
 
 // Rutas Protegidas del Cliente (Filtro customerauth)
 $routes->group('mi-cuenta', ['filter' => 'customerauth'], static function ($routes) {
@@ -107,8 +108,24 @@ $routes->group('admin', ['namespace' => 'App\Controllers\Admin', 'filter' => 'ad
     $routes->match(['GET', 'POST'], 'banners', 'Banners::index');
     $routes->get('banners/eliminar/(:num)', 'Banners::delete/$1');
     
-    // Configuración
+    // Valoraciones / Reseñas
+    $routes->get('valoraciones', 'Ratings::index');
+    $routes->get('valoraciones/estado/(:num)/(:segment)', 'Ratings::changeStatus/$1/$2');
+    $routes->get('valoraciones/eliminar/(:num)', 'Ratings::delete/$1');
+
+    // Notificaciones
+    $routes->get('notificaciones', 'Notifications::index');
+    $routes->get('notificaciones/marcar-todas', 'Notifications::markAllRead');
+    $routes->get('notificaciones/leer/(:num)', 'Notifications::read/$1');
+
+    // Configuración avanzada (SMTP, Backups, Migraciones)
     $routes->match(['GET', 'POST'], 'configuracion', 'Settings::index');
+    $routes->post('configuracion/backup', 'Settings::createBackup');
+    $routes->post('configuracion/migrar', 'Settings::runMigrations');
+    $routes->post('configuracion/probar-smtp', 'Settings::testSmtp');
+
+    // Dashboard interactivo AJAX
+    $routes->get('dashboard/filtro-ajax', 'Dashboard::filterData');
 
     // Perfil del Administrador
     $routes->get('perfil', 'Profile::index');

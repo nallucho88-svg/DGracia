@@ -94,10 +94,11 @@ class EmailService
                 </div>
             </div>";
 
-            $email = Services::email();
-            $email->clear();
+            $email = self::getEmailClient();
             $email->setTo(implode(',', $recipients));
-            $email->setFrom(setting('contact_email', 'notificaciones@dulcegracia.com'), setting('site_name', 'Dulce Gracia'));
+            $fromEmail = setting('smtp_from_email', setting('contact_email', 'notificaciones@dulcegracia.com'));
+            $fromName  = setting('smtp_from_name', setting('site_name', 'Dulce Gracia'));
+            $email->setFrom($fromEmail, $fromName);
             $email->setSubject($subject);
             $email->setMessage($html);
             $email->setMailType('html');
@@ -142,10 +143,11 @@ class EmailService
                 </div>
             </div>";
 
-            $email = Services::email();
-            $email->clear();
+            $email = self::getEmailClient();
             $email->setTo($recipientEmail);
-            $email->setFrom(setting('contact_email', 'soporte@dulcegracia.com'), setting('site_name', 'Dulce Gracia'));
+            $fromEmail = setting('smtp_from_email', setting('contact_email', 'soporte@dulcegracia.com'));
+            $fromName  = setting('smtp_from_name', setting('site_name', 'Dulce Gracia'));
+            $email->setFrom($fromEmail, $fromName);
             $email->setSubject($subject);
             $email->setMessage($html);
             $email->setMailType('html');
@@ -155,5 +157,37 @@ class EmailService
             log_message('error', 'Error enviando correo de recuperación: ' . $e->getMessage());
             return false;
         }
+    }
+
+    /**
+     * Cliente de Email con configuración SMTP centralizada
+     */
+    public static function getEmailClient()
+    {
+        $config = [
+            'mailType' => 'html',
+            'charset'  => 'utf-8',
+            'CRLF'     => "\r\n",
+            'newline'  => "\r\n"
+        ];
+
+        $host   = setting('smtp_host', '');
+        $user   = setting('smtp_user', '');
+        $pass   = setting('smtp_pass', '');
+        $port   = setting('smtp_port', '');
+        $crypto = setting('smtp_crypto', '');
+
+        if (!empty($host) && !empty($user)) {
+            $config['protocol']   = 'smtp';
+            $config['SMTPHost']   = $host;
+            $config['SMTPUser']   = $user;
+            $config['SMTPPass']   = $pass;
+            $config['SMTPPort']   = (int) ($port ?: 587);
+            $config['SMTPCrypto'] = ($crypto === 'none') ? '' : ($crypto ?: 'tls');
+        }
+
+        $email = Services::email($config);
+        $email->clear(true);
+        return $email;
     }
 }

@@ -115,14 +115,14 @@ class Checkout extends BaseController
         $orderData = [
             'order_number'          => $orderNumber,
             'user_id'               => $userId,
-            'customer_name'         => trim($this->request->getPost('customer_name')),
-            'phone'                 => trim($this->request->getPost('phone')),
-            'whatsapp'              => trim($this->request->getPost('whatsapp')),
-            'customer_email'        => strtolower(trim($this->request->getPost('customer_email'))),
-            'address'               => trim($this->request->getPost('address')),
-            'neighborhood'          => trim($this->request->getPost('neighborhood')),
-            'city'                  => trim($this->request->getPost('city')) ?: 'Medellín',
-            'delivery_instructions' => trim($this->request->getPost('delivery_instructions')),
+            'customer_name'         => trim((string)$this->request->getPost('customer_name')),
+            'phone'                 => trim((string)$this->request->getPost('phone')),
+            'whatsapp'              => trim((string)$this->request->getPost('whatsapp')),
+            'customer_email'        => strtolower(trim((string)$this->request->getPost('customer_email'))),
+            'address'               => trim((string)$this->request->getPost('address')),
+            'neighborhood'          => trim((string)$this->request->getPost('neighborhood')),
+            'city'                  => trim((string)$this->request->getPost('city')) ?: 'Medellín',
+            'delivery_instructions' => trim((string)$this->request->getPost('delivery_instructions')),
             'delivery_date'         => date('Y-m-d'),
             'delivery_time'         => '',
             'delivery_type'         => $this->request->getPost('delivery_type'),
@@ -137,7 +137,7 @@ class Checkout extends BaseController
             'payment_status'        => 'pendiente',
             'status'                => 'pendiente',
             'source'                => 'web',
-            'notes'                 => trim($this->request->getPost('notes'))
+            'notes'                 => trim((string)$this->request->getPost('notes'))
         ];
 
         $db = \Config\Database::connect();
@@ -185,6 +185,7 @@ class Checkout extends BaseController
         }
 
         // Registrar uso de cupón en coupon_logs
+        $couponCode = $summary['coupon_code'] ?? null;
         if ($couponCode && !empty($appliedCoupon['coupon'])) {
             $cModel = new \App\Models\CouponModel();
             $cModel->where('code', $couponCode)->set('used_count', 'used_count+1', false)->update();
@@ -212,6 +213,14 @@ class Checkout extends BaseController
             $userCartModel->clearUserCart($userId);
         }
 
+        // Notificación interna en el panel Admin
+        \App\Models\NotificationModel::createNotification(
+            'order',
+            '🛍️ Nuevo Pedido #' . $orderNumber,
+            'Pedido por $' . number_format($summary['final_total'], 0, ',', '.') . ' registrado por ' . $orderData['customer_name'],
+            base_url('admin/pedidos/ver/' . $orderId)
+        );
+
         // Notificación por correo a administradores
         try {
             $createdOrder = $orderModel->find($orderId);
@@ -228,16 +237,37 @@ class Checkout extends BaseController
 
     public function success($orderNumber)
     {
-        $orderModel = new OrderModel();
+        $orderModel     = new OrderModel();
+        $orderItemModel = new OrderItemModel();
+        $ratingModel    = new \App\Models\RatingModel();
+
         $order = $orderModel->where('order_number', $orderNumber)->first();
 
         if (!$order) {
             return redirect()->to(base_url());
         }
 
+        $items = $orderItemModel->where('order_id', $order->id)->findAll();
+        foreach ($items as &$item) {
+            $item->rating = $ratingModel->where('order_item_id', $item->id)->first();
+        }
+
+        $statuses = [
+            'pendiente'     => ['label' => 'Pedido Recibido', 'icon' => 'fa-clipboard-check', 'step' => 1],
+            'en preparacion'=> ['label' => 'En Preparación', 'icon' => 'fa-blender', 'step' => 2],
+            'enviado'       => ['label' => 'En Camino', 'icon' => 'fa-motorcycle', 'step' => 3],
+            'entregado'     => ['label' => 'Entregado', 'icon' => 'fa-check-circle', 'step' => 4],
+            'cancelado'     => ['label' => 'Cancelado', 'icon' => 'fa-times-circle', 'step' => 0]
+        ];
+
+        $currentStep = $statuses[$order->status]['step'] ?? 1;
+
         $data = [
-            'title' => 'Pedido Confirmado | Dulce Gracia',
-            'order' => $order
+            'title'       => 'Pedido Confirmado | Dulce Gracia',
+            'order'       => $order,
+            'items'       => $items,
+            'statuses'    => $statuses,
+            'currentStep' => $currentStep
         ];
 
         return view('checkout/success', $data);

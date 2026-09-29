@@ -196,3 +196,76 @@ const DGAlert = (function () {
         }
     };
 })();
+
+// Inicializador del centro de notificaciones admin (Top bar 🔔)
+document.addEventListener('DOMContentLoaded', function () {
+    const badgeEl = document.getElementById('notifBadgeCount');
+    const containerEl = document.getElementById('notifListContainer');
+    const markAllBtn = document.getElementById('btnMarkAllRead');
+
+    if (!badgeEl || !containerEl) return;
+
+    function fetchNotifications() {
+        const baseUrl = window.location.origin;
+        fetch(baseUrl + '/admin/notificaciones')
+            .then(res => res.json())
+            .then(data => {
+                if (data.status === 'success') {
+                    // Actualizar badge
+                    if (data.unread_count > 0) {
+                        badgeEl.textContent = data.unread_count;
+                        badgeEl.classList.remove('d-none');
+                    } else {
+                        badgeEl.classList.add('d-none');
+                    }
+
+                    // Renderizar lista
+                    if (!data.notifications || data.notifications.length === 0) {
+                        containerEl.innerHTML = '<div class="p-4 text-center text-muted small">No tienes notificaciones recientes.</div>';
+                        return;
+                    }
+
+                    let html = '';
+                    data.notifications.forEach(n => {
+                        const isUnread = (parseInt(n.is_read) === 0);
+                        const bgClass = isUnread ? 'bg-light font-weight-bold' : '';
+                        const icon = n.type === 'order' ? 'fa-shopping-bag text-primary' : (n.type === 'contact' ? 'fa-envelope text-warning' : 'fa-bell text-info');
+                        const targetUrl = baseUrl + '/admin/notificaciones/leer/' + n.id;
+                        
+                        html += `
+                        <a href="${targetUrl}" class="list-group-item list-group-item-action p-3 ${bgClass} border-bottom">
+                            <div class="d-flex align-items-start gap-2">
+                                <div class="rounded-circle bg-white p-2 border shadow-sm">
+                                    <i class="fas ${icon}"></i>
+                                </div>
+                                <div class="flex-grow-1">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <small class="fw-bold text-dark mb-0">${n.title}</small>
+                                        ${isUnread ? '<span class="badge bg-primary rounded-pill style="font-size:8px;">Nueva</span>' : ''}
+                                    </div>
+                                    <p class="mb-1 text-muted small" style="font-size: 11px;">${n.message}</p>
+                                    <small class="text-muted" style="font-size: 9px;">${n.created_at || ''}</small>
+                                </div>
+                            </div>
+                        </a>`;
+                    });
+
+                    containerEl.innerHTML = html;
+                }
+            })
+            .catch(err => console.warn('Error fetching admin notifications:', err));
+    }
+
+    fetchNotifications();
+
+    if (markAllBtn) {
+        markAllBtn.addEventListener('click', function (e) {
+            e.preventDefault();
+            const baseUrl = window.location.origin;
+            fetch(baseUrl + '/admin/notificaciones/marcar-todas')
+                .then(res => res.json())
+                .then(() => fetchNotifications())
+                .catch(err => console.error(err));
+        });
+    }
+});

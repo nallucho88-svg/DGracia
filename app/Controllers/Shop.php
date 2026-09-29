@@ -102,11 +102,13 @@ class Shop extends BaseController
 
     public function product($slug)
     {
-        $productModel = new ProductModel();
-        $imageModel = new ProductImageModel();
+        $productModel  = new ProductModel();
+        $imageModel    = new ProductImageModel();
         $categoryModel = new CategoryModel();
 
-        $product = $productModel->where('slug', $slug)->first();
+        $product = is_numeric($slug)
+            ? $productModel->where('id', (int)$slug)->orWhere('slug', $slug)->first()
+            : $productModel->where('slug', $slug)->first();
 
         if (!$product) {
             throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound();
@@ -127,12 +129,26 @@ class Shop extends BaseController
             $isFavorite = (bool) $isFav;
         }
 
+        $ratingModel = new \App\Models\RatingModel();
+        $ratingSummary = $ratingModel->getProductRatingSummary($product->id);
+
+        $db = \Config\Database::connect();
+        $reviews = $db->table('ratings r')
+            ->select('r.*, u.name as customer_name')
+            ->join('users u', 'u.id = r.user_id', 'left')
+            ->where('r.product_id', $product->id)
+            ->where('r.status', 'visible')
+            ->orderBy('r.created_at', 'DESC')
+            ->get()->getResultArray();
+
         $data = [
-            'title'      => $product->name . ' | Dulce Gracia',
-            'product'    => $product,
-            'images'     => $images,
-            'category'   => $category,
-            'isFavorite' => $isFavorite
+            'title'         => $product->name . ' | Dulce Gracia',
+            'product'       => $product,
+            'images'        => $images,
+            'category'      => $category,
+            'isFavorite'    => $isFavorite,
+            'ratingSummary' => $ratingSummary,
+            'reviews'       => $reviews
         ];
 
         return view('shop/detail', $data);

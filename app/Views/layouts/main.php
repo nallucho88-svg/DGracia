@@ -18,6 +18,7 @@ foreach ($rawSettings as $rs) {
     <meta name="base-url" content="<?= base_url() ?>">
     <meta name="description" content="<?= esc($siteDesc) ?>">
     <title><?= isset($title) ? esc($title) : esc($siteName) ?></title>
+    <?= $this->renderSection('og_meta') ?>
     <?php if(!empty($faviconPath)): ?>
     <link rel="icon" type="image/x-icon" href="<?= base_url($faviconPath) ?>">
     <?php endif; ?>

@@ -240,10 +240,16 @@ document.addEventListener('DOMContentLoaded', function() {
                 const icon = favBtn.querySelector('i');
                 if (res.is_favorite) {
                     if (icon) icon.className = 'fas fa-heart text-danger';
+                    else favBtn.textContent = '♥';
                     favBtn.classList.add('is-favorite');
+                    favBtn.classList.add('text-danger');
+                    favBtn.classList.remove('text-muted');
                 } else {
                     if (icon) icon.className = 'far fa-heart text-muted';
+                    else favBtn.textContent = '♡';
                     favBtn.classList.remove('is-favorite');
+                    favBtn.classList.remove('text-danger');
+                    favBtn.classList.add('text-muted');
                 }
 
                 if (typeof DGAlert !== 'undefined') {

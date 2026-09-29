@@ -33,9 +33,15 @@
                                 <tr id="cart-row-<?= $item['id'] ?>">
                                     <td>
                                         <div class="d-flex align-items-center">
-                                            <img src="<?= $item['image'] ?>" alt="<?= esc($item['name']) ?>" class="img-thumbnail rounded-3 me-3" style="width: 60px; height: 60px; object-fit: cover;">
+                                            <a href="<?= base_url('producto/' . (!empty($item['slug']) ? $item['slug'] : $item['id'])) ?>" class="d-inline-block text-decoration-none">
+                                                <img src="<?= $item['image'] ?>" alt="<?= esc($item['name']) ?>" class="img-thumbnail rounded-3 me-3" style="width: 60px; height: 60px; object-fit: cover;">
+                                            </a>
                                             <div>
-                                                <h6 class="mb-0 fw-bold"><?= esc($item['name']) ?></h6>
+                                                <h6 class="mb-0 fw-bold">
+                                                    <a href="<?= base_url('producto/' . (!empty($item['slug']) ? $item['slug'] : $item['id'])) ?>" class="text-decoration-none text-dark hover-primary">
+                                                        <?= esc($item['name']) ?>
+                                                    </a>
+                                                </h6>
                                             </div>
                                         </div>
                                     </td>
