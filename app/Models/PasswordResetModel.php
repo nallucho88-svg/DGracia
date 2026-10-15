@@ -18,5 +18,5 @@ class PasswordResetModel extends Model
     protected $useTimestamps = true;
     protected $dateFormat    = 'datetime';
     protected $createdField  = 'created_at';
-    protected $updatedField  = false;
+    protected $updatedField  = '';
 }

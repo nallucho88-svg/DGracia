@@ -22,6 +22,7 @@ class Settings extends BaseController
                     $newName = 'favicon_' . time() . '.' . $ext;
                     $favicon->move(FCPATH . 'uploads/settings', $newName);
                     $settingsData['site_favicon'] = base_url('uploads/settings/' . $newName);
+                    $settingsData['favicon_path'] = 'uploads/settings/' . $newName;
                 }
             }
 
@@ -67,6 +68,7 @@ class Settings extends BaseController
             'site_name', 'site_description', 'site_favicon', 'site_logo',
             'header_text', 'hero_title', 'hero_subtitle', 'hero_bg_image',
             'contact_address', 'contact_phone', 'contact_whatsapp', 'contact_email',
+            'admin_notification_email',
             'business_hours', 'social_instagram', 'social_facebook', 'discount_stackable_mode',
             'alert_sound_enabled',
             'points_system_enabled', 'point_purchase_amount', 'point_reward_qty',

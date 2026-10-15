@@ -221,12 +221,15 @@ class Checkout extends BaseController
             base_url('admin/pedidos/ver/' . $orderId)
         );
 
-        // Notificación por correo a administradores
+        // Notificaciones por correo a administradores y cliente
         try {
             $createdOrder = $orderModel->find($orderId);
             $createdItems = $orderItemModel->where('order_id', $orderId)->findAll();
             if ($createdOrder && !empty($createdItems)) {
+                // 1. Correo de nueva compra a administradores (FASE 5)
                 \App\Libraries\EmailService::sendOrderNotificationToAdmins($createdOrder, $createdItems);
+                // 2. Correo de compra al cliente con enlace de seguimiento (FASE 4)
+                \App\Libraries\EmailService::sendOrderConfirmationToCustomer($createdOrder, $createdItems);
             }
         } catch (\Throwable $e) {
             log_message('error', 'Error disparando correo de checkout: ' . $e->getMessage());

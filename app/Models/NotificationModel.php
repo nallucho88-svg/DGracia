@@ -42,7 +42,49 @@ class NotificationModel extends Model
             return true;
         } catch (\Throwable $e) {
             log_message('error', 'Error creando notificación: ' . $e->getMessage());
-            return false;
+        }
+    }
+
+    /**
+     * Verificar y generar notificaciones para ofertas próximas a vencer (FASE 7)
+     */
+    public static function checkExpiringOffers(): void
+    {
+        try {
+            $db = \Config\Database::connect();
+            $now = date('Y-m-d H:i:s');
+            $inThreeDays = date('Y-m-d H:i:s', strtotime('+3 days'));
+            $todayDate = date('Y-m-d');
+
+            // Consultar ofertas activas que vencen en los próximos 3 días
+            $expiringDiscounts = $db->table('discounts')
+                ->where('status', 1)
+                ->where('end_date >=', $now)
+                ->where('end_date <=', $inThreeDays)
+                ->get()
+                ->getResult();
+
+            $notifModel = new self();
+
+            foreach ($expiringDiscounts as $disc) {
+                // Control anti-duplicados: verificar si ya se notificó esta oferta el día de hoy
+                $existing = $notifModel->where('type', 'offer_expiring')
+                    ->like('title', $disc->title)
+                    ->where('DATE(created_at)', $todayDate)
+                    ->first();
+
+                if (!$existing) {
+                    $formattedEndDate = date('d/m/Y', strtotime($disc->end_date));
+                    self::createNotification(
+                        'offer_expiring',
+                        '⏰ Oferta próxima a vencer: ' . $disc->title,
+                        'La oferta "' . $disc->title . '" vence pronto el ' . $formattedEndDate . '.',
+                        base_url('admin/descuentos')
+                    );
+                }
+            }
+        } catch (\Throwable $e) {
+            log_message('error', 'Error verificando ofertas por vencer: ' . $e->getMessage());
         }
     }
 }

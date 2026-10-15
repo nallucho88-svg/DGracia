@@ -98,7 +98,7 @@ class Orders extends BaseController
     {
         if ($this->request->isAJAX()) {
             $id = $this->request->getPost('order_id');
-            $status = $this->request->getPost('status');
+            $status = strtolower(trim((string)$this->request->getPost('status')));
             
             $validStatuses = ['pendiente', 'en preparacion', 'enviado', 'entregado', 'cancelado'];
 
@@ -107,8 +107,27 @@ class Orders extends BaseController
             }
 
             $orderModel = new OrderModel();
-            
+            $order = $orderModel->find($id);
+
+            if (!$order) {
+                return $this->response->setStatusCode(444)->setJSON(['status' => 'error', 'message' => 'Pedido no encontrado.']);
+            }
+
+            $previousStatus = strtolower($order->status ?? '');
+
             if ($orderModel->update($id, ['status' => $status])) {
+                // FASE 6: Enviar correo automático SOLO cuando el estado cambia REALMENTE a "entregado"
+                if ($previousStatus !== 'entregado' && $status === 'entregado') {
+                    try {
+                        $updatedOrder = $orderModel->find($id);
+                        if ($updatedOrder) {
+                            \App\Libraries\EmailService::sendOrderDeliveredEmail($updatedOrder);
+                        }
+                    } catch (\Throwable $e) {
+                        log_message('error', 'Error disparando correo de pedido entregado: ' . $e->getMessage());
+                    }
+                }
+
                 return $this->response->setJSON(['status' => 'success', 'message' => 'Estado actualizado correctamente.']);
             }
             

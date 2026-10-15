@@ -97,6 +97,12 @@
                 </div>
             <?php endif; ?>
             
+            <?php if(session()->has('info')): ?>
+                <div class="alert alert-info rounded-3 p-2 text-center small">
+                    <?= session('info') ?>
+                </div>
+            <?php endif; ?>
+
             <?php if(session()->has('success')): ?>
                 <div class="alert alert-success rounded-3 p-2 text-center small">
                     <?= session('success') ?>
@@ -115,7 +121,10 @@
                 </div>
                 
                 <div class="mb-4">
-                    <label class="form-label text-muted small fw-bold">Contraseña</label>
+                    <div class="d-flex justify-content-between align-items-center mb-1">
+                        <label class="form-label text-muted small fw-bold mb-0">Contraseña</label>
+                        <a href="<?= base_url('admin/olvide-contrasena') ?>" class="text-decoration-none small text-muted">¿Olvidaste tu contraseña?</a>
+                    </div>
                     <div class="input-group">
                         <span class="input-group-text bg-white border-end-0 text-muted"><i class="fas fa-lock"></i></span>
                         <input type="password" class="form-control border-start-0 ps-0" name="password" required placeholder="••••••••">

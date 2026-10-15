@@ -1,4 +1,17 @@
 <IfModule mod_rewrite.c>
     RewriteEngine On
+
+    # Redirigir hacia la carpeta public/ sin entrar en bucle infinito
+    RewriteCond %{REQUEST_URI} !/public/ [NC]
     RewriteRule ^(.*)$ public/$1 [L]
 </IfModule>
+
+# Proteger archivo de configuración .env
+<Files ".env">
+    <IfModule authz_core_module>
+        Require all denied
+    </IfModule>
+    <IfModule !authz_core_module>
+        Deny from all
+    </IfModule>
+</Files>

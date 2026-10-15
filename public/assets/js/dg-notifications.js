@@ -205,13 +205,26 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (!badgeEl || !containerEl) return;
 
+    function getBaseUrl() {
+        const meta = document.querySelector('meta[name="base-url"]');
+        if (meta && meta.getAttribute('content')) {
+            let url = meta.getAttribute('content');
+            return url.endsWith('/') ? url : url + '/';
+        }
+        return window.location.origin + '/';
+    }
+
     function fetchNotifications() {
-        const baseUrl = window.location.origin;
-        fetch(baseUrl + '/admin/notificaciones')
+        if (document.visibilityState && document.visibilityState !== 'visible') {
+            return; // No realizar polling si la pestaña está inactiva
+        }
+
+        const baseUrl = getBaseUrl();
+        fetch(baseUrl + 'admin/notificaciones')
             .then(res => res.json())
             .then(data => {
                 if (data.status === 'success') {
-                    // Actualizar badge
+                    // Actualizar contador badge (FASE 7.5)
                     if (data.unread_count > 0) {
                         badgeEl.textContent = data.unread_count;
                         badgeEl.classList.remove('d-none');
@@ -219,7 +232,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         badgeEl.classList.add('d-none');
                     }
 
-                    // Renderizar lista
+                    // Renderizar lista de notificaciones dinámicas (FASE 7.1)
                     if (!data.notifications || data.notifications.length === 0) {
                         containerEl.innerHTML = '<div class="p-4 text-center text-muted small">No tienes notificaciones recientes.</div>';
                         return;
@@ -229,11 +242,17 @@ document.addEventListener('DOMContentLoaded', function () {
                     data.notifications.forEach(n => {
                         const isUnread = (parseInt(n.is_read) === 0);
                         const bgClass = isUnread ? 'bg-light font-weight-bold' : '';
-                        const icon = n.type === 'order' ? 'fa-shopping-bag text-primary' : (n.type === 'contact' ? 'fa-envelope text-warning' : 'fa-bell text-info');
-                        const targetUrl = baseUrl + '/admin/notificaciones/leer/' + n.id;
+                        
+                        let icon = 'fa-bell text-info';
+                        if (n.type === 'order') icon = 'fa-shopping-bag text-primary';
+                        else if (n.type === 'offer_expiring') icon = 'fa-percentage text-danger';
+                        else if (n.type === 'rating') icon = 'fa-star text-warning';
+                        else if (n.type === 'contact') icon = 'fa-envelope-open-text text-info';
+
+                        const targetUrl = baseUrl + 'admin/notificaciones/leer/' + n.id;
                         
                         html += `
-                        <a href="${targetUrl}" class="list-group-item list-group-item-action p-3 ${bgClass} border-bottom">
+                        <a href="${targetUrl}" class="list-group-item list-group-item-action p-3 ${bgClass} border-bottom text-decoration-none">
                             <div class="d-flex align-items-start gap-2">
                                 <div class="rounded-circle bg-white p-2 border shadow-sm">
                                     <i class="fas ${icon}"></i>
@@ -241,7 +260,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                 <div class="flex-grow-1">
                                     <div class="d-flex justify-content-between align-items-center">
                                         <small class="fw-bold text-dark mb-0">${n.title}</small>
-                                        ${isUnread ? '<span class="badge bg-primary rounded-pill style="font-size:8px;">Nueva</span>' : ''}
+                                        ${isUnread ? '<span class="badge bg-danger rounded-pill style="font-size:8px;">Nueva</span>' : ''}
                                     </div>
                                     <p class="mb-1 text-muted small" style="font-size: 11px;">${n.message}</p>
                                     <small class="text-muted" style="font-size: 9px;">${n.created_at || ''}</small>
@@ -258,11 +277,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
     fetchNotifications();
 
+    // Polling en vivo cada 20 segundos sin refrescar página (FASE 7.3 & 7.4)
+    setInterval(fetchNotifications, 20000);
+
     if (markAllBtn) {
         markAllBtn.addEventListener('click', function (e) {
             e.preventDefault();
-            const baseUrl = window.location.origin;
-            fetch(baseUrl + '/admin/notificaciones/marcar-todas')
+            const baseUrl = getBaseUrl();
+            fetch(baseUrl + 'admin/notificaciones/marcar-todas')
                 .then(res => res.json())
                 .then(() => fetchNotifications())
                 .catch(err => console.error(err));

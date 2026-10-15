@@ -9,10 +9,13 @@ class Notifications extends BaseController
 {
     public function index()
     {
+        // FASE 7: Escanear y generar notificaciones de ofertas por vencer
+        NotificationModel::checkExpiringOffers();
+
         $model = new NotificationModel();
         
         $unreadCount = $model->where('is_read', 0)->countAllResults();
-        $recent = $model->orderBy('created_at', 'DESC')->limit(10)->findAll();
+        $recent = $model->orderBy('created_at', 'DESC')->limit(15)->findAll();
 
         return $this->response->setJSON([
             'status'       => 'success',

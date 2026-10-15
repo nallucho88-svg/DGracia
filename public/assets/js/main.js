@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const baseUrl = document.querySelector('meta[name="base-url"]')?.getAttribute('content') || (window.location.origin + '/DGracia/public/');
+    const baseUrl = document.querySelector('meta[name="base-url"]')?.getAttribute('content') || (window.location.origin + '/');
 
     // Hover & Click logic for Mini Cart Dropdown
     const miniCartWrapper = document.getElementById('miniCartWrapper');
@@ -22,10 +22,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
 
-        // Click / Tap for touch devices
-        miniCartTrigger.addEventListener('click', function(e) {
-            fetchMiniCart();
-        });
     }
 
     // Function to fetch mini cart HTML/JSON

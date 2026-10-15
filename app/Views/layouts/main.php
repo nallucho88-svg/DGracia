@@ -1,7 +1,9 @@
 <?php
 $siteName = setting('site_name', 'Dulce Gracia');
 $siteDesc = setting('site_description', 'Endulzamos tus momentos especiales.');
-$faviconPath = setting('favicon_path', '');
+$siteFavicon = setting('site_favicon', setting('favicon_path', ''));
+$siteLogo    = setting('site_logo', setting('store_logo', ''));
+
 // Build $settings array for footer social/contact links
 $settingModel = new \App\Models\SettingModel();
 $rawSettings = $settingModel->findAll();
@@ -19,8 +21,10 @@ foreach ($rawSettings as $rs) {
     <meta name="description" content="<?= esc($siteDesc) ?>">
     <title><?= isset($title) ? esc($title) : esc($siteName) ?></title>
     <?= $this->renderSection('og_meta') ?>
-    <?php if(!empty($faviconPath)): ?>
-    <link rel="icon" type="image/x-icon" href="<?= base_url($faviconPath) ?>">
+    <?php if(!empty($siteFavicon)): 
+        $favUrl = (strpos($siteFavicon, 'http://') === 0 || strpos($siteFavicon, 'https://') === 0) ? $siteFavicon : base_url($siteFavicon);
+    ?>
+    <link rel="icon" type="image/x-icon" href="<?= esc($favUrl) ?>?v=<?= time() ?>">
     <?php endif; ?>
     
     <!-- Google Fonts -->
@@ -50,7 +54,15 @@ foreach ($rawSettings as $rs) {
     <!-- Header / Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dg sticky-top">
         <div class="container">
-            <a class="navbar-brand" href="<?= base_url() ?>"><?= esc($siteName) ?></a>
+            <a class="navbar-brand d-flex align-items-center" href="<?= base_url() ?>">
+                <?php if (!empty($siteLogo)): 
+                    $logoUrl = (strpos($siteLogo, 'http://') === 0 || strpos($siteLogo, 'https://') === 0) ? $siteLogo : base_url($siteLogo);
+                ?>
+                    <img src="<?= esc($logoUrl) ?>" alt="<?= esc($siteName) ?>" class="img-fluid" style="max-height: 48px; object-fit: contain;">
+                <?php else: ?>
+                    <?= esc($siteName) ?>
+                <?php endif; ?>
+            </a>
             
             <!-- Botón hamburguesa móvil -->
             <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
@@ -68,7 +80,7 @@ foreach ($rawSettings as $rs) {
                 <div class="d-flex align-items-center gap-3">
                     <!-- Ícono de Carrito con Mini-Carrito Dropdown -->
                     <div class="dropdown position-relative" id="miniCartWrapper">
-                        <a href="<?= base_url('carrito') ?>" class="text-decoration-none position-relative d-inline-block p-1" style="color: var(--dg-primary);" id="miniCartTrigger" data-bs-toggle="dropdown" aria-expanded="false" title="Mi Carrito">
+                        <a href="<?= base_url('carrito') ?>" class="text-decoration-none position-relative d-inline-block p-1" style="color: var(--dg-primary);" id="miniCartTrigger" title="Mi Carrito">
                             <i class="fas fa-shopping-cart fs-4"></i>
                             <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" id="cart-counter">
                                 0
@@ -131,7 +143,15 @@ foreach ($rawSettings as $rs) {
         <div class="container">
             <div class="row gy-4">
                 <div class="col-lg-4 col-md-6">
-                    <h3 style="font-family: var(--font-heading); color: var(--dg-white); font-weight: 700;"><?= esc($siteName) ?></h3>
+                    <?php if (!empty($siteLogo)): 
+                        $footerLogoUrl = (strpos($siteLogo, 'http://') === 0 || strpos($siteLogo, 'https://') === 0) ? $siteLogo : base_url($siteLogo);
+                    ?>
+                        <a href="<?= base_url() ?>" class="d-inline-block mb-3">
+                            <img src="<?= esc($footerLogoUrl) ?>" alt="<?= esc($siteName) ?>" class="img-fluid" style="max-height: 55px; object-fit: contain;">
+                        </a>
+                    <?php else: ?>
+                        <h3 style="font-family: var(--font-heading); color: var(--dg-white); font-weight: 700;"><?= esc($siteName) ?></h3>
+                    <?php endif; ?>
                     <p><?= esc($siteDesc) ?></p>
                     <div class="d-flex gap-3 mt-3">
                         <?php if(!empty($settings['social_facebook'])): ?>

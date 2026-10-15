@@ -298,6 +298,14 @@ class CustomerAccount extends BaseController
             'status'        => 'visible'
         ]);
 
+        // Crear notificación para administradores (FASE 7)
+        \App\Models\NotificationModel::createNotification(
+            'rating',
+            '⭐ Nueva valoración (' . $ratingVal . '★)',
+            'Nuevo comentario en ' . $item->product_name . (!empty($comment) ? ': "' . mb_strimwidth(strip_tags($comment), 0, 45, '...') . '"' : ''),
+            base_url('admin/valoraciones')
+        );
+
         $successMsg = '¡Muchas gracias por calificar tu producto!';
 
         if ($this->request->isAJAX()) {

@@ -63,6 +63,10 @@ $routes->group('admin', ['namespace' => 'App\Controllers\Admin'], static functio
     $routes->get('login', 'Auth::login');
     $routes->post('login/process', 'Auth::processLogin');
     $routes->get('logout', 'Auth::logout');
+    $routes->get('olvide-contrasena', 'Auth::forgotForm');
+    $routes->post('olvide-contrasena', 'Auth::sendResetLink');
+    $routes->get('restablecer-contrasena/(:segment)', 'Auth::resetForm/$1');
+    $routes->post('restablecer-contrasena', 'Auth::processReset');
 });
 
 // Rutas del Panel Administrativo Protegidas (Con filtro adminauth)

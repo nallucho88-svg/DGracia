@@ -3,7 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="base-url" content="<?= base_url() ?>">
     <title><?= esc($title ?? 'Admin | Dulce Gracia') ?></title>
+    <?php 
+    $siteFavicon = setting('site_favicon', setting('favicon_path', ''));
+    if(!empty($siteFavicon)): 
+        $favUrl = (strpos($siteFavicon, 'http://') === 0 || strpos($siteFavicon, 'https://') === 0) ? $siteFavicon : base_url($siteFavicon);
+    ?>
+    <link rel="icon" type="image/x-icon" href="<?= esc($favUrl) ?>?v=<?= time() ?>">
+    <?php endif; ?>
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <!-- Bootstrap CSS -->

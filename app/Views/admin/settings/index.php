@@ -252,12 +252,17 @@
                             </select>
                         </div>
                         <div class="col-md-6 border-top pt-3">
-                            <label class="form-label fw-bold">From Email (Remitente)</label>
+                            <label class="form-label fw-bold">From Email (Remitente desde el que salen los correos)</label>
                             <input type="email" class="form-control" name="settings[smtp_from_email]" value="<?= esc($settings['smtp_from_email'] ?? '') ?>" placeholder="notificaciones@dulcegracia.com">
                         </div>
                         <div class="col-md-6 border-top pt-3">
                             <label class="form-label fw-bold">From Name (Nombre del Remitente)</label>
                             <input type="text" class="form-control" name="settings[smtp_from_name]" value="<?= esc($settings['smtp_from_name'] ?? 'Dulce Gracia') ?>" placeholder="Dulce Gracia Repostería">
+                        </div>
+                        <div class="col-md-12 border-top pt-3">
+                            <label class="form-label fw-bold"><i class="fas fa-envelope-open-text me-2 text-primary"></i>Correo de Notificaciones para Administrador (Destinatario de avisos de compras)</label>
+                            <input type="email" class="form-control" name="settings[admin_notification_email]" value="<?= esc($settings['admin_notification_email'] ?? '') ?>" placeholder="pedidos@dulcegracia.com">
+                            <small class="text-muted">Correo electrónico que recibirá las notificaciones automáticas cada vez que un cliente realice una nueva compra.</small>
                         </div>
                     </div>
                 </div>
