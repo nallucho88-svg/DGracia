@@ -1,0 +1,181 @@
+:root {
+    /* Paleta de colores elegante - Dulce Gracia */
+    --dg-primary: #5D4037;       /* Marrón/Chocolate principal */
+    --dg-secondary: #F8BBD0;     /* Rosado suave elegante */
+    --dg-accent: #D4AF37;        /* Dorado discreto para detalles/botones especiales */
+    --dg-bg-cream: #FDFBF7;      /* Crema muy claro para el fondo principal */
+    --dg-text-dark: #3E2723;     /* Texto oscuro (chocolate intenso) */
+    --dg-text-light: #FFFFFF;    /* Texto claro */
+    --dg-white: #FFFFFF;         /* Blanco puro para tarjetas */
+    --dg-hover: #4E342E;         /* Hover oscuro */
+
+    /* Tipografía */
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Lato', sans-serif;
+    
+    /* Transiciones */
+    --transition-smooth: all 0.3s ease-in-out;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--dg-bg-cream);
+    color: var(--dg-text-dark);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: var(--dg-primary);
+}
+
+/* Navbar Personalizada */
+.navbar-dg {
+    background-color: var(--dg-white);
+    box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+    padding: 1rem 0;
+}
+
+.navbar-dg .navbar-brand {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    color: var(--dg-primary);
+    font-weight: 700;
+}
+
+.navbar-dg .nav-link {
+    color: var(--dg-text-dark);
+    font-weight: 500;
+    transition: var(--transition-smooth);
+    margin: 0 0.5rem;
+    position: relative;
+}
+
+.navbar-dg .nav-link:hover {
+    color: var(--dg-primary);
+}
+
+/* Subrayado animado en el navbar */
+.navbar-dg .nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background-color: var(--dg-accent);
+    transition: var(--transition-smooth);
+    transform: translateX(-50%);
+}
+
+.navbar-dg .nav-link:hover::after {
+    width: 100%;
+}
+
+/* Botones */
+.btn-dg-primary {
+    background-color: var(--dg-primary);
+    color: var(--dg-white);
+    border: none;
+    border-radius: 25px;
+    padding: 10px 25px;
+    font-weight: 600;
+    transition: var(--transition-smooth);
+    box-shadow: 0 4px 6px rgba(93, 64, 55, 0.2);
+}
+
+.btn-dg-primary:hover {
+    background-color: var(--dg-hover);
+    color: var(--dg-white);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(93, 64, 55, 0.3);
+}
+
+.btn-dg-accent {
+    background-color: var(--dg-accent);
+    color: var(--dg-white);
+    border: none;
+    border-radius: 25px;
+    padding: 10px 25px;
+    font-weight: 600;
+    transition: var(--transition-smooth);
+    box-shadow: 0 4px 6px rgba(212, 175, 55, 0.3);
+}
+
+.btn-dg-accent:hover {
+    background-color: #C5A028;
+    color: var(--dg-white);
+    transform: translateY(-2px);
+}
+
+/* Footer */
+.footer-dg {
+    background-color: var(--dg-primary);
+    color: var(--dg-bg-cream);
+    padding: 4rem 0 2rem;
+    margin-top: 5rem;
+}
+
+.footer-dg h5 {
+    color: var(--dg-accent);
+    margin-bottom: 1.5rem;
+}
+
+.footer-dg a {
+    color: var(--dg-bg-cream);
+    text-decoration: none;
+    transition: var(--transition-smooth);
+}
+
+.footer-dg a:hover {
+    color: var(--dg-accent);
+}
+
+/* WhatsApp Flotante */
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 30px;
+    right: 30px;
+    background-color: #25d366;
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 35px;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.15);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition-smooth);
+    text-decoration: none;
+    animation: pulse-wa 2s infinite;
+}
+
+.whatsapp-float:hover {
+    background-color: #128C7E;
+    color: #FFF;
+    transform: scale(1.1);
+}
+
+@keyframes pulse-wa {
+    0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); }
+    70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+
+/* Tarjetas base para Catálogo */
+.card-dg {
+    border: none;
+    border-radius: 12px;
+    background-color: var(--dg-white);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.04);
+    transition: var(--transition-smooth);
+    overflow: hidden;
+}
+
+.card-dg:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}

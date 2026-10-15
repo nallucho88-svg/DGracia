@@ -1,13 +1,24 @@
-<IfModule mod_rewrite.c>
-    RewriteEngine On
+# ======================================================================
+# CodeIgniter 4 - Root .htaccess
+# ======================================================================
 
-    # Redirigir hacia la carpeta public/ sin entrar en bucle infinito
-    RewriteCond %{REQUEST_URI} !/public/ [NC]
-    RewriteRule ^(.*)$ public/$1 [L]
+# Deshabilitar listado de directorios
+<IfModule mod_autoindex.c>
+    Options -Indexes
 </IfModule>
 
-# Proteger archivo de configuración .env
-<Files ".env">
+# Bloquear acceso a archivos sensibles y de configuración
+<FilesMatch "^(\.env|composer\.(json|lock)|spark|phpunit\.dist\.xml|preload\.php|env|LICENSE|README\.md)">
+    <IfModule authz_core_module>
+        Require all denied
+    </IfModule>
+    <IfModule !authz_core_module>
+        Deny from all
+    </IfModule>
+</FilesMatch>
+
+# Proteger archivos ocultos (dotfiles) como .git, .env, etc.
+<Files ".*">
     <IfModule authz_core_module>
         Require all denied
     </IfModule>
@@ -15,3 +26,46 @@
         Deny from all
     </IfModule>
 </Files>
+
+# ----------------------------------------------------------------------
+# Rewrite engine
+# ----------------------------------------------------------------------
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Bloquear acceso HTTP directo a carpetas internas del framework
+    RewriteRule ^(app|system|writable|vendor|tests|\.git)(/.*)?$ - [F,L,NC]
+
+    # Redirigir barras finales en URLs que no corresponden a directorios físicos
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_URI} (.+)/$
+    RewriteRule ^ %1 [L,R=301]
+
+    # Si el archivo o directorio solicitado existe físicamente en la raíz, servirlo directamente
+    RewriteCond %{REQUEST_FILENAME} -f [OR]
+    RewriteCond %{REQUEST_FILENAME} -d
+    RewriteRule ^ - [L]
+
+    # Si el recurso solicitado existe dentro de la carpeta public/, servirlo desde allí
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond public/$1 -f [OR]
+    RewriteCond public/$1 -d
+    RewriteRule ^(.*)$ public/$1 [L]
+
+    # Enviar todas las demás solicitudes al Front Controller index.php
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^([\s\S]*)$ index.php/$1 [L,NC,QSA]
+
+    # Asegurar que el encabezado Authorization se transmita a PHP
+    RewriteCond %{HTTP:Authorization} .
+    RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+</IfModule>
+
+<IfModule !mod_rewrite.c>
+    ErrorDocument 404 index.php
+</IfModule>
+
+# Deshabilitar firma del servidor
+ServerSignature Off
